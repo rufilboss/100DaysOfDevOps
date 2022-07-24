@@ -1,2 +1,3 @@
-# 100DaysOfDevOps
-Documenting My #100DaysOfDevOps Journey. 07/25/22
+# My 100DaysOfDevOps Journey.
+Documenting My #100DaysOfDevOps Journey.
+From Monday 25th July 2022.
