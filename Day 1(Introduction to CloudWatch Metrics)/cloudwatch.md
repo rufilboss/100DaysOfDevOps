@@ -14,3 +14,26 @@
 * Each email address is sent to a topic subscription confirmation email. You must confirm the subscription before notifications can be sent.
 * Click on Create Alarm.
 
+# Setup CPU Usage Alarm using the AWS CLI
+
+1. Create an alarm using the put-metric-alarm command
+
+```sh
+aws cloudwatch put-metric-alarm --alarm-name cpu-mon --alarm-description "Alarm when CPU exceeds 70 percent" --metric-name CPUUtilization --namespace AWS/EC2 --statistic Average --period 300 --threshold 70 --comparison-operator GreaterThanThreshold  --dimensions "Name=InstanceId,Value=i-12345678" --evaluation-periods 2 --alarm-actions arn:aws:sns:us-east-1:111122223333:MyTopic --unit Percent
+```
+
+2. Using the command line, we can test the Alarm by forcing an alarm state change using a set-alarm-state command
+
+3. Change the alarm-state from INSUFFICIENT_DATA to OK
+
+```sh
+aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value OK
+```
+
+4. Change the alarm-state from OK to ALARM
+
+```sh
+aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value ALARM
+```
+
+5. Lastly, check if you have received an email notification about the alarm.
