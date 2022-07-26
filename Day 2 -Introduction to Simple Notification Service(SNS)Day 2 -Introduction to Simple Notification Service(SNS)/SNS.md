@@ -17,7 +17,7 @@
 
 ## Create a Topic
 ```sh
-$ aws sns create-topic --name "my-demo-sns-topic"
+$ aws sns create-topic --name "example-sns-topic"
 {
 "TopicArn": "arn:aws:sns:us-west-2:1234556667:example-sns-topic"
 }
@@ -33,7 +33,7 @@ $ aws sns subscribe --topic-arn arn:aws:sns:us-west-2:123456667:example-sns-topi
 
 ## Publish to a Topic
 ```sh
-$ aws sns publish --topic-arn arn:aws:sns:us-west-2:1234567:example-sns-topic --message "hello from sns"
+$ aws sns publish --topic-arn arn:aws:sns:us-west-2:1234567:example-sns-topic --message "Hello from sns"
 {
 "MessageId": "d651b7d5-2d66-58c8-abe4-e30822a3aa3e"
 }
