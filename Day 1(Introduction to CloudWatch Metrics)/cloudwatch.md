@@ -19,7 +19,7 @@
 1. Create an alarm using the put-metric-alarm command
 
 ```sh
-aws cloudwatch put-metric-alarm --alarm-name cpu-mon --alarm-description "Alarm when CPU exceeds 70 percent" --metric-name CPUUtilization --namespace AWS/EC2 --statistic Average --period 300 --threshold 70 --comparison-operator GreaterThanThreshold  --dimensions "Name=InstanceId,Value=i-12345678" --evaluation-periods 2 --alarm-actions arn:aws:sns:us-east-1:111122223333:MyTopic --unit Percent
+$ aws cloudwatch put-metric-alarm --alarm-name cpu-mon --alarm-description "Alarm when CPU exceeds 70 percent" --metric-name CPUUtilization --namespace AWS/EC2 --statistic Average --period 300 --threshold 70 --comparison-operator GreaterThanThreshold  --dimensions "Name=InstanceId,Value=i-12345678" --evaluation-periods 2 --alarm-actions arn:aws:sns:us-east-1:111122223333:MyTopic --unit Percent
 ```
 
 2. Using the command line, we can test the Alarm by forcing an alarm state change using a set-alarm-state command
@@ -27,13 +27,13 @@ aws cloudwatch put-metric-alarm --alarm-name cpu-mon --alarm-description "Alarm 
 3. Change the alarm-state from INSUFFICIENT_DATA to OK
 
 ```sh
-aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value OK
+$ aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value OK
 ```
 
 4. Change the alarm-state from OK to ALARM
 
 ```sh
-aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value ALARM
+$ aws cloudwatch set-alarm-state --alarm-name "cpu-monitoring" --state-reason "initializing" --state-value ALARM
 ```
 
 5. Lastly, check if you have received an email notification about the alarm.
