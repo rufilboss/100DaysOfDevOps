@@ -1,3 +1,4 @@
+#cloudwatch.tf
 resource "aws_cloudwatch_metric_alarm" "cpu-utilization" {
   alarm_name                = "high-cpu-utilization-alarm"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
