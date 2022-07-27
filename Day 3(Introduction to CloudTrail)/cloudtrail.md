@@ -55,8 +55,8 @@ $ aws cloudtrail create-trail --name example-cloudtrail --s3-bucket-name example
 {
 "IncludeGlobalServiceEvents": true,
 "IsOrganizationTrail": false,
-"Name": "my-test-cloudtrail",
-"TrailARN": "arn:aws:cloudtrail:us-west-2:XXXXXXXXX:trail/my-test-cloudtrail",
+"Name": "example-cloudtrail",
+"TrailARN": "arn:aws:cloudtrail:us-west-2:XXXXXXXXX:trail/example-cloudtrail",
 "LogFileValidationEnabled": false,
 "IsMultiRegionTrail": false,
 "S3BucketName": "examples3bucketforcloudtrail"
@@ -110,14 +110,14 @@ $ aws cloudtrail describe-trails
 
 ## Start logging for the trail
 ```sh
-$ aws cloudtrail start-logging --name my-test-cloudtrail
+$ aws cloudtrail start-logging --name example-cloudtrail
 ```
 ### NOTE: When we create the trail using CloudTrail console, logging is turned on automatically
 
 ## To verify if logging is enabled
 
 ```sh
-$ aws cloudtrail get-trail-status --name my-test-cloudtrail
+$ aws cloudtrail get-trail-status --name example-cloudtrail
 {
 "LatestDeliveryTime": 1550014519.927,
 "LatestDeliveryAttemptTime": "2019-02-12T23:35:19Z",
@@ -133,20 +133,45 @@ $ aws cloudtrail get-trail-status --name my-test-cloudtrail
 ## To enable log file validation
 
 ```sh
-$ aws cloudtrail create-trail --name my-test-cloudtrail-multiregion-logging --s3-bucket-name mytests3bucketforcloudtrail --is-multi-region-trail --enable-log-file-validation
+$ aws cloudtrail create-trail --name example-cloudtrail-multiregion-logging --s3-bucket-name examples3bucketforcloudtrail --is-multi-region-trail --enable-log-file-validation
 {
 "IncludeGlobalServiceEvents": true,
 "IsOrganizationTrail": false,
-"Name": "my-test-cloudtrail-multiregion-logging",
-"TrailARN": "arn:aws:cloudtrail:us-west-2:349934551430:trail/my-test-cloudtrail-multiregion-logging",
+"Name": "example-cloudtrail-multiregion-logging",
+"TrailARN": "arn:aws:cloudtrail:us-west-2:349934551430:trail/example-cloudtrail-multiregion-logging",
 "LogFileValidationEnabled": true,
 "IsMultiRegionTrail": true,
-"S3BucketName": "mytests3bucketforcloudtrail"
+"S3BucketName": "examples3bucketforcloudtrail"
 }
 ```
 
 ## To delete a particular trail
 
 ```sh
-$ aws cloudtrail delete-trail --name my-test-cloudtrail-multiregion-logging
+$ aws cloudtrail delete-trail --name example-cloudtrail-multiregion-logging
+```
+
+## Command cheat sheet
+
+```sh
+# Create Trail(Single Region)
+aws cloudtrail create-trail --name example-cloudtrail --s3-bucket-name examples3bucketforcloudtrail
+
+# Create Trail(That applies to multi-region)
+aws cloudtrail create-trail --name example-cloudtrail-multiregion --s3-bucket-name examples3bucketforcloudtrail --is-multi-region-trail
+
+# To get the status/list all the trails
+aws cloudtrail describe-trails
+
+# Start logging for the trail
+aws cloudtrail start-logging --name example-cloudtrail
+
+# To verify if logging is enabled
+aws cloudtrail get-trail-status --name example-cloudtrail
+
+# To enable log file validation
+aws cloudtrail create-trail --name example-cloudtrail-multiregion-logging --s3-bucket-name examples3bucketforcloudtrail --is-multi-region-trail --enable-log-file-validation
+
+# To delete a particular trail
+aws cloudtrail delete-trail --name example-cloudtrail-multiregion-logging
 ```
