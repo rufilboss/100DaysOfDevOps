@@ -323,3 +323,35 @@ Configuration validation succeeded
 Created symlink from /etc/systemd/system/multi-user.target.wants/amazon-cloudwatch-agent.service to /etc/systemd/system/amazon-cloudwatch-agent.service.
 Redirecting to /bin/systemctl restart amazon-cloudwatch-agent.service
 ```
+
+#### For centos, you need to perform two additional steps
+```sh
+$ yum -y install epel-release
+$ yum -y install collectd
+```
+
+## Scenario2: Using SSM Parameter store
+```sh
+$ wget https://s3.amazonaws.com/amazoncloudwatch-agent/linux/amd64/latest/AmazonCloudWatchAgent.zip
+$ unzip AmazonCloudWatchAgent.zip
+$ ./install.sh
+```
+
+#### But rather than perform the next wizard step manually, we can use system manager parameter store
+```sh
+$ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:CloudWatch-Advanceconfig-linux -s
+/opt/aws/amazon-cloudwatch-agent/bin/config-downloader --output-dir /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d --download-source ssm:CentosCloudWatch-linux --mode ec2 --config /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml --multi-config default
+Region: us-west-2
+credsConfig: map[]
+Successfully fetched the config and saved in /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d/ssm_CentosCloudWatch-linux.tmp
+Start configuration validation...
+/opt/aws/amazon-cloudwatch-agent/bin/config-translator --input /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json --input-dir /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.d --output /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml --mode ec2 --config /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml --multi-config default
+Valid Json input schema.
+No csm configuration found.
+Configuration validation first phase succeeded
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -schematest -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
+Configuration validation second phase succeeded
+Configuration validation succeeded
+Created symlink from /etc/systemd/system/multi-user.target.wants/amazon-cloudwatch-agent.service to /etc/systemd/system/amazon-cloudwatch-agent.service.
+Redirecting to /bin/systemctl restart amazon-cloudwatch-agent.service
+```
