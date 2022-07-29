@@ -38,7 +38,7 @@ cp .env.example .env
 * Enter the channel name where you want to send a notification, also note down Webhook URL
 * Under .env file,enter the following info
 ```sh
-#ENCRYPTED_HOOK_URL= you can use ENCRYPTED_HOOK_URL if you want
+# ENCRYPTED_HOOK_URL= you can use ENCRYPTED_HOOK_URL if you want
 UNENCRYPTED_HOOK_URL=Step3
 AWS_FUNCTION_NAME=cloudwatch-to-slack
 AWS_REGION=us-west-2
@@ -96,3 +96,25 @@ TracingConfig: { Mode: null } }
 │                                     │
 ╰─────────────────────────────────────╯
 ```
+* If everything looks good, you will see the new function on the lambda page.
+
+## Step4: Create an SNS topic
+
+* Go to https://us-west-2.console.aws.amazon.com/sns/v2/home?region=us-west-2#/home
+* Click on create a topic and enter Topic name(eg: cloudwatch-to-lambda-sns-topic)
+* Click on newly create a topic and then from Actions drop-down Subscribe to topic
+* Click on Create subscription, using AWS Lambda as Protocol
+
+## Step5: Create CloudWatch Alarm
+
+* Go to CloudWatch home page https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2
+* Alarms → Create Alarm → Metric → Select Metric → EC2 → Per Instance Metric
+* Select CPU Utilization
+* Fill all the necessary details
+* In order to replicate the scenario, I am using stress tool, which is available as the part of RedHat epel repo
+```sh
+# stress --cpu 10 --timeout 300
+stress: info: [15259] dispatching hogs: 10 cpu, 0 io, 0 vm, 0 hdd
+stress: info: [15259] successful run completed in 300s
+```
+* You will start recieving notification in your slack app.
