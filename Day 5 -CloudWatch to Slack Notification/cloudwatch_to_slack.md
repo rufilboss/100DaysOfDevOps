@@ -49,3 +49,50 @@ AWS_ROLE="Step2"
 AWS_ACCESS_KEY_ID= Step1
 AWS_SECRET_ACCESS_KEY= Step1
 ```
+* After making these changes, execute the following command on the terminal
+```sh
+$ npm install
+added 136 packages in 4.039s
+╭─────────────────────────────────────╮
+│                                     │
+│   Update available 5.6.0 → 5.8.0    │
+│     Run npm i -g npm to update      │
+│                                     │
+╰─────────────────────────────────────╯
+```
+* Finally, deploy it
+```sh
+$ npm run deploy
+> lambda-cloudwatch-slack@0.3.0 deploy /Users/plakhera/Documents/lambda-cloudwatch-slack
+> ./scripts/deploy.sh
+Warning!!! You are building on a platform that is not 64-bit Linux (darwin.x64).
+If any of your Node dependencies include C-extensions, they may not work as expected in the Lambda environment.
+=> Moving files to temporary directory
+=> Running npm install --production
+=> Zipping deployment package
+=> Zipping repo. This might take up to 30 seconds
+=> Reading zip file to memory
+=> Reading event source file to memory
+=> Uploading zip file to AWS Lambda us-west-2 with parameters:
+{ FunctionName: 'cloudwatch-to-slack',
+Code: { ZipFile: <Buffer 50 4b 03 04 14 00 08 00 08 00 20 10 4a 4e 00 00 00 00 00 00 00 00 00 00 00 00 04 00 00 00 2e 65 6e 76 6d 90 5d 4f 83 30 18 85 ef f9 15 8d bb 5c 18 9b ... > },
+Handler: 'index.handler',
+Role: 'arn:aws:iam::XXXXXX:role/cloudwatch-to-lambda',
+Runtime: 'nodejs8.10',
+Description: 'Better Slack notifications for AWS CloudWatch',
+MemorySize: 128,
+Timeout: 60,
+Publish: false,
+VpcConfig: { SubnetIds: [], SecurityGroupIds: [] },
+Environment: { Variables: { UNENCRYPTED_HOOK_URL: 'https://hooks.slack.com/services/XXXXXXXX' } },
+KMSKeyArn: '',
+DeadLetterConfig: { TargetArn: null },
+TracingConfig: { Mode: null } }
+^C
+╭─────────────────────────────────────╮
+│                                     │
+│   Update available 5.6.0 → 6.7.0    │
+│     Run npm i -g npm to update      │
+│                                     │
+╰─────────────────────────────────────╯
+```
