@@ -3,7 +3,7 @@
 </h1>
 
 ### Started on Monday 25th July 2022.
-Today: Day 5 of 100, We meuve...
+Today: Day 6 of 100, We meuve...
 
 # MIT License
 
