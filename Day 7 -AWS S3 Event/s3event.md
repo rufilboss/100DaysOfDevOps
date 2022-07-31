@@ -33,5 +33,5 @@ The Amazon S3 notification feature enables you to receive notifications(SNS/SQS/
  }
 }
 ```
-* Go to S3 console [**here**] (https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
+* Go to S3 console [**here**](https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
 * Your bucket → Properties → Events
