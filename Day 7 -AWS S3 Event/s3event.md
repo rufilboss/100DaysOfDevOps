@@ -1,10 +1,10 @@
 ### Problem Statement
 Whenever anyone deletes any object in S3 bucket you will get the notification
 Solution
-This can be achieved via in one of the three ways
-
-### AWS Console
+##### This can be achieved via in one of the two ways
+AWS Console
 Terraform
+
 NOTE: This is not the complete list and there are more ways to achieve the same
 # Using AWS Maagement Console
 
@@ -35,3 +35,14 @@ The Amazon S3 notification feature enables you to receive notifications(SNS/SQS/
 ```
 * Go to S3 console [**here**](https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
 * Your bucket → Properties → Events
+```sh
+* Give your event a name
+* Event type I want to get a notification is (All object delete events) i.e I want to recieve notification when object is deleted from this topic.
+* Send to SNS Topic
+* SNS(Choose the SNS topic you created earlier)
+```
+* Now if you try to delete an object from the bucket
+### NOTE: Delivery of these events happens in almost real-time with no cost involved.
+
+# Using Terraform
+Check the s3event.tf file.....
