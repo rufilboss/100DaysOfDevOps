@@ -1,6 +1,6 @@
 # Setup a CPU Usage Alarm using the AWS Management Console.
 
-1. Open the CloudWatch console at https://console.aws.amazon.com/cloudwatch/.
+1. Open the CloudWatch console at [**here**](https://console.aws.amazon.com/cloudwatch/)
 2. In the navigation pane, choose Alarms, Create Alarm.
 3. Go to Metric → Select metric → EC2 → Per-Instance-Metrics → CPU Utilization → Select metric
 

@@ -2,14 +2,14 @@
 
 ## Step1: Create an AWS Access key and Secret Key
 
-* Go to IAM console https://console.aws.amazon.com/iam/home?region=us-west-2#/home
+* Go to IAM console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home)
 * Click on Users → Particular user → Security Credentials
 * Click on Create Access Key
 * Save the Access Key and Secret Key as we'll need them later while configuring Lambda function.
 
 ## Step2: Create an IAM Role
 
-* Go to IAM console https://console.aws.amazon.com/iam/home?region=us-west-2#/home
+* Go to IAM console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home)
 * Roles → Create role → AWS service → Lambda
 * Search for AWSLambdaBasicExecutionRole
 * Give it a name
@@ -100,14 +100,14 @@ TracingConfig: { Mode: null } }
 
 ## Step4: Create an SNS topic
 
-* Go to https://us-west-2.console.aws.amazon.com/sns/v2/home?region=us-west-2#/home
+* Go to [**here**](https://us-west-2.console.aws.amazon.com/sns/v2/home?region=us-west-2#/home)
 * Click on create a topic and enter Topic name(eg: cloudwatch-to-lambda-sns-topic)
 * Click on newly create a topic and then from Actions drop-down Subscribe to topic
 * Click on Create subscription, using AWS Lambda as Protocol
 
 ## Step5: Create CloudWatch Alarm
 
-* Go to CloudWatch home page https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2
+* Go to CloudWatch home page [**here**](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2)
 * Alarms → Create Alarm → Metric → Select Metric → EC2 → Per Instance Metric
 * Select CPU Utilization
 * Fill all the necessary details
