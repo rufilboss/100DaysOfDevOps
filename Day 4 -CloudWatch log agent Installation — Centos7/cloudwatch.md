@@ -8,7 +8,7 @@
 
 ### Step1: Setup IAM Role(CloudWatch agent installed on EC2 instance, require permission to put data and that why we need to setup this role)
 
-* Go to IAM console https://console.aws.amazon.com/iam/home?region=us-west-2#/home
+* Go to IAM console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home)
 * Roles → Create role → AWS service → EC2
 * Search for these two policies ( CloudWatchAgentServerPolicy(This is required for the cloudwatch agent to interact with CloudWatch logs)and AmazonSSMFullAccess(To automate the process of cloudwatch agent installation).
 * Create role
