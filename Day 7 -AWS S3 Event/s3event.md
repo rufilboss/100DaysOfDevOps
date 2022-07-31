@@ -17,3 +17,21 @@ The Amazon S3 notification feature enables you to receive notifications(SNS/SQS/
 
 * First, go to the SNS topic [**here**](https://us-west-2.console.aws.amazon.com/sns/v2/home?region=us-west-2#/home)
 * Click on Topics → Actions → Edit topic policy
+* Paste this json policy(We still need permission on SNS topic to allow S3 event system to deliver events to it)
+```sh
+{
+ "Effect": "Allow",
+ "Principal": {
+  "AWS": "*"
+ },
+ "Action": "SNS:Publish",
+ "Resource": "arn:aws:sns:us-west-2:XXXXXX:alarms-topic", <--SNS Arn
+ "Condition": {
+  "ArnLike": {
+   "aws:SourceArn": "arn:aws:s3:::s3-cloudtrail-bucket-with-terraform-code" <---Bucket name
+  }
+ }
+}
+```
+* Go to S3 console [**here**] (https://s3.console.aws.amazon.com/s3/home?region=us-east-1)
+* Your bucket → Properties → Events
