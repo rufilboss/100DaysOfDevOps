@@ -64,3 +64,50 @@ Action: AssumeRole
 Resource: ARN of the role we created earlier
 ```
 * This is making our user assume the role
+### Step5:
+
+* Testing
+
+```sh
+$ aws configure --profile ststestprofile
+AWS Access Key ID [None]: XXXXXXXX
+AWS Secret Access Key [None]: XXXXXX
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
+* Also, export this profile for the time being
+
+```sh
+$ export AWS_PROFILE=ststestprofile
+```
+* As we set the user to assume Role, let generate the temporary credentails and security token by running the below mentioned command
+
+```sh
+$ aws sts assume-role --role-arn arn:aws:iam::XXXXXX:role/sts-s3-read-only --role-session-name "mytestsession"
+{
+"AssumedRoleUser": {
+"AssumedRoleId": "XXXXXXX:mytestsession",
+"Arn": "arn:aws:sts::XXXXXXX:assumed-role/sts-s3-read-only/mytestsession"
+},
+"Credentials": {
+"SecretAccessKey": "XXXXXXX",
+"SessionToken": "XXXXXXX",
+"Expiration": "2018-12-18T06:47:21Z",
+"AccessKeyId": "XXXXXXXXX"
+}
+}
+```
+* Then export it
+
+```sh
+export AWS_ACCESS_KEY_ID="XXXXXXX"
+export AWS_SECRET_ACCESS_KEY="XXXXXXX"
+export AWS_SECURITY_TOKEN="XXXXXXX"
+```
+
+* Try to access S3 bucket
+```sh
+$ aws s3 ls
+2018-12-13 20:53:05 mytestXXXXXX
+```
+
