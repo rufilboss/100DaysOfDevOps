@@ -111,3 +111,9 @@ $ aws s3 ls
 2018-12-13 20:53:05 mytestXXXXXX
 ```
 
+## OR
+
+```sh
+$ aws s3 cp bucketest s3://mytestXXXXXX
+upload failed: ./bucketest to s3://mytestXXXXXX/bucketest An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+```
