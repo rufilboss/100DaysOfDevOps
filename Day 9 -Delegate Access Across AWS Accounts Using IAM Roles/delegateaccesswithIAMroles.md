@@ -70,3 +70,6 @@ An AWS S3 bucket created in Production Account A.
 * Display Name: Any display name
 * Switch Role
 ```
+* Now go to S3 console and try to access S3 bucket which is present in Account A.
+
+###### NOTE: You cannot switch to a role when you are signed in as the AWS account root user.
