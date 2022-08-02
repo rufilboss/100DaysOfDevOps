@@ -3,4 +3,6 @@
 </h1>
 
 ### Started on Monday 25th July 2022.
-Today: Day 8 of 100, We meuve...
+##### Today: 2nd Aug 2022
+
+Day 9 of 100, We meuve...
