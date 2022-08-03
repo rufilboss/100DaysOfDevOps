@@ -3,6 +3,8 @@ I want to limit user in my Dev Account to only launch instance type which is t2.
 
 #### Solution: This is possible by using IAM managed policy
 
+# Using AWS Management Console
+
 ### Step1:
 * Go to IAM console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home) → Policies → Create policy
 
@@ -348,3 +350,5 @@ $ aws sts decode-authorization-message --encoded-message  VoZsF9LnYO9v0_WhtW-_Ir
     ]
 }
 ```
+# Creating and Attaching Policy via AWS CLI
+
