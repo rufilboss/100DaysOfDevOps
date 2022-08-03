@@ -352,3 +352,25 @@ $ aws sts decode-authorization-message --encoded-message  VoZsF9LnYO9v0_WhtW-_Ir
 ```
 # Creating and Attaching Policy via AWS CLI
 
+```sh
+* Create a file mytestpolicy and copy the policy we create aboveAWS
+* $ aws iam create-policy --policy-name my-t2-restriction-policy --policy-document  file://mytestpolicy
+{
+"Policy": {
+"PolicyName": "my-t2-restriction-policy",
+"PermissionsBoundaryUsageCount": 0,
+"CreateDate": "2019-02-20T20:16:08Z",
+"AttachmentCount": 0,
+"IsAttachable": true,
+"PolicyId": "ANPAIOJ75XXVI6OW22S5Q",
+"DefaultVersionId": "v1",
+"Path": "/",
+"Arn": "arn:aws:iam::XXXXXX:policy/my-t2-restriction-policy",
+"UpdateDate": "2019-02-20T20:16:08Z"
+}
+}
+# To attach this policy to a particular user
+$ aws iam attach-user-policy --policy-arn arn:aws:iam::XXXXX:policy/my-t2-restriction-policy --user-name plakhera
+```
+
+# Creating and Attaching Policy via Terraform
