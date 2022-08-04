@@ -60,3 +60,11 @@ Add Conditions
 
 * Test it
 
+# AWS CLI
+
+* Create a json file bucketpolicy.json
+* aws s3api put-bucket-policy --bucket my-test-bucket --policy [**here**](file://bucketpolicy.json)
+
+# Using Terraform
+
+Check the terraform file...
