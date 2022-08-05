@@ -40,5 +40,5 @@ We all understand the importance of CloudTrail, it records each action taken by 
 ## Step1:
 * Create IAM Role so that Lambda can interact with CloudWatch Events
 ```sh
-Go to IAM Console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home) --> Roles --> Create role
+Go to IAM Console https://console.aws.amazon.com/iam/home?region=us-west-2#/home --> Roles --> Create role
 ```
