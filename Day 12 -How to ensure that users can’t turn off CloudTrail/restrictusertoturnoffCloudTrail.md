@@ -133,3 +133,8 @@ Add target
 * This time chhose SNS topic
 * Choose the SNS topic we just create
 ```
+
+* What this will do, if any user tries to disable CloudTrail
+    * It will send SNS notification
+    * It will revert the change and enable CloudTrail back
+
