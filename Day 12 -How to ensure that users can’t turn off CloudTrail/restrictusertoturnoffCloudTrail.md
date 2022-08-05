@@ -42,3 +42,43 @@ We all understand the importance of CloudTrail, it records each action taken by 
 ```sh
 Go to IAM Console https://console.aws.amazon.com/iam/home?region=us-west-2#/home --> Roles --> Create role
 ```
+
+* In the next screen, select Create Policy
+
+```sh
+* Service: Search for CloudWatch Logs
+* Action: Select CreateLogGroup, CreateLogStream and PutLogEvents
+* Resource: Select Any
+```
+* Review and give your policy some name
+* Final policy look like this
+```sh
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "logs:PutLogEvents",
+            "Resource": "arn:aws:logs:*:*:log-group:*:*:*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "logs:CreateLogGroup",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+* Add this newly created policy to the role and add one more policy to it(AWSCloudTrailFullAccess), so that Lambda will respond to any CloudTrail event.
