@@ -88,3 +88,48 @@ Go to IAM Console https://console.aws.amazon.com/iam/home?region=us-west-2#/home
 * Go to Lambda [**here**](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/home)
 * Select Create Function
 
+```sh
+* Select Author from scratch
+* Name: Give your Lambda function any name
+* Runtime: Select Python2.7 as runtime
+* Role: Choose the role we create in first step
+* Click on Create function
+```
+* Copy paste this code
+
+```sh
+import json
+import boto3
+import sys
+
+print('Loading function')
+""" Function to define Lambda Handler """
+def lambda_handler(event, context):
+    try:
+
+        client = boto3.client('cloudtrail')
+        if event['detail']['eventName'] == 'StopLogging':
+            response = client.start_logging(Name=event['detail']['requestParameters']['name'])
+
+    except Exception, e:
+        sys.exit();
+
+```
+
+## Step3: Create CloudWatch Events
+
+* Go to CloudWatch --> [**here**](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#) --> Rules --> Create rule
+
+```sh
+Event Source
+* Select Event Pattern
+* Service Name: Select CloudTrail
+* Event Type: AWS API Call via CloudTrail
+* Specific operation(s): StopLogging
+Targets
+* Select Lambda function
+* Function: Select the Function we have just created
+Add target
+* This time chhose SNS topic
+* Choose the SNS topic we just create
+```
