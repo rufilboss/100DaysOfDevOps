@@ -82,3 +82,9 @@ Go to IAM Console https://console.aws.amazon.com/iam/home?region=us-west-2#/home
 ```
 
 * Add this newly created policy to the role and add one more policy to it(AWSCloudTrailFullAccess), so that Lambda will respond to any CloudTrail event.
+
+## Step2: Create Lambda function
+
+* Go to Lambda [**here**](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/home)
+* Select Create Function
+
