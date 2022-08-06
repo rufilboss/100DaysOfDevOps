@@ -1,0 +1,66 @@
+#### Problem:
+* Shutdown all EC2 instance in AWS DEV account at 6pm and bring it back next day at 9am(Monday to Friday)
+
+#### Solution:
+* Using Lambda function in combination of CloudWatch events.
+
+* One of the major challenge in implementing this what would be the case if Developer is working late and he wants his instance to be run beyond 6 pm or if there is an urgent patch he needs to implement and need to work on the weekend?
+* One common solution we come out is manually specifying the list of an instance in Python Code(Lambda Function) and in case of exception it goes through change management process where we need to remove developer instance manually(Agree not an ideal solution but so far works great)
+
+# Using AWS Management Console
+
+## Step1:
+* Create IAM Role so that Lambda can interact with CloudWatch Events
+* Go to IAM Console [**here**](https://console.aws.amazon.com/iam/home?region=us-west-2#/home) --> Roles --> Create role
+* In the next screen, select Create Policy, IAM Policy will look like this
+```sh
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:Start*",
+        "ec2:Stop*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+* Add this newly created policy to the role.
+
+## Step2:
+* Create Lambda function
+* Go to Lambda [**here**](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/home)
+* Select Create Function
+```sh
+* Select Author from scratch
+* Name: Give your Lambda function any name
+* Runtime: Select Python2.7 as runtime
+* Role: Choose the role we create in first step
+* Click on Create function
+```
+* In this scenario, we need to create Function one to stop instance and others to start an instance
+* To stop the instance, the code will look like this
+```sh
+import boto3
+# Enter the region your instances are in. Include only the region without specifying Availability Zone; e.g., 'us-east-1'
+region = 'XX-XXXXX-X'
+# Enter your instances here: ex. ['X-XXXXXXXX', 'X-XXXXXXXX']
+instances = ['X-XXXXXXXX']
+
+def lambda_handler(event, context):
+    ec2 = boto3.client('ec2', region_name=region)
+    ec2.stop_instances(InstanceIds=instances)
+    print 'stopped your instances: ' + str(instances)
+```
