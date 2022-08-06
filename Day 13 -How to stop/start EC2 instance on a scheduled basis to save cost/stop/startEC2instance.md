@@ -81,3 +81,14 @@ def lambda_handler(event, context):
     print 'started your instances: ' + str(instances)
 ```
 
+## Step2:
+* Create the CloudWatch event to trigger this Lambda function
+* Open the Amazon CloudWatch console.
+* Choose Events, and then choose Create rule.
+* Choose Schedule under Event Source.
+    * Under Cron expression choose * 18 * * ? * (If you want to shutdown your instance at 6pm everyday)
+    * Choose Add target, and then choose Lambda function that you created earlier to stop the instance
+* Same steps need to be repeated for Starting the instance
+    * Only difference is different time schedule
+    * Under target different Lambda function(to start the instance)
+
