@@ -43,13 +43,12 @@
 * Create Lambda function
 * Go to Lambda [**here**](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/home)
 * Select Create Function
-```sh
-* Select Author from scratch
-* Name: Give your Lambda function any name
-* Runtime: Select Python2.7 as runtime
-* Role: Choose the role we create in first step
-* Click on Create function
-```
+    * Select Author from scratch
+    * Name: Give your Lambda function any name
+    * Runtime: Select Python2.7 as runtime
+    * Role: Choose the role we create in first step
+    * Click on Create function
+
 * In this scenario, we need to create Function one to stop instance and others to start an instance
 * To stop the instance, the code will look like this
 ```sh
@@ -64,3 +63,8 @@ def lambda_handler(event, context):
     ec2.stop_instances(InstanceIds=instances)
     print 'stopped your instances: ' + str(instances)
 ```
+
+    * Change the Value of region
+    * In the instance field specify instance id
+* Keep all the settings as default, just change the timeout value to 10sec
+* Now we need to perform the same steps for starting the instance
