@@ -40,6 +40,7 @@
 * Add this newly created policy to the role.
 
 ## Step2:
+
 * Create Lambda function
 * Go to Lambda [**here**](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/home)
 * Select Create Function
@@ -51,6 +52,7 @@
 
 * In this scenario, we need to create Function one to stop instance and others to start an instance
 * To stop the instance, the code will look like this
+
 ```sh
 import boto3
 # Enter the region your instances are in. Include only the region without specifying Availability Zone; e.g., 'us-east-1'
