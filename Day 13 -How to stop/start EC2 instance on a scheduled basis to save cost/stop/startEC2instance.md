@@ -96,5 +96,4 @@ def lambda_handler(event, context):
     * Lambda function --> Monitoring --> View logs in CloudWatch
 * For stopping the instance, you will see something like this
 * For starting the instance
-
-The simple automation system is ready in stopping/starting the instance and to save some company money.
+* The simple automation system is ready in stopping/starting the instance and to save some company money.
