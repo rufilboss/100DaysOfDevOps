@@ -91,4 +91,8 @@ def lambda_handler(event, context):
 * Same steps need to be repeated for Starting the instance
     * Only difference is different time schedule
     * Under target different Lambda function(to start the instance)
-
+##### NOTE: One very important point to note is that all scheduled event is in UTC timezone, so you need to customize it based on your timezone.
+* Once the event is triggered, go to your
+    * Lambda function --> Monitoring --> View logs in CloudWatch
+* For stopping the instance, you will see something like this
+* 
