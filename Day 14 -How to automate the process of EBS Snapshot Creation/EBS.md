@@ -26,7 +26,7 @@
 ##### NOTE: All scheduled events use UTC time zone, so might need to change based on your timezone
 
 * On the next screen give your Snapshot some name and Description
-* Now go to the EC2 console https://us-west-2.console.aws.amazon.com/ec2/
+* Now go to the EC2 console [**here**](https://us-west-2.console.aws.amazon.com/ec2/)
 * Under ELASTIC BLOCK STORE, click on Snapshots
 
 * One of the major limitations, I see in this approach, is I don't see any option to delete snapshot after n number of days(eg: After 30 days)
