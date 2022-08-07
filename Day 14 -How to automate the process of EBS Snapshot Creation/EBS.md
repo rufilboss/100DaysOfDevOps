@@ -35,3 +35,9 @@
 
 * This is probably the easiest way, where using single service we can Create and Manage(deleting it after ’n’ number of days) EBS snapshots
 * Go to AWS → Compute → EC2 → Elastic Block Store → Lifecycle Manager → Create Snapshot Lifecycle Policy
+    * Description: Add a description to your policy to help you identify what it is intended for.
+    * Target volumes with tags: Add the Volume 
+    * Create snapshots every: 12 or 24 hour
+    * Snapshot creation start time: 5:00(Timing is in UTC)
+    * Retention rule: 30(Depending upon your requirement)
+    * Keep all the other values as default
