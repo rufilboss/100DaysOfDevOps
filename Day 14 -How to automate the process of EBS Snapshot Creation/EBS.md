@@ -41,3 +41,5 @@
     * Snapshot creation start time: 5:00(Timing is in UTC)
     * Retention rule: 30(Depending upon your requirement)
     * Keep all the other values as default
+
+###### NOTE: Snapshot creation start time hh:mm UTC — The time of day when policy runs are scheduled to start. The policy runs start within an hour after the scheduled time
