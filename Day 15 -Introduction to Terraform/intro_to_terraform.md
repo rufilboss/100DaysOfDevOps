@@ -313,4 +313,152 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-* 
+* To apply these changes, run terraform apply
+
+```sh
+$ terraform apply
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
++ create
+Terraform will perform the following actions:
++ aws_instance.ec2_instance
+id:                                    <computed>
+ami:                                   "ami-28e07e50"
+associate_public_ip_address:           <computed>
+availability_zone:                     <computed>
+cpu_core_count:                        <computed>
+cpu_threads_per_core:                  <computed>
+ebs_block_device.#:                    <computed>
+ephemeral_block_device.#:              <computed>
+get_password_data:                     "false"
+instance_state:                        <computed>
+instance_type:                         "t2.micro"
+ipv6_address_count:                    <computed>
+ipv6_addresses.#:                      <computed>
+key_name:                              "${aws_key_pair.example.id}"
+network_interface.#:                   <computed>
+network_interface_id:                  <computed>
+password_data:                         <computed>
+placement_group:                       <computed>
+primary_network_interface_id:          <computed>
+private_dns:                           <computed>
+private_ip:                            <computed>
+public_dns:                            <computed>
+public_ip:                             <computed>
+root_block_device.#:                   <computed>
+security_groups.#:                     <computed>
+source_dest_check:                     "true"
+subnet_id:                             <computed>
+tags.%:                                "1"
+tags.Name:                             "first-ec2-instance"
+tenancy:                               <computed>
+volume_tags.%:                         <computed>
+vpc_security_group_ids.#:              <computed>
++ aws_key_pair.example
+id:                                    <computed>
+fingerprint:                           <computed>
+key_name:                              "example-key"
+public_key:                            "XXXX"
++ aws_security_group.examplesg
+id:                                    <computed>
+arn:                                   <computed>
+description:                           "Managed by Terraform"
+egress.#:                              <computed>
+ingress.#:                             "1"
+ingress.2541437006.cidr_blocks.#:      "1"
+ingress.2541437006.cidr_blocks.0:      "0.0.0.0/0"
+ingress.2541437006.description:        ""
+ingress.2541437006.from_port:          "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "0"
+ingress.2541437006.protocol:           "tcp"
+ingress.2541437006.security_groups.#:  "0"
+ingress.2541437006.self:               "false"
+ingress.2541437006.to_port:            "22"
+name:                                  <computed>
+owner_id:                              <computed>
+revoke_rules_on_delete:                "false"
+vpc_id:                                <computed>
+Plan: 3 to add, 0 to change, 0 to destroy.
+Do you want to perform these actions?
+Terraform will perform the actions described above.
+Only 'yes' will be accepted to approve.
+Enter a value: yes <-----(Make sure to type yes if your satisfied with your changes, note there is no rollback from here)
+aws_key_pair.example: Creating...
+fingerprint: "" => "<computed>"
+key_name:    "" => "example-key"
+public_key:  "" => "XXXX"
+aws_security_group.examplesg: Creating...
+arn:                                   "" => "<computed>"
+description:                           "" => "Managed by Terraform"
+egress.#:                              "" => "<computed>"
+ingress.#:                             "" => "1"
+ingress.2541437006.cidr_blocks.#:      "" => "1"
+ingress.2541437006.cidr_blocks.0:      "" => "0.0.0.0/0"
+ingress.2541437006.description:        "" => ""
+ingress.2541437006.from_port:          "" => "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "" => "0"
+ingress.2541437006.protocol:           "" => "tcp"
+ingress.2541437006.security_groups.#:  "" => "0"
+ingress.2541437006.self:               "" => "false"
+ingress.2541437006.to_port:            "" => "22"
+name:                                  "" => "<computed>"
+owner_id:                              "" => "<computed>"
+revoke_rules_on_delete:                "" => "false"
+vpc_id:                                "" => "<computed>"
+aws_key_pair.example: Creation complete after 0s (ID: example-key)
+aws_security_group.examplesg: Creation complete after 2s (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Creating...
+ami:                             "" => "ami-28e07e50"
+associate_public_ip_address:     "" => "<computed>"
+availability_zone:               "" => "<computed>"
+cpu_core_count:                  "" => "<computed>"
+cpu_threads_per_core:            "" => "<computed>"
+ebs_block_device.#:              "" => "<computed>"
+ephemeral_block_device.#:        "" => "<computed>"
+get_password_data:               "" => "false"
+instance_state:                  "" => "<computed>"
+instance_type:                   "" => "t2.micro"
+ipv6_address_count:              "" => "<computed>"
+ipv6_addresses.#:                "" => "<computed>"
+key_name:                        "" => "example-key"
+network_interface.#:             "" => "<computed>"
+network_interface_id:            "" => "<computed>"
+password_data:                   "" => "<computed>"
+placement_group:                 "" => "<computed>"
+primary_network_interface_id:    "" => "<computed>"
+private_dns:                     "" => "<computed>"
+private_ip:                      "" => "<computed>"
+public_dns:                      "" => "<computed>"
+public_ip:                       "" => "<computed>"
+root_block_device.#:             "" => "<computed>"
+security_groups.#:               "" => "<computed>"
+source_dest_check:               "" => "true"
+subnet_id:                       "" => "<computed>"
+tags.%:                          "" => "1"
+tags.Name:                       "" => "first-ec2-instance"
+tenancy:                         "" => "<computed>"
+volume_tags.%:                   "" => "<computed>"
+vpc_security_group_ids.#:        "" => "1"
+vpc_security_group_ids.76457633: "" => "sg-f34d6a83"
+aws_instance.ec2_instance: Still creating... (10s elapsed)
+aws_instance.ec2_instance: Still creating... (20s elapsed)
+aws_instance.ec2_instance: Still creating... (30s elapsed)
+aws_instance.ec2_instance: Still creating... (40s elapsed)
+aws_instance.ec2_instance: Still creating... (50s elapsed)
+aws_instance.ec2_instance: Still creating... (1m0s elapsed)
+aws_instance.ec2_instance: Still creating... (1m10s elapsed)
+aws_instance.ec2_instance: Creation complete after 1m15s (ID: i-0f0cd1c7d727ef8fb)
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+What terraform is doing here is reading code and translating it to api calls to providers(aws in this case)
+W00t you have deployed your first EC2 server using terraform
+
+Go back to the EC2 console to verify your first deployed server
+
+
+Let say after verification you realize that I need to give more meaningful tag to this server, so the rest of the code remain the same and you modified the tag parameter
+
+tags {
+  Name = "first-webserver"
+}
+```
+
