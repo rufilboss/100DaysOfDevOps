@@ -526,3 +526,16 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
     * git add .gitignore
     * git commit -m "Adding gitignore file for terraform repository"
 
+* Via .gitignore we are telling terraform to ignore(.terraform folder(temporary directory for terraform)and all *.tfstates file(as this file may contain secrets))
+    * $ cat .gitignore
+    * .terraform
+    * *.tfstate
+    * *.tfstate.backup
+* Create a shared git repository
+```sh
+git remote add origin https://github.com/<user name>/terraform.git
+```
+* Push the code
+```sh
+$ git push -u origin master
+```
