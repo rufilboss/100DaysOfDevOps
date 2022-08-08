@@ -200,3 +200,9 @@ resource "aws_instance" "ec2_instance" {
   }
 }
 ```
+
+###### NOTE: Before running terraform command to spun our first EC2 instance, run terraform fmt command which will rewrite terraform configuration files to a canonical format and style
+```sh
+$ terraform fmt
+main.tf
+```
