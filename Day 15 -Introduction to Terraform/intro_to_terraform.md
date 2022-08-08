@@ -75,5 +75,14 @@ on linux_amd64
     * Key Pair
 
 * Let break it to steps by step:
+    * Amazon Machine Image(AMI): It’s an Operating System Image used to run EC2 instance. For this example I am using Red Hat Enterprise Linux 7.5 (HVM), SSD Volume Type — ami-28e07e50. We can create our own AMI using AWS console or Packer.
 
+    * Instance Type: Type of EC2 instance to run, as every instance type provide different capabilities(CPU, Memory, I/O). For this example, I am using t2.micro(1 Virtual CPU, 1GB Memory)
 
+    * Network Information(VPC/Subnet Id): Virtual Private Cloud(VPC) is an isolated area of AWS account that has it’s own virtual network and IP address space. For this example, I am using default VPC which is the part of new AWS account. In case if you want to set up your instance in custom VPC, you need to add two additional parameters(vpc_security_group_ids and subnet_id) to your terraform code
+
+    * Tags: Tag we can think of a label which helps to categorize AWS resources.
+
+    * Security Group: Security group can think like a virtual firewall, and it controls the traffic of your instance
+
+    
