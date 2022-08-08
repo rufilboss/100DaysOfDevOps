@@ -147,3 +147,25 @@ resource "aws_instance" "ec2_instance" {
 
 * In this case we just need to check the doc and fill out all the remaining values
 * To refer back to the security group we need to use interpolation syntax by terraform
+
+* This look like
+```sh
+"${var_to_interpolate}
+```
+* Whenever you see a $ sign and curly braces inside the double quotes, that means terraform is going to interpolate that code specially. To get the id of the security group
+
+```sh
+"${aws_security_group.examplesg.id}"
+```
+
+* Same thing applied to key pair
+```sh
+"${aws_key_pair.example.id}"
+```
+
+* Our code is ready but we are missing one thing, provider before starting any code we need to tell terraform which provider we are using(aws in this case)
+```sh
+provider "aws" {
+  region = "us-west-2"
+}
+```
