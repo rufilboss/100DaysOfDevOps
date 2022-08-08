@@ -17,10 +17,20 @@ sudo apt install wget curl unzip
 sudo yum install curl wget unzip
 ```
 
-Then, run the following command
+Then, run the following command:
 
 ```sh
 TER_VER=`curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1'`
 wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip
+```
+
+* Once the archive is downloaded, extract and move terraform binary file to the /usr/local/bin directory.
+
+```sh
+$ unzip terraform_${TER_VER}_linux_amd64.zip
+Archive:  terraform_xxx_linux_amd64.zip
+ inflating: terraform
+
+$ sudo mv terraform /usr/local/bin/
 ```
 
