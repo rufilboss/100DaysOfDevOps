@@ -462,3 +462,60 @@ tags {
 }
 ```
 
+* Run terraform plan command again, as you can see
+tags.Name: “first-ec2-instance” => “first-webserver”
+
+```sh
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_security_group.examplesg: Refreshing state... (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Refreshing state... (ID: i-0f0cd1c7d727ef8fb)
+------------------------------------------------------------------------
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+~ update in-place
+Terraform will perform the following actions:
+~ aws_instance.ec2_instance
+tags.Name: "first-ec2-instance" => "first-webserver"
+Plan: 0 to add, 1 to change, 0 to destroy.
+------------------------------------------------------------------------
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+Now if we can think about it, how does terraform knows that there only change in the tag parameter and nothing else
+Terraform keep track of all the resources it already created in .tfstate files, so its already aware of the resources that already exist
+$ ls -la
+total 40
+drwxr-xr-x     7 plakhera  wheel    224 Jul 28 11:25 .
+drwx------+ 1349 plakhera  wheel  43168 Jul 28 09:37 ..
+drwxr-xr-x     6 plakhera  wheel    192 Jul 28 11:24 .idea
+drwxr-xr-x     3 plakhera  wheel     96 Jul 28 10:45 .terraform
+-rw-r--r--     1 plakhera  wheel    983 Jul 28 11:24 main.tf
+-rw-r--r--     1 plakhera  wheel   7228 Jul 28 11:23 terraform.tfstate
+-rw-r--r--     1 plakhera  wheel   7134 Jul 28 11:23 terraform.tfstate.backup
+If you notice at the top it says “Refreshing Terraform state in-memory prior to plan…”
+If I refresh my webbrowser after running terraform apply
+$ terraform apply
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_security_group.examplesg: Refreshing state... (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Refreshing state... (ID: i-0f0cd1c7d727ef8fb)
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+~ update in-place
+Terraform will perform the following actions:
+~ aws_instance.ec2_instance
+tags.Name: "first-ec2-instance" => "first-webserver"
+Plan: 0 to add, 1 to change, 0 to destroy.
+Do you want to perform these actions?
+Terraform will perform the actions described above.
+Only 'yes' will be accepted to approve.
+Enter a value: yes
+aws_instance.ec2_instance: Modifying... (ID: i-0f0cd1c7d727ef8fb)
+tags.Name: "first-ec2-instance" => "first-webserver"
+aws_instance.ec2_instance: Modifications complete after 3s (ID: i-0f0cd1c7d727ef8fb)
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+```
+
