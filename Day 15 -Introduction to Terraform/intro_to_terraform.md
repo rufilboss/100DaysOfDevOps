@@ -66,5 +66,14 @@ on linux_amd64
     * Terraform code is written in the HashiCorp Configuration Language(HCL)
     * All the code ends with the extension of .tf
     * It’s a declarative language(We need to define what infrastructure we want and terraform will figure out how to create it)
-* In this first example I am going to build EC2 instance, but before creating EC2 instance go to AWS console and think what the different things we need to build EC2 instance are
+* In this first example I am going to build EC2 instance, but before creating EC2 instance go to AWS console and think what the different things we need to build EC2 instance are: 
+    * Amazon Machine Image(AMI)
+    * Instance Type
+    * Network Information(VPC/Subnet)
+    * Tags
+    * Security Group
+    * Key Pair
+
+* Let break it to steps by step:
+
 
