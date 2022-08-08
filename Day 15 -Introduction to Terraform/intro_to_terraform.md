@@ -44,3 +44,5 @@ $ terraform --version
 Terraform v1.2.3
 on linux_amd64
 ```
+
+###### NOTE: To update Terraform on Linux, download the latest release and use the same process to extract and move binary file to location in your PATH.
