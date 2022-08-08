@@ -101,6 +101,7 @@ on linux_amd64
 ##### Let start with Key Pair
 
 * Go to terraform documentation and search for aws key pair
+
 ```sh
 resource "aws_key_pair" "example" {
   key_name = "example-key"
