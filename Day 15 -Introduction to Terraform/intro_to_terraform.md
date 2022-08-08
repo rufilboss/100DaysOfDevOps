@@ -164,6 +164,7 @@ resource "aws_instance" "ec2_instance" {
 ```
 
 * Our code is ready but we are missing one thing, provider before starting any code we need to tell terraform which provider we are using(aws in this case)
+
 ```sh
 provider "aws" {
   region = "us-west-2"
@@ -174,6 +175,7 @@ provider "aws" {
 * AWS has datacenter all over the world, which are grouped in region and availability zones. Region is a separate geographic area(Oregon, Virginia, Sydney) and each region has multiple isolated datacenters(us-west-2a,us-west-2b..)
 
 ##### So our final code look like this
+
 ```sh
 provider "aws" {
   region = "us-west-2"
@@ -202,6 +204,7 @@ resource "aws_instance" "ec2_instance" {
 ```
 
 ###### NOTE: Before running terraform command to spun our first EC2 instance, run terraform fmt command which will rewrite terraform configuration files to a canonical format and style
+
 ```sh
 $ terraform fmt
 main.tf
