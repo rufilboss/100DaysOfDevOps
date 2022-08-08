@@ -3,7 +3,7 @@
 </h1>
 
 ### Started on Monday 25th July 2022.
-##### Today: 7th of August 2022
+##### Today: 8th of August 2022
 
-Day 14 of 100, We meuve....
+Day 15 of 100, We meuve....
 
