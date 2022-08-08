@@ -531,11 +531,47 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
     * .terraform
     * *.tfstate
     * *.tfstate.backup
+
 * Create a shared git repository
 ```sh
 git remote add origin https://github.com/<user name>/terraform.git
 ```
+###### NOTE: Git did not support https on terminal anymore, you expected to use ssh
 * Push the code
 ```sh
 $ git push -u origin master
 ```
+
+* To Perform cleanup whatever we have created so far, run terraform destroy
+```sh
+$ terraform destroy
+aws_security_group.examplesg: Refreshing state... (ID: sg-154d6a65)
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_instance.ec2_instance: Refreshing state... (ID: i-06d3d45b6102ecc3f)
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+- destroy
+Terraform will perform the following actions:
+- aws_instance.ec2_instance
+- aws_key_pair.example
+- aws_security_group.examplesg
+Plan: 0 to add, 0 to change, 3 to destroy.
+Do you really want to destroy?
+Terraform will destroy all your managed infrastructure, as shown above.
+There is no undo. Only 'yes' will be accepted to confirm.
+Enter a value: yes
+aws_instance.ec2_instance: Destroying... (ID: i-06d3d45b6102ecc3f)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 10s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 20s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 30s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 40s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 50s elapsed)
+aws_instance.ec2_instance: Destruction complete after 52s
+aws_key_pair.example: Destroying... (ID: example-key)
+aws_security_group.examplesg: Destroying... (ID: sg-154d6a65)
+aws_key_pair.example: Destruction complete after 0s
+aws_security_group.examplesg: Destruction complete after 0s
+Destroy complete! Resources: 3 destroyed.
+```
+
+
