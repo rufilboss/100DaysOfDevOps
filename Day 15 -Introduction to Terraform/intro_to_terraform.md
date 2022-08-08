@@ -1,12 +1,12 @@
-###### What is terraform?
+### What is terraform?
     Terraform is a tool for provisioning infrastructure(or managing Infrastructure as Code). It supports multiple providers(eg, AWS, Google Cloud, Azure, OpenStack..)
 
-##### Installing Terraform
+#### Installing Terraform
     Installing terraform is pretty straightforward, download it from terraform download page and select the appropriate package based on your operating system.
 
 ###### NOTE: I'm using Ubuntu system which has same installation has debian.
 
-###### Requirements: Before downloading terraform we need to install wget and curl tools
+###### Requirements: Install wget and curl tools, commands:
 
 ```sh
 # Debian / Ubuntu systems
@@ -17,7 +17,7 @@ sudo apt install wget curl unzip
 sudo yum install curl wget unzip
 ```
 
-Then, run the following command:
+* Then, run the following command:
 
 ```sh
 TER_VER=`curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1'`
@@ -101,6 +101,7 @@ on linux_amd64
 ##### Let start with Key Pair
 
 * Go to terraform documentation and search for aws key pair
+
 ```sh
 resource "aws_key_pair" "example" {
   key_name = "example-key"
@@ -164,6 +165,7 @@ resource "aws_instance" "ec2_instance" {
 ```
 
 * Our code is ready but we are missing one thing, provider before starting any code we need to tell terraform which provider we are using(aws in this case)
+
 ```sh
 provider "aws" {
   region = "us-west-2"
@@ -174,6 +176,7 @@ provider "aws" {
 * AWS has datacenter all over the world, which are grouped in region and availability zones. Region is a separate geographic area(Oregon, Virginia, Sydney) and each region has multiple isolated datacenters(us-west-2a,us-west-2b..)
 
 ##### So our final code look like this
+
 ```sh
 provider "aws" {
   region = "us-west-2"
@@ -202,6 +205,7 @@ resource "aws_instance" "ec2_instance" {
 ```
 
 ###### NOTE: Before running terraform command to spun our first EC2 instance, run terraform fmt command which will rewrite terraform configuration files to a canonical format and style
+
 ```sh
 $ terraform fmt
 main.tf
@@ -229,3 +233,353 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
+
+* Next command we are going to run is “terraform plan”, this will tell what terraform actually do before making any changes
+* This is good way of making any sanity check before making actual changes to env
+* Output of terraform plan command looks similar to Linux diff command
+    * (+ sign): Resource going to be created
+
+    * (- sign): Resources going to be deleted
+
+    * (~ sign): Resource going to be modified
+
+```sh
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+------------------------------------------------------------------------
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
++ create
+Terraform will perform the following actions:
++ aws_instance.ec2_instance
+id:                                    <computed>
+ami:                                   "ami-28e07e50"
+associate_public_ip_address:           <computed>
+availability_zone:                     <computed>
+cpu_core_count:                        <computed>
+cpu_threads_per_core:                  <computed>
+ebs_block_device.#:                    <computed>
+ephemeral_block_device.#:              <computed>
+get_password_data:                     "false"
+instance_state:                        <computed>
+instance_type:                         "t2.micro"
+ipv6_address_count:                    <computed>
+ipv6_addresses.#:                      <computed>
+key_name:                              "${aws_key_pair.example.id}"
+network_interface.#:                   <computed>
+network_interface_id:                  <computed>
+password_data:                         <computed>
+placement_group:                       <computed>
+primary_network_interface_id:          <computed>
+private_dns:                           <computed>
+private_ip:                            <computed>
+public_dns:                            <computed>
+public_ip:                             <computed>
+root_block_device.#:                   <computed>
+security_groups.#:                     <computed>
+source_dest_check:                     "true"
+subnet_id:                             <computed>
+tags.%:                                "1"
+tags.Name:                             "first-ec2-instance"
+tenancy:                               <computed>
+volume_tags.%:                         <computed>
+vpc_security_group_ids.#:              <computed>
++ aws_key_pair.example
+id:                                    <computed>
+fingerprint:                           <computed>
+key_name:                              "example-key"
+public_key:                            "XXX"
++ aws_security_group.examplesg
+id:                                    <computed>
+arn:                                   <computed>
+description:                           "Managed by Terraform"
+egress.#:                              <computed>
+ingress.#:                             "1"
+ingress.2541437006.cidr_blocks.#:      "1"
+ingress.2541437006.cidr_blocks.0:      "0.0.0.0/0"
+ingress.2541437006.description:        ""
+ingress.2541437006.from_port:          "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "0"
+ingress.2541437006.protocol:           "tcp"
+ingress.2541437006.security_groups.#:  "0"
+ingress.2541437006.self:               "false"
+ingress.2541437006.to_port:            "22"
+name:                                  <computed>
+owner_id:                              <computed>
+revoke_rules_on_delete:                "false"
+vpc_id:                                <computed>
+Plan: 3 to add, 0 to change, 0 to destroy.
+------------------------------------------------------------------------
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+```
+
+* To apply these changes, run terraform apply
+
+```sh
+$ terraform apply
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
++ create
+Terraform will perform the following actions:
++ aws_instance.ec2_instance
+id:                                    <computed>
+ami:                                   "ami-28e07e50"
+associate_public_ip_address:           <computed>
+availability_zone:                     <computed>
+cpu_core_count:                        <computed>
+cpu_threads_per_core:                  <computed>
+ebs_block_device.#:                    <computed>
+ephemeral_block_device.#:              <computed>
+get_password_data:                     "false"
+instance_state:                        <computed>
+instance_type:                         "t2.micro"
+ipv6_address_count:                    <computed>
+ipv6_addresses.#:                      <computed>
+key_name:                              "${aws_key_pair.example.id}"
+network_interface.#:                   <computed>
+network_interface_id:                  <computed>
+password_data:                         <computed>
+placement_group:                       <computed>
+primary_network_interface_id:          <computed>
+private_dns:                           <computed>
+private_ip:                            <computed>
+public_dns:                            <computed>
+public_ip:                             <computed>
+root_block_device.#:                   <computed>
+security_groups.#:                     <computed>
+source_dest_check:                     "true"
+subnet_id:                             <computed>
+tags.%:                                "1"
+tags.Name:                             "first-ec2-instance"
+tenancy:                               <computed>
+volume_tags.%:                         <computed>
+vpc_security_group_ids.#:              <computed>
++ aws_key_pair.example
+id:                                    <computed>
+fingerprint:                           <computed>
+key_name:                              "example-key"
+public_key:                            "XXXX"
++ aws_security_group.examplesg
+id:                                    <computed>
+arn:                                   <computed>
+description:                           "Managed by Terraform"
+egress.#:                              <computed>
+ingress.#:                             "1"
+ingress.2541437006.cidr_blocks.#:      "1"
+ingress.2541437006.cidr_blocks.0:      "0.0.0.0/0"
+ingress.2541437006.description:        ""
+ingress.2541437006.from_port:          "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "0"
+ingress.2541437006.protocol:           "tcp"
+ingress.2541437006.security_groups.#:  "0"
+ingress.2541437006.self:               "false"
+ingress.2541437006.to_port:            "22"
+name:                                  <computed>
+owner_id:                              <computed>
+revoke_rules_on_delete:                "false"
+vpc_id:                                <computed>
+Plan: 3 to add, 0 to change, 0 to destroy.
+Do you want to perform these actions?
+Terraform will perform the actions described above.
+Only 'yes' will be accepted to approve.
+Enter a value: yes <-----(Make sure to type yes if your satisfied with your changes, note there is no rollback from here)
+aws_key_pair.example: Creating...
+fingerprint: "" => "<computed>"
+key_name:    "" => "example-key"
+public_key:  "" => "XXXX"
+aws_security_group.examplesg: Creating...
+arn:                                   "" => "<computed>"
+description:                           "" => "Managed by Terraform"
+egress.#:                              "" => "<computed>"
+ingress.#:                             "" => "1"
+ingress.2541437006.cidr_blocks.#:      "" => "1"
+ingress.2541437006.cidr_blocks.0:      "" => "0.0.0.0/0"
+ingress.2541437006.description:        "" => ""
+ingress.2541437006.from_port:          "" => "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "" => "0"
+ingress.2541437006.protocol:           "" => "tcp"
+ingress.2541437006.security_groups.#:  "" => "0"
+ingress.2541437006.self:               "" => "false"
+ingress.2541437006.to_port:            "" => "22"
+name:                                  "" => "<computed>"
+owner_id:                              "" => "<computed>"
+revoke_rules_on_delete:                "" => "false"
+vpc_id:                                "" => "<computed>"
+aws_key_pair.example: Creation complete after 0s (ID: example-key)
+aws_security_group.examplesg: Creation complete after 2s (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Creating...
+ami:                             "" => "ami-28e07e50"
+associate_public_ip_address:     "" => "<computed>"
+availability_zone:               "" => "<computed>"
+cpu_core_count:                  "" => "<computed>"
+cpu_threads_per_core:            "" => "<computed>"
+ebs_block_device.#:              "" => "<computed>"
+ephemeral_block_device.#:        "" => "<computed>"
+get_password_data:               "" => "false"
+instance_state:                  "" => "<computed>"
+instance_type:                   "" => "t2.micro"
+ipv6_address_count:              "" => "<computed>"
+ipv6_addresses.#:                "" => "<computed>"
+key_name:                        "" => "example-key"
+network_interface.#:             "" => "<computed>"
+network_interface_id:            "" => "<computed>"
+password_data:                   "" => "<computed>"
+placement_group:                 "" => "<computed>"
+primary_network_interface_id:    "" => "<computed>"
+private_dns:                     "" => "<computed>"
+private_ip:                      "" => "<computed>"
+public_dns:                      "" => "<computed>"
+public_ip:                       "" => "<computed>"
+root_block_device.#:             "" => "<computed>"
+security_groups.#:               "" => "<computed>"
+source_dest_check:               "" => "true"
+subnet_id:                       "" => "<computed>"
+tags.%:                          "" => "1"
+tags.Name:                       "" => "first-ec2-instance"
+tenancy:                         "" => "<computed>"
+volume_tags.%:                   "" => "<computed>"
+vpc_security_group_ids.#:        "" => "1"
+vpc_security_group_ids.76457633: "" => "sg-f34d6a83"
+aws_instance.ec2_instance: Still creating... (10s elapsed)
+aws_instance.ec2_instance: Still creating... (20s elapsed)
+aws_instance.ec2_instance: Still creating... (30s elapsed)
+aws_instance.ec2_instance: Still creating... (40s elapsed)
+aws_instance.ec2_instance: Still creating... (50s elapsed)
+aws_instance.ec2_instance: Still creating... (1m0s elapsed)
+aws_instance.ec2_instance: Still creating... (1m10s elapsed)
+aws_instance.ec2_instance: Creation complete after 1m15s (ID: i-0f0cd1c7d727ef8fb)
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+```
+
+What terraform is doing here is reading code and translating it to api calls to providers(aws in this case)
+W00t you have deployed your first EC2 server using terraform
+
+* Go back to the EC2 console to verify your first deployed server
+
+
+* Let say after verification you realize that I need to give more meaningful tag to this server, so the rest of the code remain the same and you modified the tag parameter
+
+```sh
+tags {
+  Name = "first-webserver"
+}
+```
+
+* Run terraform plan command again, as you can see
+tags.Name: “first-ec2-instance” => “first-webserver”
+
+```sh
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_security_group.examplesg: Refreshing state... (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Refreshing state... (ID: i-0f0cd1c7d727ef8fb)
+------------------------------------------------------------------------
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+~ update in-place
+Terraform will perform the following actions:
+~ aws_instance.ec2_instance
+tags.Name: "first-ec2-instance" => "first-webserver"
+Plan: 0 to add, 1 to change, 0 to destroy.
+------------------------------------------------------------------------
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+Now if we can think about it, how does terraform knows that there only change in the tag parameter and nothing else
+Terraform keep track of all the resources it already created in .tfstate files, so its already aware of the resources that already exist
+$ ls -la
+total 40
+drwxr-xr-x     7 plakhera  wheel    224 Jul 28 11:25 .
+drwx------+ 1349 plakhera  wheel  43168 Jul 28 09:37 ..
+drwxr-xr-x     6 plakhera  wheel    192 Jul 28 11:24 .idea
+drwxr-xr-x     3 plakhera  wheel     96 Jul 28 10:45 .terraform
+-rw-r--r--     1 plakhera  wheel    983 Jul 28 11:24 main.tf
+-rw-r--r--     1 plakhera  wheel   7228 Jul 28 11:23 terraform.tfstate
+-rw-r--r--     1 plakhera  wheel   7134 Jul 28 11:23 terraform.tfstate.backup
+If you notice at the top it says “Refreshing Terraform state in-memory prior to plan…”
+If I refresh my webbrowser after running terraform apply
+$ terraform apply
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_security_group.examplesg: Refreshing state... (ID: sg-f34d6a83)
+aws_instance.ec2_instance: Refreshing state... (ID: i-0f0cd1c7d727ef8fb)
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+~ update in-place
+Terraform will perform the following actions:
+~ aws_instance.ec2_instance
+tags.Name: "first-ec2-instance" => "first-webserver"
+Plan: 0 to add, 1 to change, 0 to destroy.
+Do you want to perform these actions?
+Terraform will perform the actions described above.
+Only 'yes' will be accepted to approve.
+Enter a value: yes
+aws_instance.ec2_instance: Modifying... (ID: i-0f0cd1c7d727ef8fb)
+tags.Name: "first-ec2-instance" => "first-webserver"
+aws_instance.ec2_instance: Modifications complete after 3s (ID: i-0f0cd1c7d727ef8fb)
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+```
+
+* In most of the cases we are working in team where we want to share this code with rest of team members and the best way to share code is by using GIT
+    * git add main.tf
+    * git commit -m "first terraform EC2 instance"
+    * vim .gitignore
+    * git add .gitignore
+    * git commit -m "Adding gitignore file for terraform repository"
+
+* Via .gitignore we are telling terraform to ignore(.terraform folder(temporary directory for terraform)and all *.tfstates file(as this file may contain secrets))
+    * $ cat .gitignore
+    * .terraform
+    * *.tfstate
+    * *.tfstate.backup
+
+* Create a shared git repository
+```sh
+git remote add origin https://github.com/<user name>/terraform.git
+```
+###### NOTE: Git did not support https on terminal anymore, you expected to use ssh
+* Push the code
+```sh
+$ git push -u origin master
+```
+
+* To Perform cleanup whatever we have created so far, run terraform destroy
+
+```sh
+$ terraform destroy
+aws_security_group.examplesg: Refreshing state... (ID: sg-154d6a65)
+aws_key_pair.example: Refreshing state... (ID: example-key)
+aws_instance.ec2_instance: Refreshing state... (ID: i-06d3d45b6102ecc3f)
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+- destroy
+Terraform will perform the following actions:
+- aws_instance.ec2_instance
+- aws_key_pair.example
+- aws_security_group.examplesg
+Plan: 0 to add, 0 to change, 3 to destroy.
+Do you really want to destroy?
+Terraform will destroy all your managed infrastructure, as shown above.
+There is no undo. Only 'yes' will be accepted to confirm.
+Enter a value: yes
+aws_instance.ec2_instance: Destroying... (ID: i-06d3d45b6102ecc3f)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 10s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 20s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 30s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 40s elapsed)
+aws_instance.ec2_instance: Still destroying... (ID: i-06d3d45b6102ecc3f, 50s elapsed)
+aws_instance.ec2_instance: Destruction complete after 52s
+aws_key_pair.example: Destroying... (ID: example-key)
+aws_security_group.examplesg: Destroying... (ID: sg-154d6a65)
+aws_key_pair.example: Destruction complete after 0s
+aws_security_group.examplesg: Destruction complete after 0s
+Destroy complete! Resources: 3 destroyed.
+```
+
+
