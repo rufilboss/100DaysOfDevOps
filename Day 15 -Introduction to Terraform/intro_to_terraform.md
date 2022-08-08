@@ -206,3 +206,26 @@ resource "aws_instance" "ec2_instance" {
 $ terraform fmt
 main.tf
 ```
+
+* The first command we are going to run to setup our instance is terraform init, what this will do is going to download code for a provider(aws) that we are going to use
+
+```sh
+$ terraform init
+Initializing provider plugins...
+- Checking for available provider plugins on https://releases.hashicorp.com...
+- Downloading plugin for provider "aws" (1.29.0)...
+The following providers do not have any version constraints in configuration,
+so the latest version was installed.
+To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = "..." constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.
+* provider.aws: version = "~> 1.29"
+Terraform has been successfully initialized!
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
