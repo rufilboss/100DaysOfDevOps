@@ -33,4 +33,4 @@ Archive:  terraform_xxx_linux_amd64.zip
 
 $ sudo mv terraform /usr/local/bin/
 ```
-
+* Moving it to /usr/local/bin/ will make the tool accessible to all user accounts.
