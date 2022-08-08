@@ -112,4 +112,17 @@ resource "aws_key_pair" "example" {
     * An example is an identifier which we can use throughout the code to refer back to this resource
     * key_name: Is the name of the Key
     * public_key: Is the public portion of ssh generated Key
+
 * The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
+
+```sh
+resource "aws_security_group" "examplesg" {
+  
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
