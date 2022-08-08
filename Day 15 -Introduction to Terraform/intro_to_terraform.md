@@ -449,14 +449,17 @@ aws_instance.ec2_instance: Still creating... (1m0s elapsed)
 aws_instance.ec2_instance: Still creating... (1m10s elapsed)
 aws_instance.ec2_instance: Creation complete after 1m15s (ID: i-0f0cd1c7d727ef8fb)
 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+```
+
 What terraform is doing here is reading code and translating it to api calls to providers(aws in this case)
 W00t you have deployed your first EC2 server using terraform
 
-Go back to the EC2 console to verify your first deployed server
+* Go back to the EC2 console to verify your first deployed server
 
 
-Let say after verification you realize that I need to give more meaningful tag to this server, so the rest of the code remain the same and you modified the tag parameter
+* Let say after verification you realize that I need to give more meaningful tag to this server, so the rest of the code remain the same and you modified the tag parameter
 
+```sh
 tags {
   Name = "first-webserver"
 }
@@ -543,6 +546,7 @@ $ git push -u origin master
 ```
 
 * To Perform cleanup whatever we have created so far, run terraform destroy
+
 ```sh
 $ terraform destroy
 aws_security_group.examplesg: Refreshing state... (ID: sg-154d6a65)
