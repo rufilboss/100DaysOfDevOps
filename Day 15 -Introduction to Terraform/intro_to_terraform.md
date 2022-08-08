@@ -6,7 +6,7 @@
 
 ###### NOTE: I'm using Ubuntu system which has same installation has debian.
 
-###### Requirements: Before downloading terraform we need to install wget and curl tools
+###### Requirements: Install wget and curl tools, commands:
 
 ```sh
 # Debian / Ubuntu systems
@@ -17,7 +17,7 @@ sudo apt install wget curl unzip
 sudo yum install curl wget unzip
 ```
 
-Then, run the following command:
+* Then, run the following command:
 
 ```sh
 TER_VER=`curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d: -f2 | tr -d \"\,\v | awk '{$1=$1};1'`
