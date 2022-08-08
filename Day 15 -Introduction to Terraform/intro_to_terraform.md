@@ -95,6 +95,9 @@ on linux_amd64
     * Tags
     * Security Group
     * Key Pair
-    
+
 * So we already have AMI, Instance Type and Network Information, we need to write terraform code for rest of the parameter to spun our first EC2 instance
 
+##### Let start with Key Pair
+
+* Go to terraform documentation and search for aws key pair
