@@ -46,3 +46,11 @@ on linux_amd64
 ```
 
 ###### NOTE: To update Terraform on Linux, download the latest release and use the same process to extract and move binary file to location in your PATH.
+
+* As mentioned above terraform support many providers, for my use case I am using AWS.
+
+* Prerequisites
+    * Existing AWS Account(OR Setup a new account)
+    * IAM full access(OR at least have AmazonEC2FullAccess)
+    * AWS Credentials(AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY)
+
