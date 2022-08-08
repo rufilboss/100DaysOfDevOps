@@ -112,4 +112,120 @@ resource "aws_key_pair" "example" {
     * An example is an identifier which we can use throughout the code to refer back to this resource
     * key_name: Is the name of the Key
     * public_key: Is the public portion of ssh generated Key
-* The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
+
+##### The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
+
+```sh
+resource "aws_security_group" "examplesg" {
+  
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+* Same thing let do with this code, first two parameter is similar to key pair
+* ingress: refer to in-bound traffic to port 22, using protocol tcp
+* cidr_block: list of cidr_block where you want to allow this traffic(This is just as an example please never use 0.0.0.0/0)
+
+* With Key_pair and Security Group in place it’s time to create first EC2 instance.
+
+##### Final Block: Creating your first EC2 instance
+```sh
+resource "aws_instance" "ec2_instance" {
+  ami = "ami-28e07e50"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.examplesg.id}"]
+  key_name = "${aws_key_pair.example.id}"
+  tags {
+    Name = "first-ec2-instance"
+  }
+}
+```
+
+* In this case we just need to check the doc and fill out all the remaining values
+* To refer back to the security group we need to use interpolation syntax by terraform
+
+* This look like
+```sh
+"${var_to_interpolate}
+```
+* Whenever you see a $ sign and curly braces inside the double quotes, that means terraform is going to interpolate that code specially. To get the id of the security group
+
+```sh
+"${aws_security_group.examplesg.id}"
+```
+
+* Same thing applied to key pair
+```sh
+"${aws_key_pair.example.id}"
+```
+
+* Our code is ready but we are missing one thing, provider before starting any code we need to tell terraform which provider we are using(aws in this case)
+```sh
+provider "aws" {
+  region = "us-west-2"
+}
+```
+
+* This tells terraform that you are going to use AWS as provider and you want to deploy your infrastructure in us-west-2 region
+* AWS has datacenter all over the world, which are grouped in region and availability zones. Region is a separate geographic area(Oregon, Virginia, Sydney) and each region has multiple isolated datacenters(us-west-2a,us-west-2b..)
+
+##### So our final code look like this
+```sh
+provider "aws" {
+  region = "us-west-2"
+}
+resource "aws_key_pair" "example" {
+  key_name   = "example-key"
+  public_key = "XXXX"
+}
+resource "aws_security_group" "examplesg" {
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+resource "aws_instance" "ec2_instance" {
+  ami             = "ami-28e07e50"
+  instance_type   = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.examplesg.id}"]
+  key_name        = "${aws_key_pair.example.id}"
+  tags {
+    Name = "first-ec2-instance"
+  }
+}
+```
+
+###### NOTE: Before running terraform command to spun our first EC2 instance, run terraform fmt command which will rewrite terraform configuration files to a canonical format and style
+```sh
+$ terraform fmt
+main.tf
+```
+
+* The first command we are going to run to setup our instance is terraform init, what this will do is going to download code for a provider(aws) that we are going to use
+
+```sh
+$ terraform init
+Initializing provider plugins...
+- Checking for available provider plugins on https://releases.hashicorp.com...
+- Downloading plugin for provider "aws" (1.29.0)...
+The following providers do not have any version constraints in configuration,
+so the latest version was installed.
+To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = "..." constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.
+* provider.aws: version = "~> 1.29"
+Terraform has been successfully initialized!
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
