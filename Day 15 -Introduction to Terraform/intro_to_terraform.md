@@ -519,3 +519,10 @@ aws_instance.ec2_instance: Modifications complete after 3s (ID: i-0f0cd1c7d727ef
 Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 ```
 
+* In most of the cases we are working in team where we want to share this code with rest of team members and the best way to share code is by using GIT
+    * git add main.tf
+    * git commit -m "first terraform EC2 instance"
+    * vim .gitignore
+    * git add .gitignore
+    * git commit -m "Adding gitignore file for terraform repository"
+
