@@ -58,4 +58,13 @@ on linux_amd64
     * export AWS_ACCESS_KEY_ID=”your access key id here”
     * export AWS_SECRET_ACCESS_KEY=”your secret access key id here.”
 
-* This is required as we need to make changes to AWS account
+* This is required as we need to make changes to AWS account.
+
+###### NOTE: These two variables are bound to your current shell, in case of reboot, or if open a new shell window, these changes will be lost
+
+* With all pre-requisites in place, it’s time to write your first terraform code, but before that just a brief overview about terraform language
+    * Terraform code is written in the HashiCorp Configuration Language(HCL)
+    * All the code ends with the extension of .tf
+    * It’s a declarative language(We need to define what infrastructure we want and terraform will figure out how to create it)
+* In this first example I am going to build EC2 instance, but before creating EC2 instance go to AWS console and think what the different things we need to build EC2 instance are
+
