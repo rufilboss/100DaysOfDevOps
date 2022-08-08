@@ -87,4 +87,14 @@ on linux_amd64
 
     * Key Pair: Key Pair is used to access EC2 instance
 
+* Let review all these parameters and see what we already have and what we need to create to spun our first EC2 instance
+
+    * Amazon Machine Image(AMI) → ami-28e07e50
+    * Instance Type → t2.micro
+    * Network Information(VPC/Subnet) → Default VPC
+    * Tags
+    * Security Group
+    * Key Pair
     
+* So we already have AMI, Instance Type and Network Information, we need to write terraform code for rest of the parameter to spun our first EC2 instance
+
