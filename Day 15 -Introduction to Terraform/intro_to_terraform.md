@@ -54,3 +54,8 @@ on linux_amd64
     * IAM full access(OR at least have AmazonEC2FullAccess)
     * AWS Credentials(AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY)
 
+* Once you have pre-requisites 1 and 2 done, the first step is to export Keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+    * export AWS_ACCESS_KEY_ID=”your access key id here”
+    * export AWS_SECRET_ACCESS_KEY=”your secret access key id here.”
+
+* This is required as we need to make changes to AWS account
