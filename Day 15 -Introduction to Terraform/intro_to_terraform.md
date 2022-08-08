@@ -113,7 +113,7 @@ resource "aws_key_pair" "example" {
     * key_name: Is the name of the Key
     * public_key: Is the public portion of ssh generated Key
 
-* The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
+##### The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
 
 ```sh
 resource "aws_security_group" "examplesg" {
@@ -123,6 +123,25 @@ resource "aws_security_group" "examplesg" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+* As we did before:
+    * Same thing let do with this code, first two parameter is similar to key pair
+    * ingress: refer to in-bound traffic to port 22, using protocol tcp
+    * cidr_block: list of cidr_block where you want to allow this traffic(This is just as an example please never use 0.0.0.0/0)
+
+* With Key_pair and Security Group in place it’s time to create first EC2 instance.
+
+##### Final Block: Creating your first EC2 instance
+```sh
+resource "aws_instance" "ec2_instance" {
+  ami = "ami-28e07e50"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.examplesg.id}"]
+  key_name = "${aws_key_pair.example.id}"
+  tags {
+    Name = "first-ec2-instance"
   }
 }
 ```
