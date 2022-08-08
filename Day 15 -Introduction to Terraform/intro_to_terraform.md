@@ -34,8 +34,13 @@ Archive:  terraform_xxx_linux_amd64.zip
 $ sudo mv terraform /usr/local/bin/
 ```
 * Moving it to /usr/local/bin/ will make the tool accessible to all user accounts.
-* Also, don't forget to check the version of Terraform installed using this command:
 ```sh
 $ which terraform
 /usr/local/bin/terraform
+```
+* Also, don't forget to check the version of Terraform installed using this command:
+```sh
+$ terraform --version
+Terraform v1.2.3
+on linux_amd64
 ```
