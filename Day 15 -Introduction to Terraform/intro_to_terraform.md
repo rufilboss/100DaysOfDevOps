@@ -169,3 +169,11 @@ provider "aws" {
   region = "us-west-2"
 }
 ```
+
+* This tells terraform that you are going to use AWS as provider and you want to deploy your infrastructure in us-west-2 region
+* AWS has datacenter all over the world, which are grouped in region and availability zones. Region is a separate geographic area(Oregon, Virginia, Sydney) and each region has multiple isolated datacenters(us-west-2a,us-west-2b..)
+
+##### So our final code look like this
+```sh
+
+```
