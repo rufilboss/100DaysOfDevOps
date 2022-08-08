@@ -239,3 +239,78 @@ commands will detect it and remind you to do so if necessary.
 
     * (~ sign): Resource going to be modified
 
+```sh
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+------------------------------------------------------------------------
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
++ create
+Terraform will perform the following actions:
++ aws_instance.ec2_instance
+id:                                    <computed>
+ami:                                   "ami-28e07e50"
+associate_public_ip_address:           <computed>
+availability_zone:                     <computed>
+cpu_core_count:                        <computed>
+cpu_threads_per_core:                  <computed>
+ebs_block_device.#:                    <computed>
+ephemeral_block_device.#:              <computed>
+get_password_data:                     "false"
+instance_state:                        <computed>
+instance_type:                         "t2.micro"
+ipv6_address_count:                    <computed>
+ipv6_addresses.#:                      <computed>
+key_name:                              "${aws_key_pair.example.id}"
+network_interface.#:                   <computed>
+network_interface_id:                  <computed>
+password_data:                         <computed>
+placement_group:                       <computed>
+primary_network_interface_id:          <computed>
+private_dns:                           <computed>
+private_ip:                            <computed>
+public_dns:                            <computed>
+public_ip:                             <computed>
+root_block_device.#:                   <computed>
+security_groups.#:                     <computed>
+source_dest_check:                     "true"
+subnet_id:                             <computed>
+tags.%:                                "1"
+tags.Name:                             "first-ec2-instance"
+tenancy:                               <computed>
+volume_tags.%:                         <computed>
+vpc_security_group_ids.#:              <computed>
++ aws_key_pair.example
+id:                                    <computed>
+fingerprint:                           <computed>
+key_name:                              "example-key"
+public_key:                            "XXX"
++ aws_security_group.examplesg
+id:                                    <computed>
+arn:                                   <computed>
+description:                           "Managed by Terraform"
+egress.#:                              <computed>
+ingress.#:                             "1"
+ingress.2541437006.cidr_blocks.#:      "1"
+ingress.2541437006.cidr_blocks.0:      "0.0.0.0/0"
+ingress.2541437006.description:        ""
+ingress.2541437006.from_port:          "22"
+ingress.2541437006.ipv6_cidr_blocks.#: "0"
+ingress.2541437006.protocol:           "tcp"
+ingress.2541437006.security_groups.#:  "0"
+ingress.2541437006.self:               "false"
+ingress.2541437006.to_port:            "22"
+name:                                  <computed>
+owner_id:                              <computed>
+revoke_rules_on_delete:                "false"
+vpc_id:                                <computed>
+Plan: 3 to add, 0 to change, 0 to destroy.
+------------------------------------------------------------------------
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+```
+
+* 
