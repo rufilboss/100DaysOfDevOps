@@ -101,3 +101,15 @@ on linux_amd64
 ##### Let start with Key Pair
 
 * Go to terraform documentation and search for aws key pair
+```sh
+resource "aws_key_pair" "example" {
+  key_name = "example-key"
+  public_key = "Copy your public key here"
+}
+```
+* Let try to dissect this code
+    * Under resource, we specify the type of resource to create, in this case we are using aws_key_pair as a resource
+    * An example is an identifier which we can use throughout the code to refer back to this resource
+    * key_name: Is the name of the Key
+    * public_key: Is the public portion of ssh generated Key
+* The same thing we need to do for Security Group, go back to the terraform documentation and search for the security group
