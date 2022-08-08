@@ -229,3 +229,13 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
+
+* Next command we are going to run is “terraform plan”, this will tell what terraform actually do before making any changes
+* This is good way of making any sanity check before making actual changes to env
+* Output of terraform plan command looks similar to Linux diff command
+    * (+ sign): Resource going to be created
+
+    * (- sign): Resources going to be deleted
+
+    * (~ sign): Resource going to be modified
+
