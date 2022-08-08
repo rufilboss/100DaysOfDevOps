@@ -85,4 +85,6 @@ on linux_amd64
 
     * Security Group: Security group can think like a virtual firewall, and it controls the traffic of your instance
 
+    * Key Pair: Key Pair is used to access EC2 instance
+
     
