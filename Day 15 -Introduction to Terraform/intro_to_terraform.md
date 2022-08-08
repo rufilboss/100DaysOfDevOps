@@ -126,10 +126,9 @@ resource "aws_security_group" "examplesg" {
   }
 }
 ```
-* As we did before:
-    * Same thing let do with this code, first two parameter is similar to key pair
-    * ingress: refer to in-bound traffic to port 22, using protocol tcp
-    * cidr_block: list of cidr_block where you want to allow this traffic(This is just as an example please never use 0.0.0.0/0)
+* Same thing let do with this code, first two parameter is similar to key pair
+* ingress: refer to in-bound traffic to port 22, using protocol tcp
+* cidr_block: list of cidr_block where you want to allow this traffic(This is just as an example please never use 0.0.0.0/0)
 
 * With Key_pair and Security Group in place it’s time to create first EC2 instance.
 
@@ -145,3 +144,6 @@ resource "aws_instance" "ec2_instance" {
   }
 }
 ```
+
+* In this case we just need to check the doc and fill out all the remaining values
+* To refer back to the security group we need to use interpolation syntax by terraform
