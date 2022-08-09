@@ -15,4 +15,14 @@ Without going to all the nitty-gritty details of VPC, first, let’s try to unde
 But the bad news is as we are creating this via terraform we need to create all these things manually but this is just one time task, later on, if we need to build one more VPC we just need to call this module with some minor changes(eg: Changes in CIDR Range, Subnet) true Infrastructure as a Code(IAAC)
 
 This is how my terraform VPC module structure look like
-
+```sh
+$ tree
+├── main.tf
+├── vpc_networking
+│   ├── main.tf
+│   ├── outputs.tf
+│   └── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+└── variables.tf
+```
