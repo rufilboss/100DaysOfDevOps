@@ -239,3 +239,200 @@ rerun this command to reinitialize your working directory. If you forget, other
 
 commands will detect it and remind you to do so if necessary.
 ```
+
+* Execute terraform plan
+* Generate and show an execution plan
+
+```sh
+
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+data.aws_availability_zones.available: Refreshing state...
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + module.vpc_networking.aws_default_route_table.private_route
+      id:                                         <computed>
+      default_route_table_id:                     "${aws_vpc.main.default_route_table_id}"
+      owner_id:                                   <computed>
+      route.#:                                    <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-private-route-table"
+      vpc_id:                                     <computed>
+
+  + module.vpc_networking.aws_internet_gateway.gw
+      id:                                         <computed>
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-igw"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_route_table.public_route
+      id:                                         <computed>
+      owner_id:                                   <computed>
+      propagating_vgws.#:                         <computed>
+      route.#:                                    "1"
+      route.~966145399.cidr_block:                "0.0.0.0/0"
+      route.~966145399.egress_only_gateway_id:    ""
+      route.~966145399.gateway_id:                "${aws_internet_gateway.gw.id}"
+      route.~966145399.instance_id:               ""
+      route.~966145399.ipv6_cidr_block:           ""
+      route.~966145399.nat_gateway_id:            ""
+      route.~966145399.network_interface_id:      ""
+      route.~966145399.transit_gateway_id:        ""
+      route.~966145399.vpc_peering_connection_id: ""
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-route"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_route_table_association.private_subnet_assoc[0]
+      id:                                         <computed>
+      route_table_id:                             "${aws_default_route_table.private_route.id}"
+      subnet_id:                                  "${aws_subnet.private_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.private_subnet_assoc[1]
+      id:                                         <computed>
+      route_table_id:                             "${aws_default_route_table.private_route.id}"
+      subnet_id:                                  "${aws_subnet.private_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.public_subnet_assoc[0]
+      id:                                         <computed>
+      route_table_id:                             "${aws_route_table.public_route.id}"
+      subnet_id:                                  "${aws_subnet.public_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.public_subnet_assoc[1]
+      id:                                         <computed>
+      route_table_id:                             "${aws_route_table.public_route.id}"
+      subnet_id:                                  "${aws_subnet.public_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_security_group.test_sg
+      id:                                         <computed>
+      arn:                                        <computed>
+      description:                                "Managed by Terraform"
+      egress.#:                                   <computed>
+      ingress.#:                                  <computed>
+      name:                                       "my-test-sg"
+      owner_id:                                   <computed>
+      revoke_rules_on_delete:                     "false"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_security_group_rule.all_outbound_access
+      id:                                         <computed>
+      from_port:                                  "0"
+      protocol:                                   "-1"
+      security_group_id:                          "${aws_security_group.test_sg.id}"
+      self:                                       "false"
+      source_security_group_id:                   <computed>
+      to_port:                                    "0"
+      type:                                       "egress"
+
+  + module.vpc_networking.aws_security_group_rule.ssh_inbound_access
+      id:                                         <computed>
+      from_port:                                  "22"
+      protocol:                                   "tcp"
+      security_group_id:                          "${aws_security_group.test_sg.id}"
+      self:                                       "false"
+      source_security_group_id:                   <computed>
+      to_port:                                    "22"
+      type:                                       "ingress"
+
+  + module.vpc_networking.aws_subnet.private_subnet[0]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2a"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.3.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "false"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-private-subnet.1"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.private_subnet[1]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2b"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.4.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "false"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-private-subnet.2"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.public_subnet[0]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2a"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.1.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "true"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-subnet.1"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.public_subnet[1]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2b"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.2.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "true"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-subnet.2"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_vpc.main
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_generated_ipv6_cidr_block:           "false"
+      cidr_block:                                 "10.0.0.0/16"
+      default_network_acl_id:                     <computed>
+      default_route_table_id:                     <computed>
+      default_security_group_id:                  <computed>
+      dhcp_options_id:                            <computed>
+      enable_classiclink:                         <computed>
+      enable_classiclink_dns_support:             <computed>
+      enable_dns_hostnames:                       "true"
+      enable_dns_support:                         "true"
+      instance_tenancy:                           "default"
+      ipv6_association_id:                        <computed>
+      ipv6_cidr_block:                            <computed>
+      main_route_table_id:                        <computed>
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-vpc"
+
+
+Plan: 15 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+```
+
