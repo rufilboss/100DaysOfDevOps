@@ -1,4 +1,4 @@
-##### What is VPC?
+#### What is VPC?
 
 Without going to all the nitty-gritty details of VPC, first, let’s try to understand VPC in the simplest term. Before the cloud era, we use to have datacenters where we deploy all of our infrastructures. You can think of VPC as your datacentre in a cloud but rather than spending months or weeks to set up that datacenter it’s now just a matter of minutes(API calls). It’s the place where you define your network which closely resembles your own traditional data centers with the benefits of using the scalable infrastructure provided by AWS.
 
@@ -28,7 +28,7 @@ $ tree
 ```
 * So the first step is to create a data resource, what data resource did is to query/list all the AWS available Availablity zone in a given region and then allow terraform to use those resource.
 
-* NOw it's time  to create VPC
+* Now it's time  to create VPC
 ```sh
 # VPC Creation
 resource "aws_vpc" "main" {
@@ -150,4 +150,5 @@ resource "aws_route_table_association" "private_subnet_assoc" {
 * Network Access Control List(NACL) A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
 * Security Group acts as a virtual firewall and is used to control the traffic for its associated instances.
 * Difference between NACL and Security Group
+
 ![diff](https://miro.medium.com/max/1400/1*JuCWpsP4XRgACDHu3XU5Fw.png)
