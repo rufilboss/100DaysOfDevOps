@@ -44,3 +44,19 @@ resource "aws_vpc" "main" {
 
 * enable_dns_support - (Optional) A boolean flag to enable/disable DNS support in the VPC. Defaults true. Amazon provided DNS server(AmazonProvidedDNS) can resolve Amazon provided private DNS hostnames, that we specify in a private hosted zones in Route53.
 * enable_dns_hostnames - (Optional) A boolean flag to enable/disable DNS hostnames in the VPC. Defaults false. This will ensure that instances that are launched into our VPC receive a DNS hostname.
+
+* Next step is to create an internet gateway
+    * Internet gateway is a horizontally scaled, redundant and highly avilable VPC component.
+    * Internet gateway serves one more purpose, it performs NAT for instances that have been assigned public IPv4 addresses.
+
+```sh
+# Creating Internet Gateway
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = "${aws_vpc.main.id}"
+
+  tags {
+    Name = "my-test-igw"
+  }
+}
+```
