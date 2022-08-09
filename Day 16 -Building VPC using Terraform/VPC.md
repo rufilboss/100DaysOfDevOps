@@ -785,3 +785,17 @@ module.vpc_networking.aws_security_group_rule.ssh_inbound_access: Creation compl
 
 Apply complete! Resources: 15 added, 0 changed, 0 destroyed.
 ```
+
+###### You can think of Terraform Module like any other language module eg: Python, it’s the same terraform file but just that after creating a module out it we can re-use that code OR Instead copy-pasting the code the same code in different places we can turn into reusable modules.
+
+#### NOTE: Please ignore the terraform.tfstate.* files
+
+* The syntax for the module
+
+```sh
+module "NAME" {
+  source = "SOURCE"
+
+  [CONFIG ...]
+}
+```
