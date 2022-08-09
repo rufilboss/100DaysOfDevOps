@@ -41,3 +41,6 @@ resource "aws_vpc" "main" {
   }
 }
 ```
+
+* enable_dns_support - (Optional) A boolean flag to enable/disable DNS support in the VPC. Defaults true. Amazon provided DNS server(AmazonProvidedDNS) can resolve Amazon provided private DNS hostnames, that we specify in a private hosted zones in Route53.
+* enable_dns_hostnames - (Optional) A boolean flag to enable/disable DNS hostnames in the VPC. Defaults false. This will ensure that instances that are launched into our VPC receive a DNS hostname.
