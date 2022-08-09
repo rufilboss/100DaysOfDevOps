@@ -80,3 +80,17 @@ resource "aws_route_table" "public_route" {
   }
 }
 ```
+
+* Now it’s time to create Private Route Table. If the subnet is not associated with any route by default it will be associated with Private Route table
+
+```sh
+# Private Route Table
+
+resource "aws_default_route_table" "private_route" {
+  default_route_table_id = "${aws_vpc.main.default_route_table_id}"
+
+  tags {
+    Name = "my-private-route-table"
+  }
+}
+```
