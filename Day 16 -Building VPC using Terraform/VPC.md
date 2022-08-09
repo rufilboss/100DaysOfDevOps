@@ -436,3 +436,352 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
+* Final step terraform apply’
+* Builds or changes the infrastructure
+```sh
+$ terraform apply
+data.aws_availability_zones.available: Refreshing state...
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + module.vpc_networking.aws_default_route_table.private_route
+      id:                                         <computed>
+      default_route_table_id:                     "${aws_vpc.main.default_route_table_id}"
+      owner_id:                                   <computed>
+      route.#:                                    <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-private-route-table"
+      vpc_id:                                     <computed>
+
+  + module.vpc_networking.aws_internet_gateway.gw
+      id:                                         <computed>
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-igw"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_route_table.public_route
+      id:                                         <computed>
+      owner_id:                                   <computed>
+      propagating_vgws.#:                         <computed>
+      route.#:                                    "1"
+      route.~966145399.cidr_block:                "0.0.0.0/0"
+      route.~966145399.egress_only_gateway_id:    ""
+      route.~966145399.gateway_id:                "${aws_internet_gateway.gw.id}"
+      route.~966145399.instance_id:               ""
+      route.~966145399.ipv6_cidr_block:           ""
+      route.~966145399.nat_gateway_id:            ""
+      route.~966145399.network_interface_id:      ""
+      route.~966145399.transit_gateway_id:        ""
+      route.~966145399.vpc_peering_connection_id: ""
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-route"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_route_table_association.private_subnet_assoc[0]
+      id:                                         <computed>
+      route_table_id:                             "${aws_default_route_table.private_route.id}"
+      subnet_id:                                  "${aws_subnet.private_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.private_subnet_assoc[1]
+      id:                                         <computed>
+      route_table_id:                             "${aws_default_route_table.private_route.id}"
+      subnet_id:                                  "${aws_subnet.private_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.public_subnet_assoc[0]
+      id:                                         <computed>
+      route_table_id:                             "${aws_route_table.public_route.id}"
+      subnet_id:                                  "${aws_subnet.public_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_route_table_association.public_subnet_assoc[1]
+      id:                                         <computed>
+      route_table_id:                             "${aws_route_table.public_route.id}"
+      subnet_id:                                  "${aws_subnet.public_subnet.*.id[count.index]}"
+
+  + module.vpc_networking.aws_security_group.test_sg
+      id:                                         <computed>
+      arn:                                        <computed>
+      description:                                "Managed by Terraform"
+      egress.#:                                   <computed>
+      ingress.#:                                  <computed>
+      name:                                       "my-test-sg"
+      owner_id:                                   <computed>
+      revoke_rules_on_delete:                     "false"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_security_group_rule.all_outbound_access
+      id:                                         <computed>
+      cidr_blocks.#:                              "1"
+      cidr_blocks.0:                              "0.0.0.0/0"
+      from_port:                                  "0"
+      protocol:                                   "-1"
+      security_group_id:                          "${aws_security_group.test_sg.id}"
+      self:                                       "false"
+      source_security_group_id:                   <computed>
+      to_port:                                    "0"
+      type:                                       "egress"
+
+  + module.vpc_networking.aws_security_group_rule.ssh_inbound_access
+      id:                                         <computed>
+      cidr_blocks.#:                              "1"
+      cidr_blocks.0:                              "0.0.0.0/0"
+      from_port:                                  "22"
+      protocol:                                   "tcp"
+      security_group_id:                          "${aws_security_group.test_sg.id}"
+      self:                                       "false"
+      source_security_group_id:                   <computed>
+      to_port:                                    "22"
+      type:                                       "ingress"
+
+  + module.vpc_networking.aws_subnet.private_subnet[0]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2a"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.3.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "false"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-private-subnet.1"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.private_subnet[1]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2b"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.4.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "false"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-private-subnet.2"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.public_subnet[0]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2a"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.1.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "true"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-subnet.1"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_subnet.public_subnet[1]
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_ipv6_address_on_creation:            "false"
+      availability_zone:                          "us-west-2b"
+      availability_zone_id:                       <computed>
+      cidr_block:                                 "10.0.2.0/24"
+      ipv6_cidr_block:                            <computed>
+      ipv6_cidr_block_association_id:             <computed>
+      map_public_ip_on_launch:                    "true"
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-public-subnet.2"
+      vpc_id:                                     "${aws_vpc.main.id}"
+
+  + module.vpc_networking.aws_vpc.main
+      id:                                         <computed>
+      arn:                                        <computed>
+      assign_generated_ipv6_cidr_block:           "false"
+      cidr_block:                                 "10.0.0.0/16"
+      default_network_acl_id:                     <computed>
+      default_route_table_id:                     <computed>
+      default_security_group_id:                  <computed>
+      dhcp_options_id:                            <computed>
+      enable_classiclink:                         <computed>
+      enable_classiclink_dns_support:             <computed>
+      enable_dns_hostnames:                       "true"
+      enable_dns_support:                         "true"
+      instance_tenancy:                           "default"
+      ipv6_association_id:                        <computed>
+      ipv6_cidr_block:                            <computed>
+      main_route_table_id:                        <computed>
+      owner_id:                                   <computed>
+      tags.%:                                     "1"
+      tags.Name:                                  "my-test-vpc"
+
+
+Plan: 15 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.vpc_networking.aws_vpc.main: Creating...
+  arn:                              "" => "<computed>"
+  assign_generated_ipv6_cidr_block: "" => "false"
+  cidr_block:                       "" => "10.0.0.0/16"
+  default_network_acl_id:           "" => "<computed>"
+  default_route_table_id:           "" => "<computed>"
+  default_security_group_id:        "" => "<computed>"
+  dhcp_options_id:                  "" => "<computed>"
+  enable_classiclink:               "" => "<computed>"
+  enable_classiclink_dns_support:   "" => "<computed>"
+  enable_dns_hostnames:             "" => "true"
+  enable_dns_support:               "" => "true"
+  instance_tenancy:                 "" => "default"
+  ipv6_association_id:              "" => "<computed>"
+  ipv6_cidr_block:                  "" => "<computed>"
+  main_route_table_id:              "" => "<computed>"
+  owner_id:                         "" => "<computed>"
+  tags.%:                           "" => "1"
+  tags.Name:                        "" => "my-test-vpc"
+module.vpc_networking.aws_vpc.main: Creation complete after 3s (ID: vpc-04ab0547e37f673e4)
+module.vpc_networking.aws_internet_gateway.gw: Creating...
+  owner_id:  "" => "<computed>"
+  tags.%:    "0" => "1"
+  tags.Name: "" => "my-test-igw"
+  vpc_id:    "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_security_group.test_sg: Creating...
+  arn:                    "" => "<computed>"
+  description:            "" => "Managed by Terraform"
+  egress.#:               "" => "<computed>"
+  ingress.#:              "" => "<computed>"
+  name:                   "" => "my-test-sg"
+  owner_id:               "" => "<computed>"
+  revoke_rules_on_delete: "" => "false"
+  vpc_id:                 "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_default_route_table.private_route: Creating...
+  default_route_table_id: "" => "rtb-0c580b031e83f41f8"
+  owner_id:               "" => "<computed>"
+  route.#:                "" => "<computed>"
+  tags.%:                 "" => "1"
+  tags.Name:              "" => "my-private-route-table"
+  vpc_id:                 "" => "<computed>"
+module.vpc_networking.aws_subnet.public_subnet[0]: Creating...
+  arn:                             "" => "<computed>"
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-west-2a"
+  availability_zone_id:            "" => "<computed>"
+  cidr_block:                      "" => "10.0.1.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "true"
+  owner_id:                        "" => "<computed>"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "my-test-public-subnet.1"
+  vpc_id:                          "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_subnet.public_subnet[1]: Creating...
+  arn:                             "" => "<computed>"
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-west-2b"
+  availability_zone_id:            "" => "<computed>"
+  cidr_block:                      "" => "10.0.2.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "true"
+  owner_id:                        "" => "<computed>"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "my-test-public-subnet.2"
+  vpc_id:                          "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_subnet.private_subnet[1]: Creating...
+  arn:                             "" => "<computed>"
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-west-2b"
+  availability_zone_id:            "" => "<computed>"
+  cidr_block:                      "" => "10.0.4.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  owner_id:                        "" => "<computed>"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "my-test-private-subnet.2"
+  vpc_id:                          "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_subnet.private_subnet[0]: Creating...
+  arn:                             "" => "<computed>"
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-west-2a"
+  availability_zone_id:            "" => "<computed>"
+  cidr_block:                      "" => "10.0.3.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  owner_id:                        "" => "<computed>"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "my-test-private-subnet.1"
+  vpc_id:                          "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_default_route_table.private_route: Creation complete after 1s (ID: rtb-0c580b031e83f41f8)
+module.vpc_networking.aws_subnet.private_subnet[0]: Creation complete after 2s (ID: subnet-0664f3f0f932f3a51)
+module.vpc_networking.aws_internet_gateway.gw: Creation complete after 2s (ID: igw-0dde53f826b2a657a)
+module.vpc_networking.aws_route_table.public_route: Creating...
+  owner_id:                                   "" => "<computed>"
+  propagating_vgws.#:                         "" => "<computed>"
+  route.#:                                    "" => "1"
+  route.2452036034.cidr_block:                "" => "0.0.0.0/0"
+  route.2452036034.egress_only_gateway_id:    "" => ""
+  route.2452036034.gateway_id:                "" => "igw-0dde53f826b2a657a"
+  route.2452036034.instance_id:               "" => ""
+  route.2452036034.ipv6_cidr_block:           "" => ""
+  route.2452036034.nat_gateway_id:            "" => ""
+  route.2452036034.network_interface_id:      "" => ""
+  route.2452036034.transit_gateway_id:        "" => ""
+  route.2452036034.vpc_peering_connection_id: "" => ""
+  tags.%:                                     "" => "1"
+  tags.Name:                                  "" => "my-test-public-route"
+  vpc_id:                                     "" => "vpc-04ab0547e37f673e4"
+module.vpc_networking.aws_subnet.private_subnet[1]: Creation complete after 2s (ID: subnet-0de1fc262257c18b6)
+module.vpc_networking.aws_route_table_association.private_subnet_assoc[0]: Creating...
+  route_table_id: "" => "rtb-0c580b031e83f41f8"
+  subnet_id:      "" => "subnet-0664f3f0f932f3a51"
+module.vpc_networking.aws_route_table_association.private_subnet_assoc[1]: Creating...
+  route_table_id: "" => "rtb-0c580b031e83f41f8"
+  subnet_id:      "" => "subnet-0de1fc262257c18b6"
+module.vpc_networking.aws_subnet.public_subnet[0]: Creation complete after 2s (ID: subnet-076a2f00f82e133e3)
+module.vpc_networking.aws_subnet.public_subnet[1]: Creation complete after 2s (ID: subnet-01e4441c4d1d295b4)
+module.vpc_networking.aws_security_group.test_sg: Creation complete after 2s (ID: sg-0eacdfa929e01f14e)
+module.vpc_networking.aws_security_group_rule.all_outbound_access: Creating...
+  cidr_blocks.#:            "" => "1"
+  cidr_blocks.0:            "" => "0.0.0.0/0"
+  from_port:                "" => "0"
+  protocol:                 "" => "-1"
+  security_group_id:        "" => "sg-0eacdfa929e01f14e"
+  self:                     "" => "false"
+  source_security_group_id: "" => "<computed>"
+  to_port:                  "" => "0"
+  type:                     "" => "egress"
+module.vpc_networking.aws_security_group_rule.ssh_inbound_access: Creating...
+  cidr_blocks.#:            "" => "1"
+  cidr_blocks.0:            "" => "0.0.0.0/0"
+  from_port:                "" => "22"
+  protocol:                 "" => "tcp"
+  security_group_id:        "" => "sg-0eacdfa929e01f14e"
+  self:                     "" => "false"
+  source_security_group_id: "" => "<computed>"
+  to_port:                  "" => "22"
+  type:                     "" => "ingress"
+module.vpc_networking.aws_route_table_association.private_subnet_assoc[0]: Creation complete after 0s (ID: rtbassoc-08ac2368c39c4bba6)
+module.vpc_networking.aws_route_table_association.private_subnet_assoc[1]: Creation complete after 0s (ID: rtbassoc-073ea97c89243f9a2)
+module.vpc_networking.aws_security_group_rule.all_outbound_access: Creation complete after 1s (ID: sgrule-2840718346)
+module.vpc_networking.aws_route_table.public_route: Creation complete after 1s (ID: rtb-0717178625788ad5a)
+module.vpc_networking.aws_route_table_association.public_subnet_assoc[1]: Creating...
+  route_table_id: "" => "rtb-0717178625788ad5a"
+  subnet_id:      "" => "subnet-01e4441c4d1d295b4"
+module.vpc_networking.aws_route_table_association.public_subnet_assoc[0]: Creating...
+  route_table_id: "" => "rtb-0717178625788ad5a"
+  subnet_id:      "" => "subnet-076a2f00f82e133e3"
+module.vpc_networking.aws_route_table_association.public_subnet_assoc[0]: Creation complete after 0s (ID: rtbassoc-022283ab63796686e)
+module.vpc_networking.aws_route_table_association.public_subnet_assoc[1]: Creation complete after 0s (ID: rtbassoc-0d0916273682d156d)
+module.vpc_networking.aws_security_group_rule.ssh_inbound_access: Creation complete after 1s (ID: sgrule-2725048208)
+
+Apply complete! Resources: 15 added, 0 changed, 0 destroyed.
+```
