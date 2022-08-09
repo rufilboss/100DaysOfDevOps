@@ -27,3 +27,17 @@ $ tree
 └── variables.tf
 ```
 * So the first step is to create a data resource, what data resource did is to query/list all the AWS available Availablity zone in a given region and then allow terraform to use those resource.
+
+* NOw it's time  to create VPC
+```sh
+# VPC Creation
+resource "aws_vpc" "main" {
+  cidr_block           = "${var.vpc_cidr}"
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags {
+    Name = "my-test-vpc"
+  }
+}
+```
