@@ -150,4 +150,4 @@ resource "aws_route_table_association" "private_subnet_assoc" {
 * Network Access Control List(NACL) A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
 * Security Group acts as a virtual firewall and is used to control the traffic for its associated instances.
 * Difference between NACL and Security Group
-
+![diff](https://miro.medium.com/max/1400/1*JuCWpsP4XRgACDHu3XU5Fw.png)
