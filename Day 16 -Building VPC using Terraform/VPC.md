@@ -26,3 +26,4 @@ $ tree
 ├── terraform.tfvars
 └── variables.tf
 ```
+* So the first step is to create a data resource, what data resource did is to query/list all the AWS available Availablity zone in a given region and then allow terraform to use those resource.
