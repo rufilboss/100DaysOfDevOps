@@ -31,3 +31,5 @@ data "aws_ami" "centos" {
   }
 }
 ```
+###### NOTE: Use of data resource is not ideal and each and every used case, eg: In the case of Production we might want to use a specific version of CentOS.
+
