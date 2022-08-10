@@ -256,3 +256,9 @@ filter {
 }
 ```
 
+* As we are able to figure out the AMI part, the next step is to create and use the key pair
+* Either we can hardcode the value of key pair or generate a new key via command line and then refer to this file
+
+```sh
+
+```
