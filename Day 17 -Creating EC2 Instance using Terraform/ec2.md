@@ -379,3 +379,14 @@ resource "aws_volume_attachment" "my-test-ebs-attachment" {
 
 * Next step is to define user data resource, what this will do, during the instance building process it’s going to attach EBS Volumes we created in earlier step.
 
+```sh
+data "template_file" "user-init" {
+  template = "${file("${path.module}/userdata.tpl")}"
+}
+```
+```sh
+#!/bin/bash
+mkfs.ext4 /dev/xvdh
+mount /dev/xvdh /mnt
+echo /dev/xvdh /mnt defaults,nofail 0 2 >> /etc/fstab
+```
