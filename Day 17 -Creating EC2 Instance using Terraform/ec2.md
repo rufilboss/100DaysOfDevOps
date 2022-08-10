@@ -33,3 +33,13 @@ data "aws_ami" "centos" {
 ```
 ###### NOTE: Use of data resource is not ideal and each and every used case, eg: In the case of Production we might want to use a specific version of CentOS.
 
+* The above code will help us to get the latest Centos AMI, the code is self-explanatory but one important parameter we used is owners
+* owners - (Optional) Limit search to specific AMI owners. Valid items are the numeric account ID, amazon, or self.
+* most_recent - (Optional) If more than one result is returned, use the most recent AMI.This is to get the latest Centos AMI as per our use case.
+
+* Other ways to find the AMI ID
+```sh
+Go to https://us-west-2.console.aws.amazon.com/ec2 --> Instances --> Launch Instances --> Search for centos 
+```
+
+* 
