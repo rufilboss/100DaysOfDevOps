@@ -339,3 +339,4 @@ output "security_group" {
     module.<module name>.<output variable>
     subnet_id      = "${module.vpc_networking.public_subnets}"                         security_group = "${module.vpc_networking.security_group}"
 
+* Final module code for EC2 instance look like this
