@@ -42,4 +42,7 @@ data "aws_ami" "centos" {
 Go to https://us-west-2.console.aws.amazon.com/ec2 --> Instances --> Launch Instances --> Search for centos 
 ```
 
-* 
+* Same thing you can do using AWS CLI
+```sh
+aws --region us-west-2 ec2 describe-images --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce
+```
