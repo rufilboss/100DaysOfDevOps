@@ -260,5 +260,26 @@ filter {
 * Either we can hardcode the value of key pair or generate a new key via command line and then refer to this file
 
 ```sh
-
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/plakhera/.ssh/id_rsa): /tmp/id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /tmp/id_rsa.
+Your public key has been saved in /tmp/id_rsa.pub.
+The key fingerprint is:
+XXXXXXXXXXXXX
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|   . . .   .   . |
+|. = . +.S .o. o .|
+| *.= +. .oo.oo + |
+|o =+=  o o+o+ * .|
+|.. ++.. +..o =.+.|
+|  .o+o   Eo oo+o |
++----[SHA256]-----+
 ```
+
