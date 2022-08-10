@@ -390,3 +390,11 @@ mkfs.ext4 /dev/xvdh
 mount /dev/xvdh /mnt
 echo /dev/xvdh /mnt defaults,nofail 0 2 >> /etc/fstab
 ```
+* Also,
+    * Special parameter in this is path.module which is going to refer to exisiting module path in our case ec2_instance
+
+* The last step is to refer user_data resource back in your terraform code
+
+```sh
+user_data = "${data.template_file.user-init.rendered}"
+```
