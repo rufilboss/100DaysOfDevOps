@@ -370,7 +370,7 @@ resource "aws_volume_attachment" "my-test-ebs-attachment" {
   volume_id   = "${aws_ebs_volume.my-test-ebs.*.id[count.index]}"
 }
 ```
-* Now,
+* So,
     * To create EBS Volumes, I am using ebs_volume resource and to attach it use aws_volume_attachment
     * We are creating two Volumes here
     * AS Volume is specific to Availibility Zone, I am using aws_availibility_zone data resource
