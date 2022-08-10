@@ -241,3 +241,8 @@ $ aws --region us-west-2 ec2 describe-images --owners aws-marketplace --filters 
 }
 ```
 
+* If you look at the Description field
+
+```sh
+"Description": "CentOS Linux 7 x86_64 HVM EBS 1708_11.01",
+```
