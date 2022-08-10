@@ -334,3 +334,8 @@ output "security_group" {
   value = "${aws_security_group.test_sg.id}"
 }
 ```
+
+* After calling these values here, we just need to define as the part of main module and the syntax of doing that is
+    module.<module name>.<output variable>
+    subnet_id      = "${module.vpc_networking.public_subnets}"                         security_group = "${module.vpc_networking.security_group}"
+
