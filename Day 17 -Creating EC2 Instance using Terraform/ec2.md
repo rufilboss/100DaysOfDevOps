@@ -317,3 +317,7 @@ resource "aws_instance" "test_instance" {
     * key_name: Resource we create earlier and we are just referencing it here
 * Below two ones are special, because both of these resource we created during the vpc section, so now what we need to do is to output it during VPC module and use there output as the input to this module. I will discuss more about it later
     * tags: Tags are always helpful to assign label to your resources.
+
+* If you notice the above code, one thing which is interesting here is vpc_security_group_ids and subnet_id
+* The interesting part, we already created these as a part of VPC code, so we just need to call in our EC2 terraform and the way to do it using outputs.tf
+
