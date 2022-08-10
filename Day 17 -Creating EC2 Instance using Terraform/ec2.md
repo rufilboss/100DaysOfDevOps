@@ -246,3 +246,8 @@ $ aws --region us-west-2 ec2 describe-images --owners aws-marketplace --filters 
 ```sh
 "Description": "CentOS Linux 7 x86_64 HVM EBS 1708_11.01",
 ```
+
+Then check the Terraform code in of the filter we use “CentOS Linux 7 x86_64 HVM EBS *” and that is one of the reasons of using that
+```sh
+
+```
