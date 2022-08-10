@@ -410,3 +410,7 @@ resource "aws_instance" "test_instance" {
   }
 }
 ```
+
+* After that, You need to follow the same steps we have done while creating modules for VPC
+
+#### 
