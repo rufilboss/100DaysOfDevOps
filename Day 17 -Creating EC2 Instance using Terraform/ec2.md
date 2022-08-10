@@ -289,6 +289,8 @@ resource "aws_key_pair" "mytest-key" {
   public_key = "${file(var.my_public_key)}"
 }
 ```
+* As you can see:
+    * in var.my_public_key set the location as /tmp/id_rsa.pub
+    * To refer to this file, we need to use the file function
 
-* and in var.my_public_key set the location as /tmp/id_rsa.pub
-* To refer to this file, we need to use the file function
+* After AMI and Keys out of our way, let start building EC2 instance
