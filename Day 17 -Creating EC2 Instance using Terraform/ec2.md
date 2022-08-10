@@ -46,3 +46,197 @@ Go to https://us-west-2.console.aws.amazon.com/ec2 --> Instances --> Launch Inst
 ```sh
 aws --region us-west-2 ec2 describe-images --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce
 ```
+
+```sh
+
+$ aws --region us-west-2 ec2 describe-images --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce
+{
+    "Images": [
+        {
+            "ProductCodes": [
+                {
+                    "ProductCodeId": "aw0evgkw8e5c1q413zgy5pjce", 
+                    "ProductCodeType": "marketplace"
+                }
+            ], 
+            "Description": "CentOS Linux 7 x86_64 HVM EBS ENA 1901_01", 
+            "VirtualizationType": "hvm", 
+            "Hypervisor": "xen", 
+            "ImageOwnerAlias": "aws-marketplace", 
+            "EnaSupport": true, 
+            "SriovNetSupport": "simple", 
+            "ImageId": "ami-01ed306a12b7d1c96", 
+            "State": "available", 
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1", 
+                    "Ebs": {
+                        "SnapshotId": "snap-040d21883a90fad29", 
+                        "DeleteOnTermination": false, 
+                        "VolumeType": "gp2", 
+                        "VolumeSize": 8, 
+                        "Encrypted": false
+                    }
+                }
+            ], 
+            "Architecture": "x86_64", 
+            "ImageLocation": "aws-marketplace/CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-05713873c6794f575.4", 
+            "RootDeviceType": "ebs", 
+            "OwnerId": "679593333241", 
+            "RootDeviceName": "/dev/sda1", 
+            "CreationDate": "2019-01-30T23:43:37.000Z", 
+            "Public": true, 
+            "ImageType": "machine", 
+            "Name": "CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-05713873c6794f575.4"
+        }, 
+        {
+            "ProductCodes": [
+                {
+                    "ProductCodeId": "aw0evgkw8e5c1q413zgy5pjce", 
+                    "ProductCodeType": "marketplace"
+                }
+            ], 
+            "Description": "CentOS Linux 7 x86_64 HVM EBS ENA 1803_01", 
+            "VirtualizationType": "hvm", 
+            "Hypervisor": "xen", 
+            "ImageOwnerAlias": "aws-marketplace", 
+            "EnaSupport": true, 
+            "SriovNetSupport": "simple", 
+            "ImageId": "ami-0ebdd976", 
+            "State": "available", 
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1", 
+                    "Ebs": {
+                        "SnapshotId": "snap-0b665edcc96bbb410", 
+                        "DeleteOnTermination": false, 
+                        "VolumeType": "gp2", 
+                        "VolumeSize": 8, 
+                        "Encrypted": false
+                    }
+                }
+            ], 
+            "Architecture": "x86_64", 
+            "ImageLocation": "aws-marketplace/CentOS Linux 7 x86_64 HVM EBS ENA 1803_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-8274d6ff.4", 
+            "RootDeviceType": "ebs", 
+            "OwnerId": "679593333241", 
+            "RootDeviceName": "/dev/sda1", 
+            "CreationDate": "2018-04-04T00:11:39.000Z", 
+            "Public": true, 
+            "ImageType": "machine", 
+            "Name": "CentOS Linux 7 x86_64 HVM EBS ENA 1803_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-8274d6ff.4"
+        }, 
+        {
+            "ProductCodes": [
+                {
+                    "ProductCodeId": "aw0evgkw8e5c1q413zgy5pjce", 
+                    "ProductCodeType": "marketplace"
+                }
+            ], 
+            "Description": "CentOS Linux 7 x86_64 HVM EBS ENA 1805_01", 
+            "VirtualizationType": "hvm", 
+            "Hypervisor": "xen", 
+            "ImageOwnerAlias": "aws-marketplace", 
+            "EnaSupport": true, 
+            "SriovNetSupport": "simple", 
+            "ImageId": "ami-3ecc8f46", 
+            "State": "available", 
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1", 
+                    "Ebs": {
+                        "SnapshotId": "snap-0313e2ec7fa27f2e9", 
+                        "DeleteOnTermination": false, 
+                        "VolumeType": "gp2", 
+                        "VolumeSize": 8, 
+                        "Encrypted": false
+                    }
+                }
+            ], 
+            "Architecture": "x86_64", 
+            "ImageLocation": "aws-marketplace/CentOS Linux 7 x86_64 HVM EBS ENA 1805_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-77ec9308.4", 
+            "RootDeviceType": "ebs", 
+            "OwnerId": "679593333241", 
+            "RootDeviceName": "/dev/sda1", 
+            "CreationDate": "2018-06-13T15:58:14.000Z", 
+            "Public": true, 
+            "ImageType": "machine", 
+            "Name": "CentOS Linux 7 x86_64 HVM EBS ENA 1805_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-77ec9308.4"
+        }, 
+        {
+            "ProductCodes": [
+                {
+                    "ProductCodeId": "aw0evgkw8e5c1q413zgy5pjce", 
+                    "ProductCodeType": "marketplace"
+                }
+            ], 
+            "Description": "CentOS Linux 7 x86_64 HVM EBS ENA 1804_2", 
+            "VirtualizationType": "hvm", 
+            "Hypervisor": "xen", 
+            "ImageOwnerAlias": "aws-marketplace", 
+            "EnaSupport": true, 
+            "SriovNetSupport": "simple", 
+            "ImageId": "ami-5490ed2c", 
+            "State": "available", 
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1", 
+                    "Ebs": {
+                        "SnapshotId": "snap-012ad984270e9fede", 
+                        "DeleteOnTermination": false, 
+                        "VolumeType": "gp2", 
+                        "VolumeSize": 8, 
+                        "Encrypted": false
+                    }
+                }
+            ], 
+            "Architecture": "x86_64", 
+            "ImageLocation": "aws-marketplace/CentOS Linux 7 x86_64 HVM EBS ENA 1804_2-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-55a2322a.4", 
+            "RootDeviceType": "ebs", 
+            "OwnerId": "679593333241", 
+            "RootDeviceName": "/dev/sda1", 
+            "CreationDate": "2018-05-17T09:30:44.000Z", 
+            "Public": true, 
+            "ImageType": "machine", 
+            "Name": "CentOS Linux 7 x86_64 HVM EBS ENA 1804_2-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-55a2322a.4"
+        }, 
+        {
+            "ProductCodes": [
+                {
+                    "ProductCodeId": "aw0evgkw8e5c1q413zgy5pjce", 
+                    "ProductCodeType": "marketplace"
+                }
+            ], 
+            "Description": "CentOS Linux 7 x86_64 HVM EBS 1708_11.01", 
+            "VirtualizationType": "hvm", 
+            "Hypervisor": "xen", 
+            "ImageOwnerAlias": "aws-marketplace", 
+            "EnaSupport": true, 
+            "SriovNetSupport": "simple", 
+            "ImageId": "ami-b63ae0ce", 
+            "State": "available", 
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1", 
+                    "Ebs": {
+                        "SnapshotId": "snap-045714dfd4f364480", 
+                        "DeleteOnTermination": false, 
+                        "VolumeType": "standard", 
+                        "VolumeSize": 8, 
+                        "Encrypted": false
+                    }
+                }
+            ], 
+            "Architecture": "x86_64", 
+            "ImageLocation": "aws-marketplace/CentOS Linux 7 x86_64 HVM EBS 1708_11.01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-95096eef.4", 
+            "RootDeviceType": "ebs", 
+            "OwnerId": "679593333241", 
+            "RootDeviceName": "/dev/sda1", 
+            "CreationDate": "2017-12-05T14:49:18.000Z", 
+            "Public": true, 
+            "ImageType": "machine", 
+            "Name": "CentOS Linux 7 x86_64 HVM EBS 1708_11.01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-95096eef.4"
+        }
+    ]
+}
+```
