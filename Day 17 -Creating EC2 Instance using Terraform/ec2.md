@@ -376,3 +376,6 @@ resource "aws_volume_attachment" "my-test-ebs-attachment" {
     * AS Volume is specific to Availibility Zone, I am using aws_availibility_zone data resource
     * Size of the Volume is 10GB
     * Type is gp2(other available options "standard", "gp2", "io1", "sc1" or "st1" (Default: "standard"))
+
+* Next step is to define user data resource, what this will do, during the instance building process it’s going to attach EBS Volumes we created in earlier step.
+
