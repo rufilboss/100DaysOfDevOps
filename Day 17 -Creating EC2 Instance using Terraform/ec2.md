@@ -309,3 +309,92 @@ resource "aws_instance" "test_instance" {
   }
 }
 ```
+
+* Most of these parameters I already discussed in the first section, but let's quickly review it and check the new one
+    * count: The number of instance, we want to create
+    * ami: This time we are pulling ami using data resource
+    * instance_type: Important parameter in AWS Realm, the type of instance we want to create
+    * key_name: Resource we create earlier and we are just referencing it here
+* Below two ones are special, because both of these resource we created during the vpc section, so now what we need to do is to output it during VPC module and use there output as the input to this module. I will discuss more about it later
+    * tags: Tags are always helpful to assign label to your resources.
+
+* If you notice the above code, one thing which is interesting here is vpc_security_group_ids and subnet_id
+* The interesting part, we already created these as a part of VPC code, so we just need to call in our EC2 terraform and the way to do it using outputs.tf
+
+```sh
+output "public_subnets" {
+  value = "${aws_subnet.public_subnet.*.id}"
+}
+
+output "private_subnets" {
+  value = "${aws_subnet.private_subnet.*.id}"
+}
+
+output "security_group" {
+  value = "${aws_security_group.test_sg.id}"
+}
+```
+
+* After calling these values here, we just need to define as the part of main module and the syntax of doing that is
+    module.<module name>.<output variable>
+    subnet_id      = "${module.vpc_networking.public_subnets}"                         security_group = "${module.vpc_networking.security_group}"
+
+* Final module code for EC2 instance look like this:
+
+```sh
+module "ec2_instance" {
+  source         = "./ec2_instance"
+  instance_count = "${var.instance_count}"
+  my_public_key  = "${var.my_public_key}"
+  instance_type  = "${var.instance_type}"
+  subnet_id      = "${module.vpc_networking.public_subnets}"
+  security_group = "${module.vpc_networking.security_group}"
+  alarm_actions  = "${module.sns.sns_topic}"
+}
+```
+
+* Let’s create two EBS volumes and attach it to two EC2 instances we created earlier
+
+```sh
+resource "aws_ebs_volume" "my-test-ebs" {
+  count             = 2
+  availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
+  size              = 10
+  type              = "gp2"
+}
+
+resource "aws_volume_attachment" "my-test-ebs-attachment" {
+  count       = 2
+  device_name = "/dev/xvdh"
+  instance_id = "${aws_instance.test_instance.*.id[count.index]}"
+  volume_id   = "${aws_ebs_volume.my-test-ebs.*.id[count.index]}"
+}
+```
+* So,
+    * To create EBS Volumes, I am using ebs_volume resource and to attach it use aws_volume_attachment
+    * We are creating two Volumes here
+    * AS Volume is specific to Availibility Zone, I am using aws_availibility_zone data resource
+    * Size of the Volume is 10GB
+    * Type is gp2(other available options "standard", "gp2", "io1", "sc1" or "st1" (Default: "standard"))
+
+* Next step is to define user data resource, what this will do, during the instance building process it’s going to attach EBS Volumes we created in earlier step.
+
+```sh
+data "template_file" "user-init" {
+  template = "${file("${path.module}/userdata.tpl")}"
+}
+```
+```sh
+#!/bin/bash
+mkfs.ext4 /dev/xvdh
+mount /dev/xvdh /mnt
+echo /dev/xvdh /mnt defaults,nofail 0 2 >> /etc/fstab
+```
+* Also,
+    * Special parameter in this is path.module which is going to refer to exisiting module path in our case ec2_instance
+
+* The last step is to refer user_data resource back in your terraform code
+
+```sh
+user_data = "${data.template_file.user-init.rendered}"
+```
