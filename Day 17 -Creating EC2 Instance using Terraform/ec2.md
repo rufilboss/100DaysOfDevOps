@@ -309,3 +309,11 @@ resource "aws_instance" "test_instance" {
   }
 }
 ```
+
+* Most of these parameters I already discussed in the first section, but let's quickly review it and check the new one
+    * count: The number of instance, we want to create
+    * ami: This time we are pulling ami using data resource
+    * instance_type: Important parameter in AWS Realm, the type of instance we want to create
+    * key_name: Resource we create earlier and we are just referencing it here
+* Below two ones are special, because both of these resource we created during the vpc section, so now what we need to do is to output it during VPC module and use there output as the input to this module. I will discuss more about it later
+    * tags: Tags are always helpful to assign label to your resources.
