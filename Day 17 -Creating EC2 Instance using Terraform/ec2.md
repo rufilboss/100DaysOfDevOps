@@ -321,3 +321,16 @@ resource "aws_instance" "test_instance" {
 * If you notice the above code, one thing which is interesting here is vpc_security_group_ids and subnet_id
 * The interesting part, we already created these as a part of VPC code, so we just need to call in our EC2 terraform and the way to do it using outputs.tf
 
+```sh
+output "public_subnets" {
+  value = "${aws_subnet.public_subnet.*.id}"
+}
+
+output "private_subnets" {
+  value = "${aws_subnet.private_subnet.*.id}"
+}
+
+output "security_group" {
+  value = "${aws_security_group.test_sg.id}"
+}
+```
