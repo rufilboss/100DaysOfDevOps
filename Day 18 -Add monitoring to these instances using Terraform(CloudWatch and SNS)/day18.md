@@ -80,6 +80,7 @@ dimensions {
 * Now look at the other part is to perform system and instance failure and send an email using SNS notification
 
 ```sh
+# cloudwatch_instance_check.tf
 resource "aws_cloudwatch_metric_alarm" "instance-health-check" {
   alarm_name                = "instance-health-check"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
@@ -97,7 +98,6 @@ dimensions {
 }
 ```
 * Most of this code is almost similar, only difference is metric _name here is StatusCheckFailed
-
 
 * Final EC2 code with CloudWatch Monitoring and SNS topic enabled look like this
 
