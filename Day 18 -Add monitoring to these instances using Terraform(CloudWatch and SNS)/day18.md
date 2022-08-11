@@ -64,3 +64,14 @@ dimensions {
 }
 ```
 
+* Then,
+    * Setup an alarm name
+    * This field is self explanatory,supported operators GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold.
+    * evaluation_period: The number of periods over which data is compared to the specified threshold
+    * metric_name: Please check the link below list of services that publish cloudwatch metrics
+    * namespace: The namespace for the alarm's associated metric(Check the second column of the link below)
+    * period: period in second(I am using 120 sec or 2min but again it completly depend upon your requirements)
+    * statistic: The statistic to apply to the alarm's associated metric, supported value: SampleCount, Average, Sum, Minimum, Maximum
+    * threshold: The value against which the specified statistic is compared.(I set it up as 80% i.e when CPU utilization goes above 80%)
+    * alarm_actions: The list of actions to execute when this alarm transitions into an ALARM state from any other state. Please note, each action is specified as an Amazon Resource Name (ARN)
+    * dimensions: The dimensions for the alarm's associated metric. Again check the below mentioned link for supported dimensions
