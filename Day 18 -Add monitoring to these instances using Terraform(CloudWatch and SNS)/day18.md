@@ -46,6 +46,7 @@ EOF
 ##### Setup CPU Usage Alarm using the Terraform
 
 ```sh
+# cloudwatch_cpu_usage.tf
 resource "aws_cloudwatch_metric_alarm" "cpu-utilization" {
   alarm_name                = "high-cpu-utilization-alarm"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
@@ -62,3 +63,4 @@ dimensions {
   }
 }
 ```
+
