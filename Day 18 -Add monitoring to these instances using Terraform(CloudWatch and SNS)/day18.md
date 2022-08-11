@@ -102,7 +102,7 @@ dimensions {
 * Final EC2 code with CloudWatch Monitoring and SNS topic enabled look like this
 
 ```sh
-
+# ec2_with_cloudwatch_alarm.tf
 provider "aws" {
   region = "us-west-2"
 }
