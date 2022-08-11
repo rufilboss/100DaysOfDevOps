@@ -3,7 +3,7 @@
 * First, let start with SNS topic, which is required to send out a notification via Email, SMS when an event occurs.
 
 ```sh
-
+#sns_topic.tf
 resource "aws_sns_topic" "alarm" {
   name = "alarms-topic"
 
