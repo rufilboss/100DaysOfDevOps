@@ -96,3 +96,7 @@ dimensions {
   }
 }
 ```
+* Most of this code is almost similar, only difference is metric _name here is StatusCheckFailed
+
+
+* Final EC2 code with CloudWatch Monitoring and SNS topic enabled look like this
