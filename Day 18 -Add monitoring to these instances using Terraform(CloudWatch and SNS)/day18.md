@@ -37,3 +37,10 @@ EOF
 * give your SNS topic, some name
 * After that I am using a default policy
 
+###### NOTE: As with SNS, someone needs to confirm the email subscription that why I am using local-exec provisioners with terraform.
+
+* Now let’s take a look at terraform code for CloudWatch.
+
+* This code is divided into two parts
+
+##### Setup CPU Usage Alarm using the Terraform
