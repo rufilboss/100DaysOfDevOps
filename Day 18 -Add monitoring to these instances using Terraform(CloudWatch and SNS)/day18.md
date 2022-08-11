@@ -32,3 +32,8 @@ EOF
   }
 }
 ```
+
+* Here I am trying to create an SNS topic resource
+* give your SNS topic, some name
+* After that I am using a default policy
+
