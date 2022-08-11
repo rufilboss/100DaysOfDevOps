@@ -75,3 +75,6 @@ dimensions {
     * threshold: The value against which the specified statistic is compared.(I set it up as 80% i.e when CPU utilization goes above 80%)
     * alarm_actions: The list of actions to execute when this alarm transitions into an ALARM state from any other state. Please note, each action is specified as an Amazon Resource Name (ARN)
     * dimensions: The dimensions for the alarm's associated metric. Again check the below mentioned link for supported dimensions
+
+* So what this is doing this code is going to send an email using SNS notification when CPU Utilization is more than 80%.
+* Now look at the other part is to perform system and instance failure and send an email using SNS notification
