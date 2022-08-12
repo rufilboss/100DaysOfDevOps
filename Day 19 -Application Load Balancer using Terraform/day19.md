@@ -16,3 +16,4 @@ The Application Load Balancer is a feature of ElasticLoad Balancing that allows 
     * Determines whether to send traffic to a given instance
     * Each instance must pass its a health check
     * Sends HTTP GET request and looks for a specific response/success code
+
