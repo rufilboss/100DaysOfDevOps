@@ -40,3 +40,13 @@ resource "aws_lb" "my-test-lb" {
 }
 ```
 
+```sh
+name: The name of the LB. This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen. If not specified, Terraform will autogenerate a name beginning with tf-lb (This part is important as Terraform auto
+internal: If true, the LB will be internal.
+load_balancer_type: The type of load balancer to create. Possible values are application or network. The default value is application.
+ip_address_type: The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 and dualstack
+subnets: A list of subnet IDs to attach to the LB.In this case I am attaching two public subnets we created during load balancer creation
+enable_deletion_protection: If true, deletion of the load balancer will be disabled via the AWS API. This will prevent Terraform from deleting the load balancer. Defaults to false.
+tags: A mapping of tags to assign to the resource.
+```
+
