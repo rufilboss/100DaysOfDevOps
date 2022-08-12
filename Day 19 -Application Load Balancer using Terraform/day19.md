@@ -50,3 +50,6 @@ enable_deletion_protection: If true, deletion of the load balancer will be disab
 tags: A mapping of tags to assign to the resource.
 ```
 
+##### Step2: 
+* Define the target group: This is going to provide a resource for use with Load Balancer.
+
