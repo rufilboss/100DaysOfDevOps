@@ -106,3 +106,9 @@ resource "aws_lb_target_group_attachment" "my-tg-attachment2" {
   port             = 80
 }
 ```
+
+```sh
+target_group_arn: The ARN of the target group with which to register targets
+target_id: The ID of the target. This is the Instance ID for an instance
+port: The port on which targets receive traffic.
+```
