@@ -118,7 +118,6 @@ port: The port on which targets receive traffic.
 * Security group used by ALB
 
 ```sh
-
 resource "aws_security_group" "alb-sg" {
   name   = "my-alb-sg"
   vpc_id = "${var.vpc_id}"
@@ -146,7 +145,6 @@ resource "aws_security_group_rule" "all_outbound_access" {
 * Final terraform code for Application Load Balancer will look like this
 
 ```sh
-
 provider "aws" {
   region = "us-west-2"
 }
@@ -219,3 +217,4 @@ resource "aws_security_group_rule" "all_outbound_access" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 ```
+
