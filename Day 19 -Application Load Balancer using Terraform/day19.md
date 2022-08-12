@@ -93,7 +93,7 @@ target_type: The type of target that you must specify when registering targets w
 * Provides the ability to register instances with an Application Load Balancer (ALB)
 
 ```sh
-alb.tf
+alb_target.tf
 resource "aws_lb_target_group_attachment" "my-tg-attachment1" {
   target_group_arn = "${aws_lb_target_group.my-alb-tg.arn}"
   target_id        = "${var.instance_id1}"
