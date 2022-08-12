@@ -19,3 +19,23 @@ The Application Load Balancer is a feature of ElasticLoad Balancing that allows 
 
 * Reference: [**here**](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 
+###### Step1: 
+
+* Define the load balancer
+
+```sh
+# lb_define.tf
+resource "aws_lb" "my-test-lb" {
+  name               = "my-test-lb"
+  internal           = false
+  load_balancer_type = "application"
+  ip_address_type    = "ipv4"
+  subnets            = ["${var.subnet_id1}", "${var.subnet_id2}"]
+
+  enable_deletion_protection = true
+
+  tags {
+    Name = "my-test-alb"
+  }
+}
+```
