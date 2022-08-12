@@ -88,3 +88,21 @@ vpc_id: The identifier of the VPC in which to create the target group
 target_type: The type of target that you must specify when registering targets with this target group.Possible values instance id, ip address
 ```
 
+##### Step3:
+
+* Provides the ability to register instances with an Application Load Balancer (ALB)
+
+```sh
+alb.tf
+resource "aws_lb_target_group_attachment" "my-tg-attachment1" {
+  target_group_arn = "${aws_lb_target_group.my-alb-tg.arn}"
+  target_id        = "${var.instance_id1}"
+  port             = 80
+}
+
+resource "aws_lb_target_group_attachment" "my-tg-attachment2" {
+  target_group_arn = "${aws_lb_target_group.my-alb-tg.arn}"
+  target_id        = "${var.instance_id2}"
+  port             = 80
+}
+```
