@@ -66,3 +66,22 @@ resource "aws_security_group_rule" "all_outbound_access" {
 * One of the available lifecycle settings are create_before_destroy, which, if set to true, tells Terraform to always create a replacement resource before destroying the original resource. For example, if you set create_before_destroy to true on an EC2 Instance, then whenever you make a change to that Instance, Terraform will first create a new EC2 Instance, wait for it to come up, and then remove the old EC2 Instance.
 
 * The catch with the create_before_destroy the parameter is that if you set it to true on resource X, you also have to set it to true on every resource that X depends on (if you forget, you’ll get errors about cyclical dependencies). In the case of the launch configuration, that means you need to set create_before_destroy to true on the security group
+
+##### Step:
+
+```sh
+data "aws_availability_zones" "all" {}
+resource "aws_autoscaling_group" "test-asg" {
+  launch_configuration    = "${aws_launch_configuration.asg-config.id}"
+  availability_zones      = ["${data.aws_availability_zones.all.names}"]
+  target_group_arns       = ["${var.target_group_arn}"]
+  health_check_type       = "ELB"
+  min_size                = "1"
+  max_size                = "2"
+  tag {
+    key = "Name"
+    propagate_at_launch = true
+    value = "my-terraform-asg-example"
+  }
+}
+```
