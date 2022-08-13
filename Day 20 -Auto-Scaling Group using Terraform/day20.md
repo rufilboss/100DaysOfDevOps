@@ -63,3 +63,5 @@ resource "aws_security_group_rule" "all_outbound_access" {
 
 * Most of the parameters look similar to EC2 configuration except lifecycle parameter which is required for using a launch configuration with an ASG
 
+* One of the available lifecycle settings are create_before_destroy, which, if set to true, tells Terraform to always create a replacement resource before destroying the original resource. For example, if you set create_before_destroy to true on an EC2 Instance, then whenever you make a change to that Instance, Terraform will first create a new EC2 Instance, wait for it to come up, and then remove the old EC2 Instance.
+
