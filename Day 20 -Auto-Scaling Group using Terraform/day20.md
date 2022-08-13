@@ -89,3 +89,4 @@ resource "aws_autoscaling_group" "test-asg" {
 
 * Next step is to create an auto-scaling group using the aws_autoscaling_group resource.
 * This autoscaling group will spin a minimum of 1 instance and a maximum of 2 instances OR completely based on your requirement.
+* It’s going to use the launch configuration we created in the earlier step.
