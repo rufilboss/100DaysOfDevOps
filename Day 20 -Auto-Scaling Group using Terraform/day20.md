@@ -91,3 +91,5 @@ resource "aws_autoscaling_group" "test-asg" {
 * This autoscaling group will spin a minimum of 1 instance and a maximum of 2 instances OR completely based on your requirement.
 * It’s going to use the launch configuration we created in the earlier step.
 * We are using an aws_availibity_zone resource which will make sure instance will be deployed in different Availability Zone.
+* A list of aws_alb_target_group ARNs, for use with Application Load Balancing, this is created During Day 19 when we created Application Load Balancer. If you are still not sure about the Value, in the outputs.tf file put this entry
+
