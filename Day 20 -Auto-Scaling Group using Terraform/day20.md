@@ -60,3 +60,6 @@ resource "aws_security_group_rule" "all_outbound_access" {
   cidr_blocks       = ["0.0.0.0/0"]
 }
 ```
+
+* Most of the parameters look similar to EC2 configuration except lifecycle parameter which is required for using a launch configuration with an ASG
+
