@@ -13,3 +13,9 @@
 
 * Reference: [**here**](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)
 
+* In the above example, Auto Scaling has
+
+    * A minimum size of one instance.
+    * Desired Capacity of two instances.
+    * The maximum size of four instances.
+    * Scaling policies we define adjust the minimum or a maximum number of instances based on the criteria we specify.
