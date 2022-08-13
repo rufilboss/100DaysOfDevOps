@@ -218,3 +218,4 @@ resource "aws_security_group_rule" "all_outbound_access" {
 }
 ```
 
+<!-- Day 10 stops here -->
