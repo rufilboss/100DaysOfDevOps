@@ -19,3 +19,10 @@
     * Desired Capacity of two instances.
     * The maximum size of four instances.
     * Scaling policies we define adjust the minimum or a maximum number of instances based on the criteria we specify.
+
+##### Step1:
+* The first step in creating the AutoScaling Group is to create a launch configuration, which specifies how to configure each EC2 instance in the autoscaling group.
+
+```sh
+
+```
