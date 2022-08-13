@@ -86,3 +86,5 @@ resource "aws_autoscaling_group" "test-asg" {
   }
 }
 ```
+
+* Next step is to create an auto-scaling group using the aws_autoscaling_group resource.
