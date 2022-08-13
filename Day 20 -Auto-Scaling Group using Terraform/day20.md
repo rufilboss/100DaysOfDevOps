@@ -98,3 +98,5 @@ output "target_group_arn" {
   value = "${aws_lb_target_group.my-alb-tg.arn}"
 }
 ```
+and then run terraform apply command, you will see something like this;
+
