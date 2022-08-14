@@ -82,5 +82,21 @@ resource "aws_db_instance" "my_test_mysql" {
 ```
 
 * One of the clear issues I see in the above code is that we are passing the password in the plain text inside the terraform code
-* Now to encrypt that password we can use KMS
 
+
+* Now to encrypt that password we can use KMS
+#### Step1: First Create KMS Keys
+
+```sh
+resource "aws_kms_key" "rds-key" {
+    description = "key to encrypt rds password"
+  tags {
+    Name = "my-rds-kms-key"
+  }
+}
+
+resource "aws_kms_alias" "rds-kms-alias" {
+  target_key_id = "${aws_kms_key.rds-key.id}"
+  name = "alias/rds-kms-key"
+}
+```
