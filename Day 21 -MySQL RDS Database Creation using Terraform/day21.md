@@ -143,3 +143,21 @@ resource "aws_db_instance" "my_test_mysql" {
 
 * Now why I didn’t put this solution in first place and the reason for that, because of the below-mentioned error and I want to present a working solution
 
+```sh
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+aws_kms_key.rds-key: Refreshing state... (ID: 9731dd04-5859-430b-aa92-c27c517ecb10)
+data.aws_kms_secret.rds: Refreshing state...
+data.aws_availability_zones.available: Refreshing state...
+aws_kms_alias.rds-kms-alias: Refreshing state... (ID: alias/rds-kms-key)
+
+Error: Error refreshing state: 1 error(s) occurred:
+
+* data.aws_kms_secret.rds: 1 error(s) occurred:
+
+* data.aws_kms_secret.rds: data.aws_kms_secret.rds: This data source has been replaced with the `aws_kms_secrets` data source. Upgrade information is available at: https://www.terraform.io/docs/providers/aws/guides/version-2-upgrade.html#data-source-aws_kms_secret
+```
+
