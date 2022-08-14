@@ -81,3 +81,6 @@ resource "aws_db_instance" "my_test_mysql" {
 * skip_final_snapshot: Determines whether a final DB snapshot is created before the DB instance is deleted. If true is specified, no DBSnapshot is created. If false is specified, a DB snapshot is created before the DB instance is deleted, using the value from final_snapshot_identifier. Default is false
 ```
 
+* One of the clear issues I see in the above code is that we are passing the password in the plain text inside the terraform code
+* Now to encrypt that password we can use KMS
+
