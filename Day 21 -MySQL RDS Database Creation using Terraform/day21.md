@@ -5,3 +5,10 @@ Amazon Relational Database Service (Amazon RDS) is a web service that makes it e
 ##### Step1: Create a DB subnet group
 
 * In order to create a new MySql database we first need to create a subnet group and assign at least two subnets to it.
+```sh
+
+resource "aws_db_subnet_group" "rds-private-subnet" {
+  name = "rds-private-subnet-group"
+  subnet_ids = ["${var.rds_subnet1}","${var.rds_subnet2}"]
+}
+```
