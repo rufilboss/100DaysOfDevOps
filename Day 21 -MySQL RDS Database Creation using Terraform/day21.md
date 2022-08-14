@@ -140,3 +140,6 @@ resource "aws_db_instance" "my_test_mysql" {
   skip_final_snapshot         = true
 }
 ```
+
+* Now why I didn’t put this solution in first place and the reason for that, because of the below-mentioned error and I want to present a working solution
+
