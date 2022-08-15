@@ -86,3 +86,39 @@ AWS Console --> IAM --> Encryption keys
 ###### NOTE: When a request is throttled, AWS KMS returns a ThrottlingExceptionerror
 
 ## Using Terraform
+
+Check [**kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2022%20-Introduction%20to%20Key%20Management%20System(KMS)/kms.tf) for full terraform code.
+
+
+* The new addition to this is Policy and let take a look
+
+    * As this is the resource-based policy, the only Principal/Account who has access to this key is the account with whom this key has been created and in this case root.
+
+```sh
+"Principal": {
+        "AWS": "arn:aws:iam::123456789:root"
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+```
+* The root user has full access right to perform any KMS operation(“kms:**”)
+* As you can see above these actions are quite wide open and we generally don’t provide these wide open permission open to our users rather then provide specific sets of actions(usage permission)
+
+```sh
+"Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+      ],
+```
+###### NOTE: Key usage permission and Key Admin permission are not the same.
+
+* Some other arguments you can use in your terraform code:
+
+```sh
+* deletion_window_in_days: Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 30 days.
+* enable_key_rotation: Specifies whether key_rotation is enabled. Defaults to false.
+```
