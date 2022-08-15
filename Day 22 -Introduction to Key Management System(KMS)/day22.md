@@ -81,3 +81,5 @@ AWS Console --> IAM --> Encryption keys
 
 * Reference: [**link**](https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second-table)
 
+###### NOTE: When a request is throttled, AWS KMS returns a ThrottlingExceptionerror
+
