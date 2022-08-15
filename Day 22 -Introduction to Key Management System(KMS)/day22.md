@@ -105,3 +105,12 @@ Check [**kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%202
 * The root user has full access right to perform any KMS operation(“kms:**”)
 * As you can see above these actions are quite wide open and we generally don’t provide these wide open permission open to our users rather then provide specific sets of actions(usage permission)
 
+```sh
+"Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+      ],
+```
