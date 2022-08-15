@@ -58,3 +58,7 @@ AWS Console --> IAM --> Encryption keys
 * Choose the users and roles who can administer this key.
 * This is critical as an administrator have right to delete these keys and after that, your data will become unusable
 
+#### Step4:
+
+* Define key usage permissions,select the IAM users and roles that can use the CMK to encrypt and decrypt data with the AWS KMS API
+
