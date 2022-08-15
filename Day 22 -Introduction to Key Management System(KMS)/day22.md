@@ -1,6 +1,6 @@
 * What is KMS?
 
-AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data.
+    AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data.
 
 * Advantage
 
@@ -27,6 +27,8 @@ AWS Key Management Service (AWS KMS) is a managed service that makes it easy for
 * Encrypted data is finally stored in a storage that can be anything(eg:EBS, EFS, S3…)
 * KMS then took data key, Encrypt it with a master key along with an encryption algorithm, resulted in it an encrypted data key, that stored alongside with data.
 
+## Using AWS Management Console
+
 * KMS in action
 
 ```sh
@@ -42,16 +44,14 @@ AWS Console --> IAM --> Encryption keys
 
 #### Step1:
 
-```sh
 * Alias: Enter an alias and descrption for the key(eg: Alias: mydemotestkey, similarly Descrption)
 * Key material origin: Choose KMS(External: You can bring your own Key(BUOY),CloudHSM(More about it later)
-```
+
 
 #### Step2:
 
-```sh
 * Adding Tag is Optional but its a good practice
-```
+
 
 #### Step3:
 
@@ -62,3 +62,27 @@ AWS Console --> IAM --> Encryption keys
 
 * Define key usage permissions,select the IAM users and roles that can use the CMK to encrypt and decrypt data with the AWS KMS API
 
+#### Step5:
+
+* Review and edit key policy.
+
+* Key Deletion
+
+    * You can’t delete key immediately, rather then you need to schedule it
+    * The waiting period is from 7–30 days, this is to make sure you understand that deleting a key makes all data encrypted under that key unrecoverable
+
+* Key Rotation
+
+    * AWS managed CMKs. You cannot manage key rotation for AWS managed CMKs. AWS KMS automatically rotates AWS managed keys every three years (1095 days).
+    * When you enable automatic key rotation, AWS KMS rotates the CMK 365 days after the enable date and every 365 days thereafter.
+
+* KMS Limits
+
+![image](https://miro.medium.com/max/700/1*_hAWJb6XPi5L5UHk6ZhDbQ.png)
+![image1](https://miro.medium.com/max/700/1*hD2F54tTNUjFZi7t3z5t0Q.png)
+
+* Reference: [**link**](https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second-table)
+
+###### NOTE: When a request is throttled, AWS KMS returns a ThrottlingExceptionerror
+
+## Using Terraform
