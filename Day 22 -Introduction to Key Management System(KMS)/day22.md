@@ -70,3 +70,8 @@ AWS Console --> IAM --> Encryption keys
 
     * You can’t delete key immediately, rather then you need to schedule it
     * The waiting period is from 7–30 days, this is to make sure you understand that deleting a key makes all data encrypted under that key unrecoverable
+
+* Key Rotation
+
+    * AWS managed CMKs. You cannot manage key rotation for AWS managed CMKs. AWS KMS automatically rotates AWS managed keys every three years (1095 days).
+    * When you enable automatic key rotation, AWS KMS rotates the CMK 365 days after the enable date and every 365 days thereafter.
