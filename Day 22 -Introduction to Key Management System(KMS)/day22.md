@@ -55,3 +55,6 @@ AWS Console --> IAM --> Encryption keys
 
 #### Step3:
 
+* Choose the users and roles who can administer this key.
+* This is critical as an administrator have right to delete these keys and after that, your data will become unusable
+
