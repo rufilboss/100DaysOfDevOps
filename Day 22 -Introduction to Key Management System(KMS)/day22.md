@@ -89,3 +89,16 @@ AWS Console --> IAM --> Encryption keys
 
 Check [**kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2022%20-Introduction%20to%20Key%20Management%20System(KMS)/kms.tf) for full terraform code.
 
+
+* The new addition to this is Policy and let take a look
+
+    * As this is the resource-based policy, the only Principal/Account who has access to this key is the account with whom this key has been created and in this case root.
+
+```sh
+"Principal": {
+        "AWS": "arn:aws:iam::123456789:root"
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+```
