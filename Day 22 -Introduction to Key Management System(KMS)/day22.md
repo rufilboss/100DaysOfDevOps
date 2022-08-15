@@ -75,3 +75,11 @@ AWS Console --> IAM --> Encryption keys
 
     * AWS managed CMKs. You cannot manage key rotation for AWS managed CMKs. AWS KMS automatically rotates AWS managed keys every three years (1095 days).
     * When you enable automatic key rotation, AWS KMS rotates the CMK 365 days after the enable date and every 365 days thereafter.
+
+* KMS Limits
+
+![image](https://miro.medium.com/max/700/1*_hAWJb6XPi5L5UHk6ZhDbQ.png)
+![image1](https://miro.medium.com/max/700/1*hD2F54tTNUjFZi7t3z5t0Q.png)
+
+* Reference: [**link**](https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second-table)
+
