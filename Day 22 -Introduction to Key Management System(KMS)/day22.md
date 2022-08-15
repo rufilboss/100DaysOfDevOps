@@ -27,3 +27,9 @@ AWS Key Management Service (AWS KMS) is a managed service that makes it easy for
 * Encrypted data is finally stored in a storage that can be anything(eg:EBS, EFS, S3…)
 * KMS then took data key, Encrypt it with a master key along with an encryption algorithm, resulted in it an encrypted data key, that stored alongside with data.
 
+* KMS in action
+
+```sh
+# To access KMS
+Go to AWS Console --> Security, Identity, & Compliance --> Key Management Service --> Create a key
+```
