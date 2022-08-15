@@ -2,10 +2,9 @@
 
 AWS Key Management Service (AWS KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data.
 
-###### Advantage
-
-* We can use IAM Policies for KMS access
-* AWS Services(RDS,S3,DynamoDB,EBS…) integrated directly with KMS [**here**](https://docs.aws.amazon.com/kms/latest/developerguide/service-integration.html)
-* It uses FIPS 140–2 compliant hardware module to manage access to key material.
-* Integrated fully with CloudTrail for auditing function
+* Advantage
+    * We can use IAM Policies for KMS access
+    * AWS Services(RDS,S3,DynamoDB,EBS…) integrated directly with KMS [**here**](https://docs.aws.amazon.com/kms/latest/developerguide/service-integration.html)
+    * It uses FIPS 140–2 compliant hardware module to manage access to key material.
+    * Integrated fully with CloudTrail for auditing function
 
