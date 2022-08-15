@@ -68,3 +68,5 @@ AWS Console --> IAM --> Encryption keys
 
 * Key Deletion
 
+    * You can’t delete key immediately, rather then you need to schedule it
+    * The waiting period is from 7–30 days, this is to make sure you understand that deleting a key makes all data encrypted under that key unrecoverable
