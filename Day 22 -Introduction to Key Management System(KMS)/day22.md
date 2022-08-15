@@ -86,3 +86,6 @@ AWS Console --> IAM --> Encryption keys
 ###### NOTE: When a request is throttled, AWS KMS returns a ThrottlingExceptionerror
 
 ## Using Terraform
+
+Check [**kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2022%20-Introduction%20to%20Key%20Management%20System(KMS)/kms.tf) for full terraform code.
+
