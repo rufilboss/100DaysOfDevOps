@@ -65,3 +65,6 @@ AWS Console --> IAM --> Encryption keys
 #### Step5:
 
 * Review and edit key policy.
+
+* Key Deletion
+
