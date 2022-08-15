@@ -27,6 +27,8 @@
 * Encrypted data is finally stored in a storage that can be anything(eg:EBS, EFS, S3…)
 * KMS then took data key, Encrypt it with a master key along with an encryption algorithm, resulted in it an encrypted data key, that stored alongside with data.
 
+## Using AWS Management Console
+
 * KMS in action
 
 ```sh
@@ -83,3 +85,4 @@ AWS Console --> IAM --> Encryption keys
 
 ###### NOTE: When a request is throttled, AWS KMS returns a ThrottlingExceptionerror
 
+## Using Terraform
