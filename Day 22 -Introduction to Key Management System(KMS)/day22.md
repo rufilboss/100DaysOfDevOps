@@ -40,3 +40,9 @@ Go to AWS Console --> Security, Identity, & Compliance --> Key Management Servic
 AWS Console --> IAM --> Encryption keys
 ```
 
+#### Step1:
+
+```sh
+* Alias: Enter an alias and descrption for the key(eg: Alias: mydemotestkey, similarly Descrption)
+* Key material origin: Choose KMS(External: You can bring your own Key(BUOY),CloudHSM(More about it later)
+```
