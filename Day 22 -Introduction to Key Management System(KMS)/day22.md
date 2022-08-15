@@ -33,3 +33,10 @@ AWS Key Management Service (AWS KMS) is a managed service that makes it easy for
 # To access KMS
 Go to AWS Console --> Security, Identity, & Compliance --> Key Management Service --> Create a key
 ```
+
+###### NOTE: YAY!!!, Now Key Management Service got its a new home but you can still access it via old way i.e
+
+```sh
+AWS Console --> IAM --> Encryption keys
+```
+
