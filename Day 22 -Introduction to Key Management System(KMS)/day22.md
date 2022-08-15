@@ -20,3 +20,6 @@ AWS Key Management Service (AWS KMS) is a managed service that makes it easy for
 * How KMS Encrypt Data
 
 ![here](https://miro.medium.com/max/700/1*a0bA32jO9PXvwgw76Xmu3w.png)
+
+* Reference: [**here**](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#enveloping)
+
