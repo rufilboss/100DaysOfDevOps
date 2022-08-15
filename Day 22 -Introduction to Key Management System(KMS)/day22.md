@@ -114,3 +114,11 @@ Check [**kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%202
         "kms:DescribeKey"
       ],
 ```
+###### NOTE: Key usage permission and Key Admin permission are not the same.
+
+* Some other arguments you can use in your terraform code:
+
+```sh
+* deletion_window_in_days: Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 30 days.
+* enable_key_rotation: Specifies whether key_rotation is enabled. Defaults to false.
+```
