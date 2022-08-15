@@ -16,3 +16,7 @@ AWS Key Management Service (AWS KMS) is a managed service that makes it easy for
     * The encrypted data keys are stored with the data
     * CMK never leaves KMS and never leaves a region
     * CMK can encrypt or decrypt data up to 4KB in size.
+
+* How KMS Encrypt Data
+
+![here](https://miro.medium.com/max/700/1*a0bA32jO9PXvwgw76Xmu3w.png)
