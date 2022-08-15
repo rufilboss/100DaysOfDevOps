@@ -62,3 +62,6 @@ AWS Console --> IAM --> Encryption keys
 
 * Define key usage permissions,select the IAM users and roles that can use the CMK to encrypt and decrypt data with the AWS KMS API
 
+#### Step5:
+
+* Review and edit key policy.
