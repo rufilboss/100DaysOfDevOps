@@ -35,3 +35,10 @@ Terraform Code [**here**]()
 * encrypted: This is required to encrypt the disk
 * kms_key_id: The ARN for the KMS encryption key
 ```
+
+#### NOTE: encrypted parameter is mandatory to set, else you will run into this error
+
+```sh
+* aws_ebs_volume.my-test-kms-ebs: Error creating EC2 volume: InvalidParameterDependency: The parameter [KmsKeyId] requires the parameter Encrypted to be set.
+status code: 400, request id: feeb7131-82ea-48d2-854e-84e4fbb7e5e1
+```
