@@ -21,3 +21,8 @@ AWS Console --> EC2 --> ELASTIC BLOCK STORE --> Volumes --> Create Volume
     * AWS KMS decrypts the encrypted data key and then sends the decrypted (plaintext) data key to Amazon EC2.
     * Amazon EC2 uses the plaintext data key in hypervisor memory to encrypt disk I/O to the EBS volume. The plaintext data key persists in memory as long as the EBS volume is attached to the EC2 instance.
 
+#### NOTE:
+
+* All the snapshots created from this volume are all encrypted.
+* The plaintext data key persists in Hypervisor memory.
+
