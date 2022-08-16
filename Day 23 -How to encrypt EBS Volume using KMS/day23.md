@@ -29,3 +29,9 @@ AWS Console --> EC2 --> ELASTIC BLOCK STORE --> Volumes --> Create Volume
 ## Using Terrform
 
 Terraform Code [**here**]()
+
+```sh
+# Some changes
+* encrypted: This is required to encrypt the disk
+* kms_key_id: The ARN for the KMS encryption key
+```
