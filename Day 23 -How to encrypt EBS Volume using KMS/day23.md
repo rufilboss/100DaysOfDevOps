@@ -26,3 +26,6 @@ AWS Console --> EC2 --> ELASTIC BLOCK STORE --> Volumes --> Create Volume
 * All the snapshots created from this volume are all encrypted.
 * The plaintext data key persists in Hypervisor memory.
 
+## Using Terrform
+
+Terraform Code [**here**]()
