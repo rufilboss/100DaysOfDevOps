@@ -13,9 +13,9 @@ AWS Console --> EC2 --> ELASTIC BLOCK STORE --> Volumes --> Create Volume
 * Under Master Key(Select the KMS we just created from the drop down)
 ```
 
-* To summarize this how it works
+* To summarize how it works
 
-    * When you create an encrypted EBS volume, Amazon EBS sends a GenerateDataKeyWithoutPlaintext request to AWS KMS, specifying the CMK that you chose for EBS volume encryption.
+    * When you create an encrypted EBS volume, Amazon EBS sends a GenerateDataKeyWithoutPlaintext request to AWS KMS, specifying the CMK that you choose for EBS volume encryption.
     * AWS KMS generates a new data key, encrypts it under the specified CMK, and then sends the encrypted data key to Amazon EBS to store with the volume metadata.
     * When you attach the encrypted volume to an EC2 instance, Amazon EC2 sends the encrypted data key to AWS KMS with a Decrypt request.
     * AWS KMS decrypts the encrypted data key and then sends the decrypted (plaintext) data key to Amazon EC2.
