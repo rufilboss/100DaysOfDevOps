@@ -20,3 +20,21 @@
     * Power user access: Admin access except it doesn’t allow user/group management
     * Read only access: As name suggest user can only view AWS resources
 
+* Default policy is explicitly deny which will override any explicitly allow policy
+
+* Let take a look at these policies
+
+AdministratorAccess
+
+```sh
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}
+```
