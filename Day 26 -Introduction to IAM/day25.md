@@ -90,3 +90,7 @@ resource "aws_iam_user" "example" {
 }
 ```
 
+* One problem with this code is that all three IAM users would have the same name, which would cause an error since usernames must be unique
+
+* To accomplish the same thing in Terraform, you can use count.index to get the index of each “iteration” in the “loop”:
+
