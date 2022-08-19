@@ -139,3 +139,18 @@ OR
 
 * For example, if you wanted to provide the Amazon Resource Name (ARN) of one of the IAM users as an output variable, you would need to do the following:
 
+```sh
+# outputs.tf
+output “user_arn” {
+ value = “${aws_iam_user.example.0.arn}”
+}
+```
+
+* If you want the ARNs of all the IAM users, you need to use the splat character, “*”, instead of the index:
+
+```sh
+# outputs.tf
+output “user_arn” {
+ value = “${aws_iam_user.example.*.arn}”
+}
+```
