@@ -81,3 +81,26 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 
 * [**How To Prevent Uploads Of Unencrypted Objects To S3 On AWS**](https://aws.amazon.com/blogs/security/how-to-prevent-uploads-of-unencrypted-objects-to-amazon-s3/)
 
+* If you want to deny via UI i.e if you want everyone to access your bucket via https
+
+```sh
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1504640911349",
+    "Statement": [
+        {
+            "Sid": "Stmt1504640908907",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::/*",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "false"
+                }
+            }
+        }
+    ]
+}
+```
+
