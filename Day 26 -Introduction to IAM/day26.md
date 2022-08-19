@@ -182,3 +182,12 @@ resource “aws_iam_policy” “example” {
 }
 ```
 
+* This code uses the count parameter to “loop” over each of your IAM users and the element interpolation function to select each user’s ARN from the list returned by aws_iam_user.example.*.arn.
+
+```sh
+resource “aws_iam_user_policy_attachment” “test-attach” {
+ count = “${length(var.username)}”
+ user = “${element(aws_iam_user.example.*.name,count.index )}”
+ policy_arn = “${aws_iam_policy.example.arn}”
+}
+```
