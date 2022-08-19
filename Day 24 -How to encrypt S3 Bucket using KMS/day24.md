@@ -135,3 +135,5 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
     * AWS KMS decrypts the key by using the appropriate master key and sends the plaintext key back to Amazon S3.
     * Amazon S3 decrypts the ciphertext and removes the plaintext data key from memory as soon as possible.
 
+###### Terraform Code
+
