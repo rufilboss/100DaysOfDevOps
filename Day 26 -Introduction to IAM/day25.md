@@ -24,17 +24,17 @@
 
 * Let take a look at these policies
 
-AdministratorAccess
+    AdministratorAccess
 
-```sh
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```sh
     {
-      "Effect": "Allow",
-      "Action": "*",
-      "Resource": "*"
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+        "Effect": "Allow",
+        "Action": "*",
+        "Resource": "*"
+        }
+    ]
     }
-  ]
-}
-```
+    ```
