@@ -133,3 +133,9 @@ OR
     }
     ```
 
+* Now when you run the plan command, you’ll see that Terraform wants to create three IAM users, each with a unique name
+
+* You'll notice that once we use count on a resource, it becomes the list of resources rather than just a single resource.
+
+* For example, if you wanted to provide the Amazon Resource Name (ARN) of one of the IAM users as an output variable, you would need to do the following:
+
