@@ -104,3 +104,8 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 }
 ```
 
+* There are two ways to use AWS KMS with AWS S3
+
+    * Server Side Encryption(I am only going to discuss this)
+    * Client Side Encryption
+    
