@@ -60,3 +60,8 @@
     ]
     }
     ```
+
+* More than one policy can be attached to a user or group at the same time
+* Policy cannot be directly attached to AWS resources(eg: EC2 instance)
+* There is a really nice tool [**link**](https://policysim.aws.amazon.com) which we can use to test and troubleshoot IAM and resource based policies
+
