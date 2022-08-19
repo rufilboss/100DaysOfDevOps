@@ -100,3 +100,12 @@ resource “aws_iam_user” “example” {
  name = “rufilboy.${count.index}”
 }
 ```
+
+* If we run the plan again we will see terraform want to create three IAM user, each with a different name(rufilboy.0, rufilboy.1, rufilboy.2)
+
+Think of a real-world scenario, we are hardly going to see names like rufilboy.0–2
+
+The solution for this issue, If we combine count.index with interpolation functions built into Terraform, you can customize each “iteration” of the “loop” even more. To achieve this we need two interpolation functions length and element. [**Link**](https://www.terraform.io/docs/configuration/interpolation.html)
+
+
+
