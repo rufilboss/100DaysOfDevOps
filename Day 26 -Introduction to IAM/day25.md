@@ -8,3 +8,8 @@
     * Api Keys
     * IAM Access Policies
 
+* At the right hand side at the top of console you'll see Global i.e creating a user/groups/roles will apply to all regions
+
+    * To create a new user,Just click on Users on the left navbar
+
+
