@@ -79,3 +79,5 @@ $ aws s3 cp testingbucketencryption s3://mytestbuclet-198232055 --sse AES256
 upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketencryption
 ```
 
+* [**How To Prevent Uploads Of Unencrypted Objects To S3 On AWS**](https://aws.amazon.com/blogs/security/how-to-prevent-uploads-of-unencrypted-objects-to-amazon-s3/)
+
