@@ -16,3 +16,5 @@ Expect: 100-continue
 [11434 bytes of object data]
 ```
 
+* To encrypt an object at the time of upload, you need to add a header called x-amz-server-side-encryption to the request to tell S3 to encrypt the object using SSE-C, SSE-S3, or SSE-KMS. The following code example shows a Putrequest using SSE-S3.
+
