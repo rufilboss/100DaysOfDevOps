@@ -94,3 +94,9 @@ resource "aws_iam_user" "example" {
 
 * To accomplish the same thing in Terraform, you can use count.index to get the index of each “iteration” in the “loop”:
 
+```sh
+resource “aws_iam_user” “example” {
+ count = 3
+ name = “prashant.${count.index}”
+}
+```
