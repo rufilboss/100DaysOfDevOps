@@ -116,3 +116,7 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
     * SSE-S3 requires that Amazon S3 manage the data and master encryption keys.
     * SSE-C requires that you manage the encryption key.
     * SSE-KMS requires that AWS manage the data key but you manage the master key in AWS KMS.
+
+
+* Go to S3 console --> [**here**](https://s3.console.aws.amazon.com/s3) --> Particular bucket
+
