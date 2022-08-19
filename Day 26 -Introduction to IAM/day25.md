@@ -22,6 +22,8 @@
 
 * Default policy is explicitly deny which will override any explicitly allow policy
 
+## Using AWS Management Console 
+
 * Let take a look at these policies
 
     AdministratorAccess
@@ -74,3 +76,4 @@ resource "aws_iam_user" "example" {
   name = "prashant"
 }
 ```
+
