@@ -133,3 +133,68 @@ OR
     }
     ```
 
+* Now when you run the plan command, you’ll see that Terraform wants to create three IAM users, each with a unique name
+
+* You'll notice that once we use count on a resource, it becomes the list of resources rather than just a single resource.
+
+* For example, if you wanted to provide the Amazon Resource Name (ARN) of one of the IAM users as an output variable, you would need to do the following:
+
+```sh
+# outputs.tf
+output “user_arn” {
+ value = “${aws_iam_user.example.0.arn}”
+}
+```
+
+* If you want the ARNs of all the IAM users, you need to use the splat character, “*”, instead of the index:
+
+```sh
+# outputs.tf
+output “user_arn” {
+ value = “${aws_iam_user.example.*.arn}”
+}
+```
+
+* Terraform provides a handy data source called the aws_iam_policy_document that gives you a more concise way to define the IAM policy
+
+```sh
+data "aws_iam_policy_document" "example" {
+  statement {
+    actions = [
+      "ec2:Describe*"]
+    resources = [
+      "*"]
+  }
+}
+```
+
+    * IAM Policy consists of one or more statements
+    * Each of which specifies an effect (either “Allow” or “Deny”). Default policy is deny.
+    * One or more actions (e.g., “ec2:Describe*” allows all API calls to EC2 that start with the name “Describe”). Here ec2 is the service and Describe is the Action which is specific to that service.
+    * One or more resources (e.g., “*” means “all resources”)
+
+* To create a new IAM managed policy from this document, we need to use aws_iam_policy resource
+
+```sh
+resource “aws_iam_policy” “example” {
+ name = “ec2-read-only”
+ policy = “${data.aws_iam_policy_document.example.json}”
+}
+```
+
+* This code uses the count parameter to “loop” over each of your IAM users and the element interpolation function to select each user’s ARN from the list returned by aws_iam_user.example.*.arn.
+
+```sh
+resource “aws_iam_user_policy_attachment” “test-attach” {
+ count = “${length(var.username)}”
+ user = “${element(aws_iam_user.example.*.name,count.index )}”
+ policy_arn = “${aws_iam_policy.example.arn}”
+}
+```
+
+* IAM Roles are used to granting the application access to AWS Services without using permanent credentials.
+
+* IAM Role is one of the safer ways to give permission to your EC2 instances.
+
+* We can attach roles to an EC2 instance, and that allows us to give permission to EC2 instance to use other AWS Services eg: S3 buckets
+
