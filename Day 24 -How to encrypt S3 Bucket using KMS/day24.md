@@ -108,4 +108,11 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 
     * Server Side Encryption(I am only going to discuss this)
     * Client Side Encryption
-    
+
+###### Server Side Encryption
+
+* We can protect data at rest in Amazon S3 using three different modes of server-side encryption: SSE-S3, SSE-C, or SSE-KMS
+
+    * SSE-S3 requires that Amazon S3 manage the data and master encryption keys.
+    * SSE-C requires that you manage the encryption key.
+    * SSE-KMS requires that AWS manage the data key but you manage the master key in AWS KMS.
