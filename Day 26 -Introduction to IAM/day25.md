@@ -103,32 +103,33 @@ resource “aws_iam_user” “example” {
 
 * If we run the plan again we will see terraform want to create three IAM user, each with a different name(rufilboy.0, rufilboy.1, rufilboy.2)
 
-Think of a real-world scenario, we are hardly going to see names like rufilboy.0–2
+    Think of a real-world scenario, we are hardly going to see names like rufilboy.0–2
 
-The solution for this issue, If we combine count.index with interpolation functions built into Terraform, you can customize each “iteration” of the “loop” even more. To achieve this we need two interpolation functions length and element. [**Link**](https://www.terraform.io/docs/configuration/interpolation.html)
+* The solution for this issue, If we combine count.index with interpolation functions built into Terraform, you can customize each “iteration” of the “loop” even more. To achieve this we need two interpolation functions length and element. [**Link**](https://www.terraform.io/docs/configuration/interpolation.html)
 
 
-element(list, index) — Returns a single element from a list at the given index. If the index is greater than the number of elements, this function will wrap using a standard mod algorithm. This function only works on flat lists.
-
-OR
-
-The element function returns the item located at INDEX in the given LIST
-
-length(list) — Returns the number of members in a given list or map, or the number of characters in a given string.
+    element(list, index) — Returns a single element from a list at the given index. If the index is greater than the number of elements, this function will wrap using a standard mod algorithm. This function only works on flat lists.
 
 OR
 
-The length function returns the number of items in LIST (it also works with strings and maps)
+* The element function returns the item located at INDEX in the given LIST
 
-```sh
-#variables.tf
-variable "username" {
-  type = "list"
-  default = ["rufilboy","aishruffy","ajhisope"]
-}
-#main.tf
-resource "aws_iam_user" "example" {
-  count = "${length(var.username)}"
-  name = "${element(var.username,count.index )}"
-}
-```
+    length(list) — Returns the number of members in a given list or map, or the number of characters in a given string.
+
+OR
+
+* The length function returns the number of items in LIST (it also works with strings and maps)
+
+    ```sh
+    #variables.tf
+    variable "username" {
+    type = "list"
+    default = ["rufilboy","aishruffy","ajhisope"]
+    }
+    #main.tf
+    resource "aws_iam_user" "example" {
+    count = "${length(var.username)}"
+    name = "${element(var.username,count.index )}"
+    }
+    ```
+
