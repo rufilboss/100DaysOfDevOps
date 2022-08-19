@@ -73,7 +73,7 @@
 
 ```sh
 resource "aws_iam_user" "example" {
-  name = "prashant"
+  name = "rufilboy"
 }
 ```
 
@@ -86,7 +86,7 @@ resource "aws_iam_user" "example" {
 ```sh
 resource "aws_iam_user" "example" {
   count = 3
-  name = "prashant"
+  name = "rufilboy"
 }
 ```
 
