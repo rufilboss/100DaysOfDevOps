@@ -154,3 +154,16 @@ output “user_arn” {
  value = “${aws_iam_user.example.*.arn}”
 }
 ```
+
+* Terraform provides a handy data source called the aws_iam_policy_document that gives you a more concise way to define the IAM policy
+
+```sh
+data "aws_iam_policy_document" "example" {
+  statement {
+    actions = [
+      "ec2:Describe*"]
+    resources = [
+      "*"]
+  }
+}
+```
