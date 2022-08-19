@@ -167,3 +167,9 @@ data "aws_iam_policy_document" "example" {
   }
 }
 ```
+
+    * IAM Policy consists of one or more statements
+    * Each of which specifies an effect (either “Allow” or “Deny”). Default policy is deny.
+    * One or more actions (e.g., “ec2:Describe*” allows all API calls to EC2 that start with the name “Describe”). Here ec2 is the service and Describe is the Action which is specific to that service.
+    * One or more resources (e.g., “*” means “all resources”)
+
