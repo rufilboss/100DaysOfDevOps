@@ -77,3 +77,16 @@ resource "aws_iam_user" "example" {
 }
 ```
 
+* Now if I want to create more than one IAM user
+
+* One way to achieve the same is copy paste the same piece of code but that defeats the whole purpose of DRY.
+
+* Terraform provides meta parameters called count to achieve the same i.e to do certain types of loops.The count is a meta parameter which defines how many copies of the resource to create.
+
+```sh
+resource "aws_iam_user" "example" {
+  count = 3
+  name = "prashant"
+}
+```
+
