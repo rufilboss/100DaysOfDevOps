@@ -24,3 +24,5 @@ resource "aws_s3_bucket" "example" {
     acl: Default to Private(other options public-read and public-read-write)
     versioning: Versioning automatically keeps up with different versions of the same object.
 
+###### NOTE: Every S3 bucket must be unique and that why random id is useful to prevent our bucket to collide with others.
+
