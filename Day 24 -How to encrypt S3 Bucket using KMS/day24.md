@@ -26,3 +26,10 @@ Expect: 100-continue
 x-amz-server-side-encryption: AES256
 [11434 bytes of object data]
 ```
+
+* In order to enforce object encryption, create an S3 bucket policy that denies any S3 Put request that does not include the x-amz-server-side-encryption header. There are two possible values for the x-amz-server-side-encryption header: AES256, which tells S3 to use S3-managed keys, and aws:kms, which tells S3 to use AWS KMS–managed keys.
+
+Bucket Policy will look like this;
+
+
+
