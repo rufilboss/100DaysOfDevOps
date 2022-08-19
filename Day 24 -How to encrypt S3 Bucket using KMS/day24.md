@@ -72,3 +72,10 @@ $ aws s3 cp testingbucketencryption s3://mytestbuclet-198232055
 upload failed: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketencryption An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
 ```
 
+* Let try it with encryption enabled
+
+```sh
+$ aws s3 cp testingbucketencryption s3://mytestbuclet-198232055 --sse AES256
+upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketencryption
+```
+
