@@ -97,6 +97,6 @@ resource "aws_iam_user" "example" {
 ```sh
 resource “aws_iam_user” “example” {
  count = 3
- name = “prashant.${count.index}”
+ name = “rufilboy.${count.index}”
 }
 ```
