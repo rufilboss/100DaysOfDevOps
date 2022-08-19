@@ -38,3 +38,25 @@
     ]
     }
     ```
+
+* We can create our own custom policy using policy generator or written from scratch
+
+    So Custom Policy where everything denies for EC2 resources
+
+    ```sh
+    {
+    “Version”: “2012–10–17”,
+    “Statement”: [
+    {
+    “Sid”: “Stmt1491718191000”,
+    “Effect”: “Deny”,
+    “Action”: [
+    “ec2:*”
+    ],
+    “Resource”: [
+    “*”
+    ]
+    }
+    ]
+    }
+    ```
