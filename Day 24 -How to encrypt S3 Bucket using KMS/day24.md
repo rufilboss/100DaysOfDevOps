@@ -137,3 +137,4 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 
 ###### Terraform Code
 
+[**s3_kms.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2024%20-How%20to%20encrypt%20S3%20Bucket%20using%20KMS/day24.tf)
