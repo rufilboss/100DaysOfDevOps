@@ -128,3 +128,10 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
     * AWS KMS creates a data key, encrypts it by using the master key, and sends both the plaintext data key and the encrypted data key to Amazon S3.
     * Amazon S3 encrypts the data using the data key and removes the plaintext key from memory as soon as possible after use.
     * Amazon S3 stores the encrypted data key as metadata with the encrypted data.
+
+* Now during decrypt operation
+
+    * Amazon S3 sends the encrypted data key to AWS KMS.
+    * AWS KMS decrypts the key by using the appropriate master key and sends the plaintext key back to Amazon S3.
+    * Amazon S3 decrypts the ciphertext and removes the plaintext data key from memory as soon as possible.
+
