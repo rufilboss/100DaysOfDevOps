@@ -1,4 +1,4 @@
-To upload an object to S3, you use a Put request, regardless if called via the console, CLI, or SDK. The Put request looks similar to the following.
+* To upload an object to S3, you use a Put request, regardless if called via the console, CLI, or SDK. The Put request looks similar to the following.
 
 ```sh
 PUT /example-object HTTP/1.1
