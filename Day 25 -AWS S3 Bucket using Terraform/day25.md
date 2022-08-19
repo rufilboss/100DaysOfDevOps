@@ -19,3 +19,8 @@ resource "aws_s3_bucket" "example" {
   }
 }
 ```
+
+    bucket: name of the bucket, if we ommit that terraform will assign random bucket name
+    acl: Default to Private(other options public-read and public-read-write)
+    versioning: Versioning automatically keeps up with different versions of the same object.
+
