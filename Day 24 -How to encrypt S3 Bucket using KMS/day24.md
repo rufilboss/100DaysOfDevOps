@@ -120,3 +120,5 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 
 * Go to S3 console --> [**here**](https://s3.console.aws.amazon.com/s3) --> Particular bucket
 
+* Now when uploading any file to your bucket choose the KMS key
+
