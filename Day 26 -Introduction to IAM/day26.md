@@ -191,3 +191,10 @@ resource “aws_iam_user_policy_attachment” “test-attach” {
  policy_arn = “${aws_iam_policy.example.arn}”
 }
 ```
+
+* IAM Roles are used to granting the application access to AWS Services without using permanent credentials.
+
+* IAM Role is one of the safer ways to give permission to your EC2 instances.
+
+* We can attach roles to an EC2 instance, and that allows us to give permission to EC2 instance to use other AWS Services eg: S3 buckets
+
