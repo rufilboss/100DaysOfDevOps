@@ -65,4 +65,10 @@ Bucket Policy will look like this;
  }
  ```
 
- 
+ * Now if we try to upload the object to S3 bucket without encryption it should fail
+
+```sh
+$ aws s3 cp testingbucketencryption s3://mytestbuclet-198232055
+upload failed: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketencryption An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+```
+
