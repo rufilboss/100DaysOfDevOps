@@ -122,3 +122,9 @@ upload: ./testingbucketencryption to s3://mytestbuclet-198232055/testingbucketen
 
 * Now when uploading any file to your bucket choose the KMS key
 
+* This is what happens behind the scene
+
+    * Amazon S3 requests a plaintext data key and a copy of the key encrypted under the specified CMK.
+    * AWS KMS creates a data key, encrypts it by using the master key, and sends both the plaintext data key and the encrypted data key to Amazon S3.
+    * Amazon S3 encrypts the data using the data key and removes the plaintext key from memory as soon as possible after use.
+    * Amazon S3 stores the encrypted data key as metadata with the encrypted data.
