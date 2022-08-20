@@ -50,3 +50,16 @@
 
     * Let’s integrate with other services like Docker. For e.g. it will let you upload an image to dockerhub.
 
+```sh
+#post-procesor.json
+
+{
+  "post-processors": [
+    [
+      "compress",
+      { "type": "upload", "endpoint": "http://example.com" }
+    ]
+  ]
+}
+
+```
