@@ -30,3 +30,7 @@
 
 ```
 
+* Provisioners
+
+    * It let you customize your images
+    * These can be scripts(bash or PowerShell)or your existing configuration management system(eg: chef, puppet, salt stack, and Ansible) or files where can upload a file to the running instance for capturing things eg: config files, binaries, etc.
