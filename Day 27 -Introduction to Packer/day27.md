@@ -15,3 +15,18 @@
 
     * Use to generate an image and it’s provider-specific. For e.g. if you are creating an image for AWS your builder will tell the packer which AMI to start with and what region to create that AMI.
 
+```sh
+#packer_builder.json
+
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "us-east-1",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "packer-example {{timestamp}}"
+  }]
+
+```
+
