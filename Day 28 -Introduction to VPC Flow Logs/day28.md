@@ -22,3 +22,6 @@
 * Destination: Send to CloudWatch Logs
 * Destination log group: Go to AWS Console --> CloudWatch --> Logs --> Create log group
 ```
+
+* After creating flow logs, if you look for the subnet of the VPC, you will see subnet have flow logs associated with it and this is because it inherited flowlogs from VPC.
+
