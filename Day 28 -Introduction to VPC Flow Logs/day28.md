@@ -16,3 +16,9 @@
     ```sh
     Go To AWS Console --> VPC --> Select your VPC --> Flow logs --> Create flow log
     ```
+
+```sh
+* Filter: Select All(Other options Accept/Reject)
+* Destination: Send to CloudWatch Logs
+* Destination log group: Go to AWS Console --> CloudWatch --> Logs --> Create log group
+```
