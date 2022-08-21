@@ -38,3 +38,5 @@
 
 Reference: [**here**](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
 
+* As I applied flow logs at the VPC level and as we see that subnet automatically inherited it, if we go at the instance create under this VPC and check the Network Interface, you will see that even your Elastic Network Interface(ENI) inherited these logs
+
