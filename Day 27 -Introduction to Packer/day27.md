@@ -64,3 +64,28 @@
 
 ```
 
+* Learnt how to install packer
+
+* Let's create a Basic Packer Template
+
+```sh
+{
+"builders": [
+{
+    "type": "amazon-ebs",
+    "region": "us-west-2",
+    "source_ami": "ami-0721c9af7b9b75114",
+    "instance_type": "t2.micro",
+    "ssh_username": "ec2-user",
+    "ami_name": "amazon-linux-packer-ami-1.0"
+}
+]
+}
+* type: Each Builder has a mandatory type field, as we are building this image on AWS we are going to use amazon-ebs type filed
+* region: Where we want to build this image, as AMI ID differ based on region
+* source_ami: This is image going to be launched on AWS and our image is based on this(In this example I am using AWS AMI)
+* instance_type: I am using t2.micro as it comes under AWS free tier
+* ssh_username: We need to tell packer which ssh username to utilize, as we are using AWS AMI, username is ec2-user
+* ami_name: Now we need to tell packer AMI it need to create
+```
+
