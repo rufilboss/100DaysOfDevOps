@@ -33,3 +33,5 @@
 <version> <account-id> <interface-id> <srcaddr> <dstaddr> <srcport> <dstport> <protocol> <packets> <bytes> <start> <end> <action> <log-status>
 2 123456789010 eni-abc123de 172.31.16.139 172.31.16.21 20641 22 6 20 4249 1418530010 1418530070 ACCEPT OK
 ```
+
+![**SampleImage**](https://miro.medium.com/max/1400/1*dg55BLfizLIgkMbEcO8qLw.png)
