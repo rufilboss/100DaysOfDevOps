@@ -52,3 +52,5 @@ Reference: [**here**](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs
 
 
 ### Using Terraform
+
+Check [**flowlogs.tf](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2028%20-Introduction%20to%20VPC%20Flow%20Logs/flowlogs.tf)
