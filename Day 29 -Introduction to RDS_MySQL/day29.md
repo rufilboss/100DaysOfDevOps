@@ -51,3 +51,8 @@
 
 * Now let’s try to create read-replica again, as you can see Create read replica tab is now enabled
 
+* The Important thing to remember we can create read replica in any other region
+
+* Under the Settings tab, give it a unique name
+
+### Using Terraform
