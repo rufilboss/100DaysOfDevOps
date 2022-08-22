@@ -34,3 +34,10 @@
 
 * Once the snapshot creation is done, let’s try to convert this into multi-AZ. Go to Instance actions and click on Modify
 
+* These are the things I modified
+
+    * Multi-AZ set to Yes
+    * Under settings you need to enter the password again
+    * I am enabling backup and set it to 1 day
+    
+* On the final screen, you have the option
