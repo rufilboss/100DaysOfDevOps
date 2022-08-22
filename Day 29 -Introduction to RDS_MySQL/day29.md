@@ -8,3 +8,12 @@
     Skip MultiAZ deployment for the time being
     Gave all the info like(DB instance identifier, Master username, Master password)
 
+* Mainly you need to fill
+
+    Database name(Don’t confuse it DB instance identifier)
+    Backup retention period(0 days, for the time being)
+
+* Then click on Launch DB instance
+
+* Wait for few mins 5–10min(or depend upon your instance type and size) and check Instance Status(It should be available)
+
