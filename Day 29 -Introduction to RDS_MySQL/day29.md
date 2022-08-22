@@ -46,3 +46,8 @@
     * Apply immediately(This will cause a downtime)
 
 * Now, we can restore a database from the snapshot, just give DB Instance Identifier or any other setting you want to modify while restoring
+
+* To Verify if Multi-AZ is enabled, Click on the particular DB
+
+* Now let’s try to create read-replica again, as you can see Create read replica tab is now enabled
+
