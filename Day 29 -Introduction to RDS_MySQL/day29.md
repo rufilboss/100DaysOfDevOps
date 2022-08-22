@@ -45,3 +45,4 @@
     * Apply during the next scheduled maintenance window
     * Apply immediately(This will cause a downtime)
 
+* Now, we can restore a database from the snapshot, just give DB Instance Identifier or any other setting you want to modify while restoring
