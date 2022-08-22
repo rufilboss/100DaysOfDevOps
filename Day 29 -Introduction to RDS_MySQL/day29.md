@@ -32,3 +32,5 @@
 
 * Take the snapshot of the running database
 
+* Once the snapshot creation is done, let’s try to convert this into multi-AZ. Go to Instance actions and click on Modify
+
