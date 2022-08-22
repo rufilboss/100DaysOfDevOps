@@ -39,5 +39,9 @@
     * Multi-AZ set to Yes
     * Under settings you need to enter the password again
     * I am enabling backup and set it to 1 day
-    
+
 * On the final screen, you have the option
+
+    * Apply during the next scheduled maintenance window
+    * Apply immediately(This will cause a downtime)
+
