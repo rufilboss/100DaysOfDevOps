@@ -56,3 +56,5 @@
 * Under the Settings tab, give it a unique name
 
 ### Using Terraform
+
+Check: [**RDS.tf**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2029%20-Introduction%20to%20RDS_MySQL/RDS.tf)
