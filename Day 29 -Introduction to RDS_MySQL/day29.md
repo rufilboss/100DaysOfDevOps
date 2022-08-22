@@ -4,6 +4,8 @@
 
 ## Using AWS Management Console
 
+* Go To AWS Console --> RDS --> Click on Get Started Now --> Select MySQL --> Choose Use Case -->  Fill in the neccesary info --> Launch DB instance
+
 * As this is for learning Purpose
 
     DB instance class(db.t2.micro)
@@ -18,4 +20,15 @@
 * Then click on Launch DB instance
 
 * Wait for few mins 5–10min(or depend upon your instance type and size) and check Instance Status(It should be available)
+
+* We need to create a replica
+
+* Create read replica option will not be highlighted yet because;
+
+    * We don’t have a snapshot
+    * We don’t have an automated backups
+
+* Read replica is always created from a snapshot or the latest backup
+
+* Take the snapshot of the running database
 
