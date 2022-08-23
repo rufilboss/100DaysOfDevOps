@@ -12,3 +12,13 @@
     * Windows, Linux, macOS, or Unix
     * We can install aws command line interface and its dependencies with the help of pip(package manager for python)
     * To install pip, we first need to install EPEL(Extra Package for Enterprise Linux) [**here**](https://fedoraproject.org/wiki/EPEL)
+
+```sh
+# yum -y install epel-release
+```
+
+* Followed by python-pip installation
+```sh
+# yum -y install python2-pip
+```
+
