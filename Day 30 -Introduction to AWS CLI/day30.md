@@ -60,3 +60,8 @@ $ pip install awscli --upgrade
 $ aws --version
 aws-cli/1.15.24 Python/2.7.5 Linux/3.10.0-693.el7.x86_64 botocore/1.10.24
 ```
+
+* Diving into AWS world using command line tool and the first command we are going to use is aws configure which is going to configure settings that aws command line interface uses when interacting with aws(this include security credentials and default region)
+
+* Before using aws configure we must need to sign up for aws account and download security credentials. If we don’t have access keys we can generate it from aws management console, go to IAM(under Security, Identity & Compliance)
+
