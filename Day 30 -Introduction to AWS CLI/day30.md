@@ -50,3 +50,13 @@ Uninstalling botocore-1.10.11:
 Successfully uninstalled botocore-1.10.11
 Successfully installed awscli-1.15.24 botocore-1.10.24
 ```
+* To upgrade cli
+
+```sh
+$ pip install awscli --upgrade
+```
+* To verify aws cli installed sucessfully
+```sh
+$ aws --version
+aws-cli/1.15.24 Python/2.7.5 Linux/3.10.0-693.el7.x86_64 botocore/1.10.24
+```
