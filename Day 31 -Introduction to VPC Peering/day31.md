@@ -15,3 +15,8 @@
     * Make sure there is no over-lapping IP between two VPC’s
 
 * Go to your VPC Dashboard and look for Peering Connections → Create Peering Connection
+
+    * Give some meaningful name to Peering connection name tag(eg: vpc-peering-test)
+    * Select Requester VPC
+    * As mentioned in the first part of the series, we can create VPC Peering between different account as well as between different region
+    * Select Acceptor VPC(As you can see Acceptor VPC has complete different CIDR region, as overlapping CIDR is not supported)
