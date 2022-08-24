@@ -6,4 +6,9 @@
 * AWS uses the existing infrastructure of a VPC to create a VPC peering connection
 * It’s neither a gateway nor a VPN connection and doesn’t rely on a separate piece of physical hardware
 * There is no single point of failure or a bandwidth bottleneck i.e bandwidth between instances in peered VPC is no different than bandwidth between instances in the same VPC.
+* VPC Peering doesn’t support transitive peering i.e VPC1 can talk to VPC 2, VPC 2 can talk to VPC3 but VPC1 can’t talk to VPC3. This is because of the security reason so if VPC1 want to communicate with VPC3 we need to establish one more peering connection between VPC1 and VPC3.
+* Once VPC Peering is established instance in two VPC can communicate with each other using Private IP(no need to communicate via Internet Gateway)
+* Inter-region VPC is supported
+* VPC Peering is even supported between two different accounts
+* Make sure there is no over-lapping IP between two VPC’s
 
