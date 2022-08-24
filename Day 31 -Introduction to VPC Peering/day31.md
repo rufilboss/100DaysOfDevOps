@@ -20,3 +20,8 @@
     * Select Requester VPC
     * As mentioned in the first part of the series, we can create VPC Peering between different account as well as between different region
     * Select Acceptor VPC(As you can see Acceptor VPC has complete different CIDR region, as overlapping CIDR is not supported)
+
+* Even when creating VPC Peering between the same account, you still need to accept peering connection
+
+* The final step is to update the individual VPC route table with the peering connection
+
