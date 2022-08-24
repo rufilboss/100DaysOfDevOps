@@ -12,3 +12,4 @@
 * VPC Peering is even supported between two different accounts
 * Make sure there is no over-lapping IP between two VPC’s
 
+* Go to your VPC Dashboard and look for Peering Connections → Create Peering Connection
