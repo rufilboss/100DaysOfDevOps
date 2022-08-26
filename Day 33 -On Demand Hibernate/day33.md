@@ -15,3 +15,10 @@
     * AMI as well as both EBS Volume need to be encrypted
     * Encryption ensures proper protection for sensitive data when it is copied from memory to the EBS volume
     * To test this feature, I need to do some reverse engineering
+
+#### Step1: Create the snapshot of root volume and then use copy option, which enables encryption option.
+
+* Create an AMI out of this volume(which is encrypted by default)
+* Choose the supported instance type and make sure hibernation is enabled
+* Also, make sure /root has sufficient space to hold in-memory data
+* I can use uptime command to see that the instance has not been rebooted, but has continued from where it left off
