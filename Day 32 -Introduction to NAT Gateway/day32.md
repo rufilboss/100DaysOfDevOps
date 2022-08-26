@@ -11,3 +11,11 @@
 
 ##### NOTE: IPv6 traffic is separate from IPv4 traffic, route table must include separate routes for IPv6 traffic.
 
+* To create a NAT gateway
+
+    * Go to VPC Dashboard → NAT Gateways → Create NAT gateways
+    * Make sure you select the Public Subnet in your custom VPC
+    * For NAT gateway to work, it needs Elastic IP
+    ###### NOTE: NAT Gateway creation will take 10–15 min
+    * Once the NAT gateway is available, add it to your default Route table
+
