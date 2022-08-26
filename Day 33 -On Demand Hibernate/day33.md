@@ -22,3 +22,5 @@
 * Choose the supported instance type and make sure hibernation is enabled
 * Also, make sure /root has sufficient space to hold in-memory data
 * I can use uptime command to see that the instance has not been rebooted, but has continued from where it left off
+
+[Learn More](https://aws.amazon.com/blogs/aws/new-hibernate-your-ec2-instances/)
