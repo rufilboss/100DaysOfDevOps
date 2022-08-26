@@ -19,3 +19,8 @@
     ###### NOTE: NAT Gateway creation will take 10–15 min
     * Once the NAT gateway is available, add it to your default Route table
 
+* The advantage of NAT Gateway
+
+    * NAT gateway is highly available but we need it per availability zone.
+    * Can scale up to 45Gbps
+    * Managed by AWS
