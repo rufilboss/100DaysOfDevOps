@@ -24,3 +24,10 @@
     * NAT gateway is highly available but we need it per availability zone.
     * Can scale up to 45Gbps
     * Managed by AWS
+
+* Limitation of NAT Gateway
+
+    * You can associate exactly one Elastic IP address with a NAT gateway. You cannot disassociate an Elastic IP address from a NAT gateway after it’s created. To use a different Elastic IP address for your NAT gateway, you must create a new NAT gateway with the required address, update your route tables, and then delete the existing NAT gateway if it’s no longer required.
+    * You cannot associate a security group with a NAT gateway. You can use security groups for your instances in the private subnets to control the traffic to and from those instances.
+    * You can use a network ACL to control the traffic to and from the subnet in which the NAT gateway is located. The network ACL applies to the NAT gateway’s traffic
+
