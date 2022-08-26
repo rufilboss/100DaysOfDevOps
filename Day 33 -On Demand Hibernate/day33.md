@@ -8,3 +8,10 @@
     * Supported OS(Amazon Linux 1)
     * Amazon Linux 2(work in progress), No support for Centos family :(. (Coming soon: Amazon Linux 2, Ubuntu, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, along with the SQL Server variants of the Windows AMIs)
     * Support for on-demand and reserved instance
+
+* How it works
+
+    * When we instruct instance to hibernate it will write it’s in-memory data to the mounted EBS Volume and then shut down itself
+    * AMI as well as both EBS Volume need to be encrypted
+    * Encryption ensures proper protection for sensitive data when it is copied from memory to the EBS volume
+    * To test this feature, I need to do some reverse engineering
