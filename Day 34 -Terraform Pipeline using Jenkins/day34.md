@@ -115,3 +115,5 @@
 
 * Here we want to add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in Secret Text so that when Jenkins job update doesn’t show AWS Key and Secret in plain text
 
+* New things that I am introducing here is the Jenkinsfile
+
