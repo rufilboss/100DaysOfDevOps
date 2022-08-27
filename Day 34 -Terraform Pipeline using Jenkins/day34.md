@@ -94,3 +94,8 @@
 
     ![rep](https://www.how2shout.com/linux/wp-content/uploads/2022/06/Access-Web-Interface-Jenkins.png)
 
+    ###### Next steps:
+    
+    * Install Plugins
+    * Setup User for administration
+    * Jenkins Dashboard on Ubuntu 22.04
