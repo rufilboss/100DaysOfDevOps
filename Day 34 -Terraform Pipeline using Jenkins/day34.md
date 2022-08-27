@@ -71,3 +71,8 @@
     $ sudo systemctl enable --now jenkins
     ```
 
+    * Find Jenkins Administrator password
+
+    ```sh
+    $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    ```
