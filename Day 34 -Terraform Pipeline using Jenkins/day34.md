@@ -121,3 +121,9 @@
     * Next step I am defining tools that is required to run the configuration and in this case terraform with version number that we setup during the global configuration.
     * Next step we need some parameter that is required to run the pipeline, in this case workspace, Right now the only thing you need to know about workspace is that each workspace maintain seperate tfstate file, in this case I am putting development as default workspace
 
+* Next step is to setting up some environment variable
+
+    * Where to find terraform
+    * Setting up TF_IN_AUTOMATION = "true" will make terraform don't spit too much information
+    * Access and Secret key to interact with AWS
+
