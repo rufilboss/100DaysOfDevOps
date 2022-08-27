@@ -1,0 +1,101 @@
+* What is the Pipeline?
+
+    * A pipeline is typically referred to as a part of Continuous Integration and it’s mostly used to merge developer changes into code mainline.
+
+* Why do we need a pipeline?
+
+    * Test changes before pushing to Production
+    * Another pair of eyes in terms of approval
+    * Logging to see who and when someone pushed the changes
+    * Separate workspace/tfstate for Development and Production Environment
+
+* Pipeline Architecture
+
+![Pipeline Architecture](https://miro.medium.com/max/1400/1*i8mcxAZfcSkZ_88CGAA6pw.jpeg)
+
+* How Jenkins Terraform Pipeline Works?
+
+    * User push their code changes to GitHub
+    * Code change trigger a Git Webhooks which triggers the terraform pipeline
+
+* Setting up Jenkins on Ubuntu 22.04 or 20.04
+
+    * Update Ubuntu 22.04 or 20.04
+
+    ```sh
+    $ sudo apt update && sudo apt upgrade
+    ```
+
+    * Install OpenJDK
+
+    ```sh
+    $ sudo apt install default-jdk
+    ```
+
+    * Add Jenkins GPG key on Ubuntu 22.04 or 20.04
+
+    ```sh
+    $ sudo mkdir -p /usr/share/keyrings
+    ```
+
+    ```sh
+    $ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+    ```
+
+    * Enable Jenkins repository on Bullseye
+
+    ```sh
+    $ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+    ```
+
+    * Run system update
+
+    ```sh
+    $ sudo apt update
+    ```
+
+    * Install Jenkins on Ubuntu 22.04 | 20.04
+
+    ```sh
+    $ sudo apt install jenkins
+    ```
+
+    * Check the Service status
+
+    ```sh
+    systemctl status jenkins --no-pager -l
+    ```
+
+    ```sh
+    $ sudo systemctl enable --now jenkins
+    ```
+
+    * Find Jenkins Administrator password
+
+    ```sh
+    $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    ```
+    * Access Web Interface
+
+    ```sh
+    $ http://server-ip:8080
+    ```
+
+    ###### Note: Don’t forget to open port 8080 in the firewall, if you are on the remote server. In your terminal use:
+
+    ```sh
+    $ sudo ufw allow 8080
+    ```
+
+    * Those who are on a Cloud hosting server, and need to whitelist the port in their service provider firewall.
+
+    * On the Web interface, enter the password you got in the previous step to securely start the setup process.
+
+    ![rep](https://www.how2shout.com/linux/wp-content/uploads/2022/06/Access-Web-Interface-Jenkins.png)
+
+    ###### Next steps:
+    
+    * Install Plugins
+    * Setup User for administration
+    * Jenkins Dashboard on Ubuntu 22.04
