@@ -99,3 +99,14 @@
     * Install Plugins
     * Setup User for administration
     * Jenkins Dashboard on Ubuntu 22.04
+
+* Once Jenkins is up and running, Click on Manage Jenkins and then Manage Plugins
+
+* Search for Terraform under Available tab, Select the Plugin and then Click on Install without restart
+
+* Go to Manage Jenkins but this Global Tool Configuration
+    ```sh
+    * Name: This version must be consistent with the version of Jenkins we are going to refer in the Jenkins file
+    * Version: Use the same version
+    ```
+    
