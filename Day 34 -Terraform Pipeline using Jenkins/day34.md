@@ -54,3 +54,9 @@
     ```sh
     sudo apt update
     ```
+
+    * Install Jenkins on Ubuntu 22.04 | 20.04
+
+    ```sh
+    sudo apt install jenkins
+    ```
