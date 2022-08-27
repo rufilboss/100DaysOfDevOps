@@ -52,18 +52,22 @@
     * Run system update
 
     ```sh
-    sudo apt update
+    $ sudo apt update
     ```
 
     * Install Jenkins on Ubuntu 22.04 | 20.04
 
     ```sh
-    sudo apt install jenkins
+    $ sudo apt install jenkins
     ```
 
     * Check the Service status
 
     ```sh
     systemctl status jenkins --no-pager -l
+    ```
+
+    ```sh
+    $ sudo systemctl enable --now jenkins
     ```
 
