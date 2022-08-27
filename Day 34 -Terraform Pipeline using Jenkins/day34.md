@@ -127,3 +127,7 @@
     * Setting up TF_IN_AUTOMATION = "true" will make terraform don't spit too much information
     * Access and Secret key to interact with AWS
 
+* Various Stages of Terraform Pipeline
+
+![Image](https://miro.medium.com/max/1400/1*c4O8hLyR7HZG0kpdqt2E7Q.png)
+
