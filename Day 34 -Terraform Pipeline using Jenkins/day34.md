@@ -31,3 +31,13 @@
     ```sh
     $ sudo apt install default-jdk
     ```
+
+    * Add Jenkins GPG key on Ubuntu 22.04
+
+    ```sh
+    $ sudo mkdir -p /usr/share/keyrings
+    ```
+
+    ```sh
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+    ```
