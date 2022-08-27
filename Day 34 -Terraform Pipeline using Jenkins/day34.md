@@ -115,5 +115,9 @@
 
 * Here we want to add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in Secret Text so that when Jenkins job update doesn’t show AWS Key and Secret in plain text
 
-* New things that I am introducing here is the Jenkinsfile
+* New things that I am introducing here is the [JenkinsFile]()
+
+    * On the top of the pipeline, I am defining any agent that is available to run the pipeline
+    * Next step I am defining tools that is required to run the configuration and in this case terraform with version number that we setup during the global configuration.
+    * Next step we need some parameter that is required to run the pipeline, in this case workspace, Right now the only thing you need to know about workspace is that each workspace maintain seperate tfstate file, in this case I am putting development as default workspace
 
