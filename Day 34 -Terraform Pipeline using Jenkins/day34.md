@@ -18,9 +18,9 @@
     * User push their code changes to GitHub
     * Code change trigger a Git Webhooks which triggers the terraform pipeline
 
-* Setting up Jenkins on Ubuntu 22.04
+* Setting up Jenkins on Ubuntu 22.04 or 20.04
 
-    * Update Ubuntu 22.04
+    * Update Ubuntu 22.04 or 20.04
 
     ```sh
     $ sudo apt update && sudo apt upgrade
@@ -32,7 +32,7 @@
     $ sudo apt install default-jdk
     ```
 
-    * Add Jenkins GPG key on Ubuntu 22.04
+    * Add Jenkins GPG key on Ubuntu 22.04 or 20.04
 
     ```sh
     $ sudo mkdir -p /usr/share/keyrings
@@ -41,3 +41,5 @@
     ```sh
     curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
     ```
+
+    
