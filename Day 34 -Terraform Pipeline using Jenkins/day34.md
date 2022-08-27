@@ -76,3 +76,8 @@
     ```sh
     $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
     ```
+    * Access Web Interface
+
+    ```sh
+    $ http://server-ip:8080
+    ```
