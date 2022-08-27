@@ -109,4 +109,9 @@
     * Name: This version must be consistent with the version of Jenkins we are going to refer in the Jenkins file
     * Version: Use the same version
     ```
-    
+* Again go back to the main Jenkins console, click on Credentials and then global
+
+* Add Credentials and then Secret text
+
+* Here we want to add AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in Secret Text so that when Jenkins job update doesn’t show AWS Key and Secret in plain text
+
