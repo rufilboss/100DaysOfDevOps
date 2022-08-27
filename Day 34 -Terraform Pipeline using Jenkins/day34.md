@@ -60,3 +60,10 @@
     ```sh
     sudo apt install jenkins
     ```
+
+    * Check the Service status
+
+    ```sh
+    systemctl status jenkins --no-pager -l
+    ```
+
