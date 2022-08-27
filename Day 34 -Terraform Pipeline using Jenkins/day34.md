@@ -133,6 +133,8 @@
 
 * Terraform init
 
+    * This is used to initialize a working directory containing our Terraform configuration files
+
 * Terraform Format
 
     * In this case, I am checking the file checked in to the git is properly formatted if not simply failed at that point
