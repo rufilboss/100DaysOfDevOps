@@ -87,4 +87,10 @@
     ```sh
     $ sudo ufw allow 8080
     ```
-    
+
+    * Those who are on a Cloud hosting server, and need to whitelist the port in their service provider firewall.
+
+    * On the Web interface, enter the password you got in the previous step to securely start the setup process.
+
+    ![rep](https://www.how2shout.com/linux/wp-content/uploads/2022/06/Access-Web-Interface-Jenkins.png)
+
