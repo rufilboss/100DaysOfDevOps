@@ -17,3 +17,12 @@
 
     * User push their code changes to GitHub
     * Code change trigger a Git Webhooks which triggers the terraform pipeline
+
+* Setting up Jenkins on Ubuntu 22.04
+
+    * Update Ubuntu 22.04
+
+    ```sh
+    $ sudo apt update && sudo apt upgrade
+    ```
+
