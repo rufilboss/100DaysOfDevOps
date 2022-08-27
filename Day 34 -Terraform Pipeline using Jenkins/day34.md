@@ -49,3 +49,8 @@
     https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
     ```
 
+    * Run system update
+
+    ```sh
+    sudo apt update
+    ```
