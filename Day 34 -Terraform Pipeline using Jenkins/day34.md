@@ -8,3 +8,8 @@
     * Another pair of eyes in terms of approval
     * Logging to see who and when someone pushed the changes
     * Separate workspace/tfstate for Development and Production Environment
+
+* Pipeline Architecture
+
+![Pipeline Architecture](https://miro.medium.com/max/1400/1*i8mcxAZfcSkZ_88CGAA6pw.jpeg)
+
