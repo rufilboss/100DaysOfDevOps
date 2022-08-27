@@ -81,3 +81,10 @@
     ```sh
     $ http://server-ip:8080
     ```
+
+    ###### Note: Don’t forget to open port 8080 in the firewall, if you are on the remote server. In your terminal use:
+
+    ```sh
+    $ sudo ufw allow 8080
+    ```
+    
