@@ -26,3 +26,8 @@
     $ sudo apt update && sudo apt upgrade
     ```
 
+    * Install OpenJDK
+
+    ```sh
+    $ sudo apt install default-jdk
+    ```
