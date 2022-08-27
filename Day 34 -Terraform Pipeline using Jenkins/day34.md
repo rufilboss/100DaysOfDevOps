@@ -13,3 +13,7 @@
 
 ![Pipeline Architecture](https://miro.medium.com/max/1400/1*i8mcxAZfcSkZ_88CGAA6pw.jpeg)
 
+* How Jenkins Terraform Pipeline Works?
+
+    * User push their code changes to GitHub
+    * Code change trigger a Git Webhooks which triggers the terraform pipeline
