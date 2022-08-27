@@ -131,3 +131,12 @@
 
 ![Image](https://miro.medium.com/max/1400/1*c4O8hLyR7HZG0kpdqt2E7Q.png)
 
+* Terraform init
+
+* Terraform Format
+
+    * In this case, I am checking the file checked in to the git is properly formatted if not simply failed at that point
+
+* Terraform Validate
+
+    * Simply check if the syntax of .tf file is proper or not
