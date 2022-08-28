@@ -39,6 +39,6 @@
 
 * Final Word
 
-* S3 Intelligent Tiering comes with an additional cost, if that is less than what you are paying right now, then this class is for you
-* It looks promising, as AWS is using Machine Learning Model under the hood, to fed trillions of objects and millions of requests to predict future access patterns for each object. The results were then used to inform storage of your S3 objects in the most cost-effective way possible.
+    * S3 Intelligent Tiering comes with an additional cost, if that is less than what you are paying right now, then this class is for you
+    * It looks promising, as AWS is using Machine Learning Model under the hood, to fed trillions of objects and millions of requests to predict future access patterns for each object. The results were then used to inform storage of your S3 objects in the most cost-effective way possible.
 
