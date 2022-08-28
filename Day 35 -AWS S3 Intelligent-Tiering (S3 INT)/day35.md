@@ -34,5 +34,11 @@
 
 * Some points to consider before using S3 Intelligent Tiering Class
 
-    * An object smaller then 128KB will never be transitioned to S3 Infrequent access and will be billed usually.
+    * An object smaller than 128KB will never be transitioned to S3 Infrequent access and will be billed usually.
     * Not fit for an object which lives less than 30 days, all objects will be billed with a minimum of 30 days.
+
+* Final Word
+
+* S3 Intelligent Tiering comes with an additional cost, if that is less than what you are paying right now, then this class is for you
+* It looks promising, as AWS is using Machine Learning Model under the hood, to fed trillions of objects and millions of requests to predict future access patterns for each object. The results were then used to inform storage of your S3 objects in the most cost-effective way possible.
+
