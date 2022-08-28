@@ -31,3 +31,8 @@
     * Comes with additional cost
     * There are no additional fees while retrieving data back from S3 Infrequent to S3 Standard.
     * Supports all S3 features cross-region replication, encryption, object tagging, and inventory.
+
+* Some points to consider before using S3 Intelligent Tiering Class
+
+    * An object smaller then 128KB will never be transitioned to S3 Infrequent access and will be billed usually.
+    * Not fit for an object which lives less than 30 days, all objects will be billed with a minimum of 30 days.
