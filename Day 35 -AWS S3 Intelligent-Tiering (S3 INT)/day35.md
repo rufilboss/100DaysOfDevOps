@@ -20,3 +20,14 @@
 
     * Access pattern of data is irregular
     * You don’t have time to use Storage Class Analytics
+
+* S3 Intelligent-Tiering
+
+    * If you are facing the above two problems then S3 Intelligent Tiering is here for your rescue.
+    * It incorporates two access tier(Standard and Standard Infrequent Access)
+    * As mentioned above, it monitors access patterns and moves objects that have not been accessed for 30 consecutive days to the infrequent access tier.
+    * If the data is accessed later, it is automatically moved back to the frequent access tier with no additional cost.
+    * It can be specified while uploading objects OR during LifeCycle Policy.
+    * Comes with additional cost
+    * There are no additional fees while retrieving data back from S3 Infrequent to S3 Standard.
+    * Supports all S3 features cross-region replication, encryption, object tagging, and inventory.
