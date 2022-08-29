@@ -34,3 +34,6 @@
 * Once installed go to System Manager home page [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Shared Resources → Managed Instances
 
 * Go to Actions → Run Command → AWS-RunShellScript → Commands → Type any Linux command eg: ls -l → Target Instance(Select the instance)
+* You can also check the output under view output tab
+
+
