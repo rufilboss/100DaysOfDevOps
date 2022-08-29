@@ -109,3 +109,21 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
 * Go to AWS Systems Manager [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Parameter store  → Create Parameter
 
 ###### Now to retrieve this value via command line
+
+```sh
+$ aws ssm get-parameters --names "examplepass"
+{
+"InvalidParameters": [],
+"Parameters": [
+{
+"Name": "examplepass",
+"LastModifiedDate": 1552923749.085,
+"Value": "example123",
+"Version": 1,
+"Type": "String",
+"ARN": "arn:aws:ssm:us-west-2:XXXXXXX:parameter/examplepass"
+}
+]
+}
+```
+
