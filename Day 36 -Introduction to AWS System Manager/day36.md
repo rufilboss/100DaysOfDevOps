@@ -87,3 +87,8 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
     }
 }
 ```
+
+* What is AWS Systems Manager State Manager
+
+    * AWS Systems Manager State Manager is a secure and scalable configuration management service that automates the process of keeping your Amazon EC2 and hybrid infrastructure in a state that you define.
+    * One of the use case I found out of AWS System Manager State Manager is to run the command on a scheduled basis(eg: SnapShot Creation)
