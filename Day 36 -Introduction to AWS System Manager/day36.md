@@ -106,3 +106,6 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
 * Which we can then be programmatically accessed via the SSM API.
 * Parameter store is offered at no additional charge
 
+* Go to the parameter store [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Create Parameter
+
+###### Now to retrieve this value via command line
