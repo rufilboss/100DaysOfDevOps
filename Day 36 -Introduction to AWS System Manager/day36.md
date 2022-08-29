@@ -30,3 +30,5 @@
     $ sudo systemctl enable amazon-ssm-agent
     ```
 
+* This is installed on the instance end and let instance to communicate with System Manager
+* Once installed go to System Manager home page [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Shared Resources → Managed Instances
