@@ -14,3 +14,19 @@
         * Create a new role and assign AmazonEc2Rolefor SSM
         * Attach the role, we've created earlier to an existing instance or during instance creation
 
+* Installing SSM Agent
+
+    ```sh
+
+    # SSM Agent Installation
+
+    sudo apt install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
+    # Checking the status of System Manager
+
+    $ sudo systemctl status amazon-ssm-agent
+
+    # Enabling it so that it will start on reboot
+    $ sudo systemctl enable amazon-ssm-agent
+    ```
+
