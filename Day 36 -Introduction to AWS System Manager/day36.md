@@ -173,5 +173,7 @@ $ aws ssm get-parameters --names "mysecurestring" --with-decryption
     * Schedule: How frequently you want to collect Invnetory
     * Parameter: Different Parameter you want to collect
 
+* If you go to managed instance tab, select your instance and then inventory tab
 * AWS Inventory is nicely integrated with AWS Config service
 * Go to config [**here**](https://us-west-2.console.aws.amazon.com/config) and under Resource Type → SSM → ManagedInstanceInventory
+
