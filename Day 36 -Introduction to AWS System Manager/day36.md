@@ -132,3 +132,22 @@ $ aws ssm get-parameters --names "examplepass"
 * When we store a secure string in the EC2 parameter store, the data is encrypted by the KMS key associated with the account.
 
 [**Learn more**](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)
+
+* You can access it via command line
+
+```sh
+$ aws ssm get-parameters --names "mysecurestring" --with-decryption
+{
+"InvalidParameters": [],
+"Parameters": [
+{
+"Name": "mysecurestring",
+"LastModifiedDate": 1552923877.289,
+"Value": "test123",
+"Version": 1,
+"Type": "SecureString",
+"ARN": "arn:aws:ssm:us-west-2:349934551430:parameter/mysecurestring"
+}
+]
+}
+```
