@@ -168,3 +168,10 @@ $ aws ssm get-parameters --names "mysecurestring" --with-decryption
 
 * Setting up inventory is pretty straightforward [**here**](https://us-west-2.console.aws.amazon.com/systems-manager/) → Inventory → Setup Inventory
 
+    * Give you inventory some name
+    * Targets: Either Manually select the instance or better to use Tag so that all the future installed instance will be tracked automatically
+    * Schedule: How frequently you want to collect Invnetory
+    * Parameter: Different Parameter you want to collect
+
+* AWS Inventory is nicely integrated with AWS Config service
+* Go to config [**here**](https://us-west-2.console.aws.amazon.com/config) and under Resource Type → SSM → ManagedInstanceInventory
