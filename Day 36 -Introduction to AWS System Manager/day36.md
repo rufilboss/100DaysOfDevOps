@@ -32,3 +32,5 @@
 
 * This is installed on the instance end and let instance to communicate with System Manager
 * Once installed go to System Manager home page [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Shared Resources → Managed Instances
+
+* Go to Actions → Run Command → AWS-RunShellScript → Commands → Type any Linux command eg: ls -l → Target Instance(Select the instance)
