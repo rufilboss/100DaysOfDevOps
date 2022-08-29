@@ -10,4 +10,5 @@
 
         * One role authorizes the user to use System Manager
         * First one assign AmazonSSMFullAccess policy to the user
-        
+        * Other authorizes systems to be authorized by the system manager
+        * Create a new role and assign AmazonEc2Rolefor SSM
