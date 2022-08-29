@@ -95,3 +95,7 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
 
 ###### But I believe there is a much better way to achieve this eg: EBS LifeCycle Manager
 
+##### AWS Systems Manager Parameter Store
+
+* AWS System Manager Parameter store provides secure, hierarchical storage for configuration data management and secrets management. We can store data such as,
+
