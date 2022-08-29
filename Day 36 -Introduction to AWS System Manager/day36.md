@@ -151,3 +151,13 @@ $ aws ssm get-parameters --names "mysecurestring" --with-decryption
 ]
 }
 ```
+
+##### How to store the secret
+
+```sh
+# To store the secret
+# aws ssm put-parameter --name "secret-password" --value 'XXXXX' --type SecureString --key-id XXXXXX
+{
+"Version": 1
+}
+```
