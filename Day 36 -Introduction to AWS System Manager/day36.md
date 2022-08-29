@@ -127,3 +127,6 @@ $ aws ssm get-parameters --names "examplepass"
 }
 ```
 
+* How to store a secure string
+
+* When we store a secure string in the EC2 parameter store, the data is encrypted by the KMS key associated with my account.
