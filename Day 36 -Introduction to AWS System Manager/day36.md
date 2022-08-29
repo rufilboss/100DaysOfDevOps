@@ -99,3 +99,7 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
 
 * AWS System Manager Parameter store provides secure, hierarchical storage for configuration data management and secrets management. We can store data such as,
 
+    * passwords
+    * database strings
+    * license codes
+
