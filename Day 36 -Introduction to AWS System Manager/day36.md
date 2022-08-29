@@ -37,3 +37,53 @@
 * You can also check the output under view output tab
 
 
+###### To execute the same command via aws cli
+
+```sh
+
+$ aws ssm send-command --document-name "AWS-RunShellScript" --parameters commands=["ls -l"] --targets "Key=instanceids,Values=i-0219d24ebd3fc7b14"
+{
+    "Command": {
+        "MaxErrors": "0", 
+        "Parameters": {
+            "commands": [
+                "ls -l"
+            ]
+        }, 
+        "DocumentName": "AWS-RunShellScript", 
+        "OutputS3BucketName": "", 
+        "OutputS3KeyPrefix": "", 
+        "StatusDetails": "Pending", 
+        "RequestedDateTime": 1552850042.208, 
+        "Status": "Pending", 
+        "TargetCount": 0, 
+        "NotificationConfig": {
+            "NotificationArn": "", 
+            "NotificationEvents": [], 
+            "NotificationType": ""
+        }, 
+        "InstanceIds": [], 
+        "ErrorCount": 0, 
+        "MaxConcurrency": "50", 
+        "ServiceRole": "", 
+        "CloudWatchOutputConfig": {
+            "CloudWatchLogGroupName": "", 
+            "CloudWatchOutputEnabled": false
+        }, 
+        "DocumentVersion": "", 
+        "CompletedCount": 0, 
+        "Comment": "", 
+        "ExpiresAfter": 1552857242.208, 
+        "DeliveryTimedOutCount": 0, 
+        "CommandId": "e4d54b52-5138-4436-a53d-f9ed4dd03cf6", 
+        "Targets": [
+            {
+                "Values": [
+                    "i-0219d24ebd3fc7b14"
+                ], 
+                "Key": "instanceids"
+            }
+        ]
+    }
+}
+```
