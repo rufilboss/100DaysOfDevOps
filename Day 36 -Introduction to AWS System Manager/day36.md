@@ -103,3 +103,6 @@ $ aws ssm send-command --document-name "AWS-RunShellScript" --parameters command
     * database strings
     * license codes
 
+* Which we can then be programmatically accessed via the SSM API.
+* Parameter store is offered at no additional charge
+
