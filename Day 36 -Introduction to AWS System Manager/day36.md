@@ -166,3 +166,5 @@ $ aws ssm get-parameters --names "mysecurestring" --with-decryption
 
 * AWS Systems Manager Inventory provides visibility into your Amazon EC2 and on-premises computing environment. You can use Inventory to collect metadata from your managed instances. You can store this metadata in a central Amazon Simple Storage Service (Amazon S3) bucket, and then use built-in tools to query the data and quickly determine which instances are running the software and configurations required by your software policy, and which instances need to be updated.
 
+* Setting up inventory is pretty straightforward [**here**](https://us-west-2.console.aws.amazon.com/systems-manager/) → Inventory → Setup Inventory
+
