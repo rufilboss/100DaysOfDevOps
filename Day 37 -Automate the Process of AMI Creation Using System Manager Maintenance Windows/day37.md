@@ -9,5 +9,19 @@
     * Go to IAM Role [**here**](https://console.aws.amazon.com/iam/) → Create role → EC2 → Choose AmazonSSMMaintenanceWindowRole
     * Give your role name and create it
     * Now click on the role you have just created and click on Trust relationship
-
+    ```sh
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+        "Effect": "Allow",
+        "Principal": {
+            "Service": "ec2.amazonaws.com",
+            "Service": "ssm.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+        }
+    ]
+    }
+    ```
 
