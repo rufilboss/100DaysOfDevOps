@@ -24,4 +24,9 @@
     ]
     }
     ```
+    * Then,
+        * Add this entry("Service": "ssm.amazonaws.com")
+        * Please don't forget to add comma(,) after "Service": "ec2.amazonaws.com",
+
+* Add an inline policy to the user, also make sure that particular user also have AWSSSMFullAccess Policy attach to it
 
