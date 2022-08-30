@@ -31,7 +31,6 @@
 * Add an inline policy to the user, also make sure that particular user also have AWSSSMFullAccess Policy attach to it
 
 ```sh
-
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -44,3 +43,4 @@
     ]
 }
 ```
+
