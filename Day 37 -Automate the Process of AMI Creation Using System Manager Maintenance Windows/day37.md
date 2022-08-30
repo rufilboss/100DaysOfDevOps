@@ -7,5 +7,7 @@
     * This can be done with the help of IAM role so that System Manager can act on our behalf in creating and performing maintenance window
 
     * Go to IAM Role [**here**](https://console.aws.amazon.com/iam/) → Create role → EC2 → Choose AmazonSSMMaintenanceWindowRole
+    * Give your role name and create it
+    * Now click on the role you have just created and click on Trust relationship
 
 
