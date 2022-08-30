@@ -30,3 +30,17 @@
 
 * Add an inline policy to the user, also make sure that particular user also have AWSSSMFullAccess Policy attach to it
 
+```sh
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "arn:aws:iam::XXXXXX:role/MaintainenceWindowRole"
+        }
+    ]
+}
+```
