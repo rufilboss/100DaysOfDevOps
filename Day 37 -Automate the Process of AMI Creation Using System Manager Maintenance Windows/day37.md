@@ -44,3 +44,15 @@
 }
 ```
 
+* Next step is to create the Maintenance Window
+
+    * Go to https://us-west-2.console.aws.amazon.com/systems-manager → Action → Maintenance Windows
+
+    * Once the maintenance window create, choose Target → Register target
+
+    * Click on the Tasks Tab and Choose AWS-Createimage as automation Document
+
+    * Keep everything default, except
+        * Give the instance id from where you want to create the image
+        * NoReboot: set it to true else it will reboot the instance,during image creation
+        * AutomationAssumeRole: Paste the arn of role we create in earlier step
