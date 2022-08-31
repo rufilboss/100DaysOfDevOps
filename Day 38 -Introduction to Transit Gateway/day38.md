@@ -31,3 +31,9 @@
 
 * Go to Transit Gateways --> Transit Gateway Attachments --> Create Transit Gateway Attachment
 
+    * Select your TGW created in Step1
+    * Give your VPC attachment some name
+    * Enable DNS support
+    * Select your first VPC 
+
+* Perform the same step for VPC2
