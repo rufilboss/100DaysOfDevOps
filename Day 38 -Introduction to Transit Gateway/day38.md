@@ -11,3 +11,6 @@
     * Max throughput AWS tested so far is 50GBPS
     * Direct Connect is still not supported(In AWS 2019 Roadmap)
     * Under the hood, to make this happen AWS is using a technology called [**Hyperplane**](https://twitter.com/awsreinvent/status/935740155499040768?lang=en)
+    * Transit gateway each route table support 10000 routes(in case of VPC default route table limit is still 100)
+    * Difference between Transit VPC vs Transit gateway
+    * Transit Gateway is available under VPC console
