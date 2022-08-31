@@ -40,3 +40,7 @@
 
 ###### NOTE: When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway.
 
+##### Step3: Update Route Table
+
+* If you click on the Transit Gateway Route Table, you will see we have the patch from Transit Gateway to our VPC
+
