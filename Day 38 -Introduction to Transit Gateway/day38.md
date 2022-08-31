@@ -14,3 +14,8 @@
     * Transit gateway each route table support 10000 routes(in case of VPC default route table limit is still 100)
     * Difference between Transit VPC vs Transit gateway
     * Transit Gateway is available under VPC console
+
+###### Step1: Build TGW
+
+* Go to [**link**](https://us-west-2.console.aws.amazon.com/vpc) → Transit Gateways → Transit Gateways --> Create Transit Gateway
+
