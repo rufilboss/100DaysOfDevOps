@@ -46,7 +46,7 @@
 
 * Next step is to create the Maintenance Window
 
-    * Go to https://us-west-2.console.aws.amazon.com/systems-manager → Action → Maintenance Windows
+    * Go to [**here**](https://us-west-2.console.aws.amazon.com/systems-manager) → Action → Maintenance Windows
 
     * Once the maintenance window create, choose Target → Register target
 
