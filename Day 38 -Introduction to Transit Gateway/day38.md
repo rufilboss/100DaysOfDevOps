@@ -44,3 +44,4 @@
 
 * If you click on the Transit Gateway Route Table, you will see we have the patch from Transit Gateway to our VPC
 
+* We need a return path(i.e from our VPC to TGW), VPC1 route table needs to be updated to point to TGW to route to the second VPC and vice-versa(i.e 10.0.0.0/16 to tgw on the second VPC)
