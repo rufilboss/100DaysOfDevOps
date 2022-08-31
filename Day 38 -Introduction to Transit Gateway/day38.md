@@ -50,3 +50,10 @@
 
     * associations — Each attachment is associated with exactly one route table. Each route table can be associated with zero to many attachments.
     * route propagation — A VPC or VPN connection can dynamically propagate routes to a transit gateway route table.
+
+##### Step4
+
+* Try to create Instance on VPC1 and VPC2
+* ssh to the instance on VPC1(using its Public IP)
+* Also, copy your Public ssh key to an instance in VPC1
+* Now try to ssh to an instance in VPC2, using its Private IP
