@@ -27,3 +27,7 @@
     * Default route table propagation: Automatically propagate Transit Gateway attachments with this Transit Gateway's default route table
     * Auto accept shared attachments: Automatically accept cross account attachments that are attached to this Transit Gateway.In case if you are planning to spread your TGW across multiple account.
 
+###### Step2: Attach your VPC
+
+* Go to Transit Gateways --> Transit Gateway Attachments --> Create Transit Gateway Attachment
+
