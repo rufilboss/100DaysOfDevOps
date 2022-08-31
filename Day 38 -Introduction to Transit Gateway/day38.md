@@ -37,3 +37,6 @@
     * Select your first VPC 
 
 * Perform the same step for VPC2
+
+##### NOTE: When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway.
+
