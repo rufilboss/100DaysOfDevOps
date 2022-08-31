@@ -15,7 +15,7 @@
     * Difference between Transit VPC vs Transit gateway
     * Transit Gateway is available under VPC console
 
-###### Step1: Build TGW
+##### Step1: Build TGW
 
 * Go to [**link**](https://us-west-2.console.aws.amazon.com/vpc) → Transit Gateways → Transit Gateways --> Create Transit Gateway
 
@@ -27,7 +27,7 @@
     * Default route table propagation: Automatically propagate Transit Gateway attachments with this Transit Gateway's default route table
     * Auto accept shared attachments: Automatically accept cross account attachments that are attached to this Transit Gateway.In case if you are planning to spread your TGW across multiple account.
 
-###### Step2: Attach your VPC
+##### Step2: Attach your VPC
 
 * Go to Transit Gateways --> Transit Gateway Attachments --> Create Transit Gateway Attachment
 
@@ -38,5 +38,5 @@
 
 * Perform the same step for VPC2
 
-##### NOTE: When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway.
+###### NOTE: When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway.
 
