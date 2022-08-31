@@ -19,3 +19,11 @@
 
 * Go to [**link**](https://us-west-2.console.aws.amazon.com/vpc) → Transit Gateways → Transit Gateways --> Create Transit Gateway
 
+    * Name tag and Description: Give some meaningful name to your Transit Gateway and Description
+    * Amazon side ASN: Autonomous System Number (ASN) of your Transit Gateway. You can use an  existing ASN assigned to your network. If you don't have one, you can  use a private ASN in the 64512-65534 or 4200000000-4294967294 range.
+    * DNS Support: Enable Domain Name System resolution for VPCs attached to this Transit Gateway(If you have multiple VPC, this will enable hostname resolution between two VPC)
+    *VPN ECMP support: Equal-cost multi-path routing for VPN Connections that are attached to this Transit Gateway.Equal Cost Multipath (ECMP) routing support between VPN connections. If connections advertise the same CIDRs, the traffic is distributed equally between them.
+    * Default route table association: Automatically associate Transit Gateway attachments with this Transit Gateway's default route table.
+    * Default route table propagation: Automatically propagate Transit Gateway attachments with this Transit Gateway's default route table
+    * Auto accept shared attachments: Automatically accept cross account attachments that are attached to this Transit Gateway.In case if you are planning to spread your TGW across multiple account.
+
