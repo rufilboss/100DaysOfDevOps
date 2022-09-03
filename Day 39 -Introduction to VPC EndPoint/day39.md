@@ -40,3 +40,10 @@
 
     * Amazon S3
     * DynamoDB
+
+###### Scenario1: I want to push logs from EC2 private instance(running on Private IP)to CloudWatch Logs.
+
+* To setup VPC Endpoint
+    * Go to [**here**](https://us-west-2.console.aws.amazon.com/vpc) --> EndPoints
+* Once the endpoint is created you will see an elastic network interface with a private IP address which acts as an entry point for traffic destined to a supported service
+
