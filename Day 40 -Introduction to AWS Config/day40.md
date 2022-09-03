@@ -20,3 +20,6 @@
     * Amazon SNS topic(Optional): We can send config changes to S3 bucket
     * AWS Config role: It give AWS config read-only access(IAM Role)to AWS resource
 
+* Confirm and AWS Config setup for us.
+* Check the status of AWS config, by click on the status icon on the top of the page
+* Now click on Resource and then Instance
