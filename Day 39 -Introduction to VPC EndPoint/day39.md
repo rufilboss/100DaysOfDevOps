@@ -47,3 +47,8 @@
     * Go to [**here**](https://us-west-2.console.aws.amazon.com/vpc) --> EndPoints
 * Once the endpoint is created you will see an elastic network interface with a private IP address which acts as an entry point for traffic destined to a supported service
 
+* Terraform Code
+
+Check out: [**vpc_logs_endpoint.tf**]()
+
+###### 
