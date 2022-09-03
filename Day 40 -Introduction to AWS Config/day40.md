@@ -25,3 +25,11 @@
 * Now click on Resource and then Instance
 * Then, Click on the Configuration timeline
 * Scroll down and click on changes
+
+* Scenario: Last time we skipped the rule section, this time let add all the config rule, our task for today to make sure for an account is compliant
+
+    * CloudTrail must be enabled
+    * S3 bucket versioning must be enabled
+    * EC2 instance must be a part of VPC
+    * We are only using instance type as t2.micro
+
