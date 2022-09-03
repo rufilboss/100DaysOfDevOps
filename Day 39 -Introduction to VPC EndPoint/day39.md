@@ -51,4 +51,5 @@
 
 Check out: [**vpc_logs_endpoint.tf**]()
 
-###### 
+###### Scenario2: I want to push logs from EC2 private instance(running on Private IP)to AWS S3.
+
