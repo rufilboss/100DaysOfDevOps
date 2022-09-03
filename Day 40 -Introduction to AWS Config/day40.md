@@ -23,3 +23,5 @@
 * Confirm and AWS Config setup for us.
 * Check the status of AWS config, by click on the status icon on the top of the page
 * Now click on Resource and then Instance
+* Then, Click on the Configuration timeline
+* Scroll down and click on changes
