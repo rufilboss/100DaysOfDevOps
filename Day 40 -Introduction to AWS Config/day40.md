@@ -8,3 +8,6 @@
     * Meet your compliance need(PCI-DSS, HIPAA)
     * Validate against AWS Config Rule
 
+##### Setting up AWS Config
+
+* Go to [**AWS Config**](https://us-west-2.console.aws.amazon.com/config) → Get started
