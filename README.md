@@ -3,9 +3,9 @@
 </h1>
 
 ### Started on Monday 25th Of July 2022.
-##### Today: 2nd of September 2022
+##### Today: 3rd of September 2022
 
-Day 40 of 100, We meuve....
+Day 41 of 100, We meuve....
 
 Inspired by: MichealCade's [**90DaysOfDevOps**](https://github.com/MichaelCade/90DaysOfDevOps)
 
