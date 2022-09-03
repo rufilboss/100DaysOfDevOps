@@ -11,3 +11,12 @@
 ##### Setting up AWS Config
 
 * Go to [**AWS Config**](https://us-west-2.console.aws.amazon.com/config) → Get started
+    * All resources: You can check on, Record all rsources supported in this region
+    OR
+    Global resources like IAM
+    OR
+    We can even check specific resources eg: EC2
+    * Amazin S3 bucket: This bucket will recieve configuration history and configuration snapshot files
+    * Amazon SNS topic(Optional): We can send config changes to S3 bucket
+    * AWS Config role: It give AWS config read-only access(IAM Role)to AWS resource
+
