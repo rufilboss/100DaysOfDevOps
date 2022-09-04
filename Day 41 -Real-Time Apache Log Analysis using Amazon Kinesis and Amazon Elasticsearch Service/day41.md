@@ -17,3 +17,4 @@
 * What is AWS ElasticSearch Service
 
     * AWS ElasticSearch Service is a cost-effective managed service that makes it easy to deploy, manage, and scale open source Elasticsearch for log analytics, full-text search and more.
+
