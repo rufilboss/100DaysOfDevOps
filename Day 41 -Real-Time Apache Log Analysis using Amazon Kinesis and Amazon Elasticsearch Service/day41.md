@@ -10,3 +10,7 @@
 
 * Step4: Visualize the data using Kibana
 
+##### What is Amazon Kinesis
+
+* Amazon Kinesis is the streaming service provided by AWS which makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+
