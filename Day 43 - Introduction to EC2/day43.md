@@ -108,3 +108,31 @@ NUMA node1 CPU(s):     9-17,27-35
     # curl http://169.254.169.254/latest/user-data/
     ```
 
+* For eg:
+
+```sh
+# curl http://169.254.169.254/latest/meta-data/
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+#To get specific information(eg:ami)
+# curl http://169.254.169.254/latest/meta-data//ami-id
+ami-6f68cf0f
+```
