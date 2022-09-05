@@ -18,3 +18,6 @@
 * Open the security group, which is highlighted in red
 * Change the Port 21 to only listen to your company IP range
 * Refresh the security advisor and as you can see port 21 is no longer appear
+
+###### NOTE: You can only refresh the status every 5 min, so if the refresh button is greyed out please wait for 5 min.
+
