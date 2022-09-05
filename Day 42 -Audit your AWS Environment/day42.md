@@ -20,3 +20,7 @@
 
 ###### NOTE: You can only refresh the status every 5 min, so if the refresh button is greyed out please wait for 5 min.
 
+* This is the simple example of how you can use Trusted Advisor to fix security issues.
+
+* Similarly, you can look for other security recommendation and fixed it.
+
