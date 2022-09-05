@@ -15,3 +15,6 @@
 
 * If you further expand the Trusted Advisor page and explore the details, anything which is not in red will list the criteria for details and recommended actions
 
+* Open the security group, which is highlighted in red
+* Change the Port 21 to only listen to your company IP range
+* Refresh the security advisor and as you can see port 21 is no longer appear
