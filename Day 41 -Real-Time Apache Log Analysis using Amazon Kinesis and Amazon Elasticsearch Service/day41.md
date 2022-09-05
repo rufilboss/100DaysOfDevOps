@@ -21,3 +21,6 @@
 ###### Step1: Setup ElasticSearch Cluster
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/es/) --> Create a new domain
+    * Choose Development and testing or based on your requirement
+    * Give your Elasticsearch domain name(I need to change it to hundreddaysofdevops as numeral 100 is not accepted by AWS) 
+    * Choose all the default options
