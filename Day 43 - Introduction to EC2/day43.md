@@ -70,3 +70,8 @@ NUMA node1 CPU(s):     9-17,27-35
 
 ###### NOTE: AWS measure IOPS in 256KB chunks(so 768KB is equivalent to 3 IOPS)
 
+* Types of EBS Volumes
+
+    * General Purpose SSD
+    * Provisioned IOPS
+    * Magnetic
