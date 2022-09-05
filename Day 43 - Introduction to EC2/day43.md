@@ -75,3 +75,6 @@ NUMA node1 CPU(s):     9-17,27-35
     * General Purpose SSD
     * Provisioned IOPS
     * Magnetic
+
+![XampleImage](https://miro.medium.com/max/1400/1*06j6Lo0XA4gj0AV2eXWbbQ.png)
+
