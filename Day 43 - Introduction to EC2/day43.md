@@ -136,3 +136,10 @@ security-groups
 # curl http://169.254.169.254/latest/meta-data//ami-id
 ami-6f68cf0f
 ```
+###### EC2 Key Pairs
+
+* EC2 key pair has two parts
+
+    * Public Key: AWS store the public key
+    * Private Key: As an administrator, we are responsible for Private Key(it’s available in the form of pem key and make sure permission must be set to 400)
+
