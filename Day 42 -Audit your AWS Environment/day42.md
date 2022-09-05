@@ -30,3 +30,16 @@
 
 One other tool I will highly recommend everyone to use is Scout2 as it gives you much more detailed information for auditing purpose.
 
+* Installation is pretty straightforward
+
+    ```sh
+    pip install awsscout2
+    ```
+
+* Export your keys
+
+    ```sh
+    export AWS_ACCESS_KEY_ID=" "
+    export AWS_SECRET_ACCESS_KEY=" "
+    ```
+
