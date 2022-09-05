@@ -9,3 +9,7 @@
 
 * Go to Trusted Advisor → [**here**](https://console.aws.amazon.com/trustedadvisor)
 
+    * Green: No issue or concern found
+    * Yellow: Investigation is recommended
+    * Red: Critical action recommended
+
