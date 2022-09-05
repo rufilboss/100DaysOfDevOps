@@ -51,3 +51,11 @@
     * In the next screen, keep all the setting default, just click on Create or choose new IAM role and create one
     * This role will be auto-populated
     * Click Next and Create Delivery Stream
+
+##### Step3: Send data to Firehose Delivery Stream
+
+* Installing Kinesis Agent
+```sh
+# sudo yum install –y https://s3.amazonaws.com/streaming-data-agent/aws-kinesis-agent-latest.amzn1.noarch.rpm
+# cat /etc/aws-kinesis/agent.json
+```
