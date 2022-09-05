@@ -34,3 +34,10 @@
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/firehose) --> Create Delivery Stream
 
 * Give your Delivery stream some name and keep all the options as default
+
+##### To see all the Lambda blueprints for Kinesis Data Firehose, with examples in Python and Node.js
+
+* Sign in to the AWS Management Console and open the AWS Lambda console at [**link**](https://console.aws.amazon.com/lambda/).
+* Choose to Create function, and then choose Blueprints.
+* Search for the keyword “kinesis-firehose-apachelog-to-json-python" to find the Kinesis Data Firehose Lambda Blueprints
+
