@@ -26,7 +26,7 @@ $ egrep -i — color “svm|vmx” /proc/cpuinfo
 
 * Another way to check is via lscpu command
 
-``sh
+```sh
 # lscpu
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
@@ -52,3 +52,6 @@ L3 cache:              46080K
 NUMA node0 CPU(s):     0-8,18-26
 NUMA node1 CPU(s):     9-17,27-35
 ```
+
+* Paravirtual Machine(PVM): In case if your hardware doesn’t support virtualization(verified under /proc/cpuinfo and lscpu) we can use PV AMI. In the past PV guests had better performance than HVM but because of enhancement in HVM Virtualization and the availability of PV drivers in HVM AMI this is no longer true.
+
