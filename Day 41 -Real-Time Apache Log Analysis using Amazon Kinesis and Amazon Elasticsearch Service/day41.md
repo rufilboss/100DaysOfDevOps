@@ -55,7 +55,9 @@
 ##### Step3: Send data to Firehose Delivery Stream
 
 * Installing Kinesis Agent
-```sh
-# sudo yum install –y https://s3.amazonaws.com/streaming-data-agent/aws-kinesis-agent-latest.amzn1.noarch.rpm
-# cat /etc/aws-kinesis/agent.json
-```
+
+    ```sh
+    $ sudo yum install –y https://s3.amazonaws.com/streaming-data-agent/aws-kinesis-agent-latest.amzn1.noarch.rpm
+    $ cat /etc/aws-kinesis/agent.json
+    $ service aws-kinesis-agent start
+    ```
