@@ -145,6 +145,22 @@ ami-6f68cf0f
 
 * We use this keypair to login to an instance(Linux) via ssh
 
-```sh
-ssh -i <keypair.pem> ec2-user@aws-hostname
-```
+    ```sh
+    ssh -i <keypair.pem> ec2-user@aws-hostname
+    ```
+
+* At the time of instance creation, it will ask you
+
+    * Choose an existing key pair
+    * Create a new key pair
+
+###### EBS Snapshots
+
+* Snapshots are point-in-time backups of EBS volumes that are stored in S3 and incremental in nature.
+
+    * It only stores the change since the most recent backup and thus helps us to reduce cost
+    * Using snapshot we can restore the EBS volumes and even in cases where the original snapshot is deleted data is still available in all the other snapshots
+    * While taking a snapshot it degrades the performance of EBS volumes, so it should be taken during the non-peak hour
+
+
+
