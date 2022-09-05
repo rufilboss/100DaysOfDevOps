@@ -15,3 +15,11 @@
     * Hardware Virtual Machine(HVM): Under this OS runs directly on top of Virtual Machine without any modification, it’s similar to running on the bare metal. It also takes advantage of hardware extension that provides fast access to the underlying hardware on the host system.
 
 
+* To find out If CPU Support Intel VT or AMD-V Virtualization Support
+
+    secure virtual machine(svm) for AMD
+    virtual machine extension(vmx) for Intel CPU
+
+```sh
+$ egrep -i — color “svm|vmx” /proc/cpuinfo
+```
