@@ -82,4 +82,17 @@ NUMA node1 CPU(s):     9-17,27-35
 
     * Stopped/Shutdown: Data erased
     * Rebooted: Data remained
-    
+
+* Buying Options in EC2 Cloud
+
+* On the right-hand side of the EC2 dashboard, you will see the different AWS Instances
+
+* On-Demand: As the name suggests we can provision/terminate instance any time(on-demand).
+    * The most important aspect is billed by the hour(when the instance is running)
+    * Most expensive purchasing option but the most flexible one
+* Reserved: Allow us to purchase an instance for a set time period(1 to 3 year)
+    * Less expensive as compare to on-demand but once purchased we are completely responsible for the entire price regardless of how often we use
+    * Comes with different pay options(upfront,partial-upfront,no upfront)
+* Spot: We can even bid for an instance and we can only pay when the spot price is equal to or below our bid price
+    * Generally used in the non-production scenario as the instance will be automatically terminate when the spot price is equal to or less than our bid
+    * It allows Amazon to sell the unused instance for a short amount of time at a substantial discount prize
