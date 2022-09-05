@@ -65,3 +65,18 @@
 ##### Step4: Visualize the data using Kibana
 
 * To create the line chart:
+
+    * Click on Visualize in the navigation bar, and choose Line chart.
+
+    * Choose From a new search. To configure your chart, you first need to tell Kibana what data to use for the y-axis:
+
+    * In the metrics section, click the arrow next to Y-Axis to configure this.
+
+    * Under Aggregation, choose Sum.
+
+    * Under Field, choose STATUSCOUNT.
+
+    * Now you need to configure the x-axis: f. In the buckets section, select X-Axis under Select buckets type.
+
+    * Under Aggregation, choose Date Histogram.
+
