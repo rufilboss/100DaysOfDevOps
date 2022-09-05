@@ -63,3 +63,9 @@ NUMA node1 CPU(s):     9-17,27-35
 * Elastic Block Storage(EBS): Provide Persistent Storage and they are network attached storage.
     * They can only be attached to one EC2 instance at a time
     * The Main benefit is they can be backed up into a snapshot, which we can use later to restore into a new EBS volume.
+
+* It’s is very important to choose an instance depending upon the I/O that application is going to perform whether it’s going to perform small or higher Input/Output(I/O) read/write.
+
+* That why in some case even with provisioned IOPS we will get the same performance and in those cases, we need to choose EBS optimized instance which prioritizes EBS traffic(Figure below shows some EBS Optimized instances)
+
+
