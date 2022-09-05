@@ -41,3 +41,11 @@
 * Choose to Create function, and then choose Blueprints.
 * Search for the keyword “kinesis-firehose-apachelog-to-json-python" to find the Kinesis Data Firehose Lambda Blueprints
 
+    * Source record transformation: Enabled and Choose the lambda function
+    * Select Destination: Choose Amazon ElasticSearch Service
+    * Domain: Should be auto-populated with ElasticSearch Name
+    * Index: Give your index some name(eg: mytestindex)
+    * Type(eg: apache)
+    * Backup mode: Create a new S3 bucket
+
+###### NOTE: Backup Mode is to prevent any data loss,firehose store the data in S3 bucket
