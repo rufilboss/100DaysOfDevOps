@@ -68,4 +68,5 @@ NUMA node1 CPU(s):     9-17,27-35
 
 * That why in some case even with provisioned IOPS we will get the same performance and in those cases, we need to choose EBS optimized instance which prioritizes EBS traffic(Figure below shows some EBS Optimized instances)
 
+###### NOTE: AWS measure IOPS in 256KB chunks(so 768KB is equivalent to 3 IOPS)
 
