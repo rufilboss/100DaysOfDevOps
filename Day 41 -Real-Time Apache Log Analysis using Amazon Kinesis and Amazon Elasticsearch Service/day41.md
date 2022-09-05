@@ -21,6 +21,10 @@
 ###### Step1: Setup ElasticSearch Cluster
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/es/) --> Create a new domain
+
     * Choose Development and testing or based on your requirement
     * Give your Elasticsearch domain name(I need to change it to hundreddaysofdevops as numeral 100 is not accepted by AWS) 
     * Choose all the default options
+    * This is my test cluster and that why I am choosing these wide open options, these are definitely not recommended for PRD environment
+    * Network configuration(Public access for your environment choose particular VPC)
+    * Access policy: Your policy must be restricted
