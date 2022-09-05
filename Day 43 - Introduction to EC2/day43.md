@@ -57,3 +57,9 @@ NUMA node1 CPU(s):     9-17,27-35
 
 ###### NOTE: Nowadays most of Amazon AMI is HVM based
 
+* Instance Type: Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give us the flexibility to choose the appropriate mix of resources for your applications
+* Storage: Generally comes with two options
+
+* Elastic Block Storage(EBS): Provide Persistent Storage and they are network attached storage.
+    * They can only be attached to one EC2 instance at a time
+    * The Main benefit is they can be backed up into a snapshot, which we can use later to restore into a new EBS volume.
