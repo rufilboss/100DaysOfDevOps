@@ -143,3 +143,8 @@ ami-6f68cf0f
     * Public Key: AWS store the public key
     * Private Key: As an administrator, we are responsible for Private Key(it’s available in the form of pem key and make sure permission must be set to 400)
 
+* We use this keypair to login to an instance(Linux) via ssh
+
+```sh
+ssh -i <keypair.pem> ec2-user@aws-hostname
+```
