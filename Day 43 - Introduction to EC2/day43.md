@@ -55,3 +55,5 @@ NUMA node1 CPU(s):     9-17,27-35
 
 * Paravirtual Machine(PVM): In case if your hardware doesn’t support virtualization(verified under /proc/cpuinfo and lscpu) we can use PV AMI. In the past PV guests had better performance than HVM but because of enhancement in HVM Virtualization and the availability of PV drivers in HVM AMI this is no longer true.
 
+###### NOTE: Nowadays most of Amazon AMI is HVM based
+
