@@ -6,3 +6,9 @@
 
 ###### Some Key Terms
 
+* Amazon Machine Image(AMI)
+
+    We can think of it as an operating system or preconfigured package(template) require to launch an EC2 instance
+
+
+
