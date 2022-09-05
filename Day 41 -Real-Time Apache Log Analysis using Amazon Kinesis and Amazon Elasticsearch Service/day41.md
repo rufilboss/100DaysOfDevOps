@@ -18,7 +18,7 @@
 
     * AWS ElasticSearch Service is a cost-effective managed service that makes it easy to deploy, manage, and scale open source Elasticsearch for log analytics, full-text search and more.
 
-###### Step1: Setup ElasticSearch Cluster
+##### Step1: Setup ElasticSearch Cluster
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/es/) --> Create a new domain
 
@@ -29,13 +29,13 @@
     * Network configuration(Public access for your environment choose particular VPC)
     * Access policy: Your policy must be restricted
 
-###### Step2: Setup firehose delivery Pipeline, this will continuously insert logs to ElasticSearch Cluster
+##### Step2: Setup firehose delivery Pipeline, this will continuously insert logs to ElasticSearch Cluster
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/firehose) --> Create Delivery Stream
 
 * Give your Delivery stream some name and keep all the options as default
 
-##### To see all the Lambda blueprints for Kinesis Data Firehose, with examples in Python and Node.js
+###### To see all the Lambda blueprints for Kinesis Data Firehose, with examples in Python and Node.js
 
 * Sign in to the AWS Management Console and open the AWS Lambda console at [**link**](https://console.aws.amazon.com/lambda/).
 * Choose to Create function, and then choose Blueprints.
