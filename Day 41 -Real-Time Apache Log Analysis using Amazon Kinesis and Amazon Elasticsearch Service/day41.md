@@ -32,3 +32,5 @@
 ###### Step2: Setup firehose delivery Pipeline, this will continuously insert logs to ElasticSearch Cluster
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/firehose) --> Create Delivery Stream
+
+* Give your Delivery stream some name and keep all the options as default
