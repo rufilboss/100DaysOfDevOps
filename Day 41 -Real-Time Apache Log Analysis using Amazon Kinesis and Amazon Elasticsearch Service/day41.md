@@ -47,5 +47,7 @@
     * Index: Give your index some name(eg: mytestindex)
     * Type(eg: apache)
     * Backup mode: Create a new S3 bucket
-
-###### NOTE: Backup Mode is to prevent any data loss,firehose store the data in S3 bucket
+    ###### NOTE: Backup Mode is to prevent any data loss,firehose store the data in S3 bucket
+    * In the next screen, keep all the setting default, just click on Create or choose new IAM role and create one
+    * This role will be auto-populated
+    * Click Next and Create Delivery Stream
