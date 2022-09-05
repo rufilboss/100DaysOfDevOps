@@ -61,3 +61,7 @@
     $ cat /etc/aws-kinesis/agent.json
     $ service aws-kinesis-agent start
     ```
+
+##### Step4: Visualize the data using Kibana
+
+* To create the line chart:
