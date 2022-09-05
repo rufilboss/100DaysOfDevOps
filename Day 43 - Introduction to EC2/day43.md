@@ -23,3 +23,32 @@
 ```sh
 $ egrep -i — color “svm|vmx” /proc/cpuinfo
 ```
+
+* Another way to check is via lscpu command
+
+``sh
+# lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                36
+On-line CPU(s) list:   0-35
+Thread(s) per core:    1
+Core(s) per socket:    18
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 63
+Model name:            Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.30GHz
+Stepping:              2
+CPU MHz:               2297.377
+BogoMIPS:              4594.20
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              46080K
+NUMA node0 CPU(s):     0-8,18-26
+NUMA node1 CPU(s):     9-17,27-35
+```
