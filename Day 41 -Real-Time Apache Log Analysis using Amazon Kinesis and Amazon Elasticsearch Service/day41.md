@@ -18,3 +18,6 @@
 
     * AWS ElasticSearch Service is a cost-effective managed service that makes it easy to deploy, manage, and scale open source Elasticsearch for log analytics, full-text search and more.
 
+###### Step1: Setup ElasticSearch Cluster
+
+* Go to [**here**](https://us-west-2.console.aws.amazon.com/es/) --> Create a new domain
