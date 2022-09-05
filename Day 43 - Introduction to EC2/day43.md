@@ -162,5 +162,10 @@ ami-6f68cf0f
     * Using snapshot we can restore the EBS volumes and even in cases where the original snapshot is deleted data is still available in all the other snapshots
     * While taking a snapshot it degrades the performance of EBS volumes, so it should be taken during the non-peak hour
 
+* To create a snapshot, just click on the left bar of EC2 console
+* Now as mentioned above we can use these snapshot to restore EBS volumes. As you can see we can in the pic below(just right-click on that snapshot)
 
-
+    * Create Volume
+    * Create Image
+    * Modify Permission
+    
