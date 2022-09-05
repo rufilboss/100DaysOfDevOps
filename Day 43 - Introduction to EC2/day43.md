@@ -101,3 +101,10 @@ NUMA node1 CPU(s):     9-17,27-35
 
 * User-Data: Using user-data we can add our own custom script during EC2 instance creation.
 
+* Now to view User-data and Instance Meta-Data use
+
+    ```sh
+    # curl http://169.254.169.254/latest/meta-data/
+    # curl http://169.254.169.254/latest/user-data/
+    ```
+
