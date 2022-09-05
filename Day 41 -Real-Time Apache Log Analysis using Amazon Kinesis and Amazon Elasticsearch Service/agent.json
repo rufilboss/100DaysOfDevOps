@@ -1,0 +1,20 @@
+{
+    "cloudwatch.endpoint": "monitoring.us-west-2.amazonaws.com",
+    "cloudwatch.emitMetrics": true,
+    "firehose.endpoint": "firehose.us-west-2.amazonaws.com",
+      "awsAccessKeyId": "",
+     "awsSecretAccessKey": "",
+   "flows": [
+    {
+    "filePattern": "/var/log/httpd/access_log",
+    "deliveryStream": "apachelogstream",
+    "dataProcessingOptions": [
+    {
+    "initialPostion": "START_OF_FILE",
+    "maxBufferAgeMillis":"2000",
+    "optionName": "LOGTOJSON",
+    "logFormat": "COMBINEDAPACHELOG"
+    }]
+    }
+    ]
+   }
