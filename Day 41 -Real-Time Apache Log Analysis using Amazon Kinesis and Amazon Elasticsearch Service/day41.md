@@ -28,3 +28,7 @@
     * This is my test cluster and that why I am choosing these wide open options, these are definitely not recommended for PRD environment
     * Network configuration(Public access for your environment choose particular VPC)
     * Access policy: Your policy must be restricted
+
+###### Step2: Setup firehose delivery Pipeline, this will continuously insert logs to ElasticSearch Cluster
+
+* Go to [**here**](https://us-west-2.console.aws.amazon.com/firehose) --> Create Delivery Stream
