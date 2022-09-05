@@ -78,3 +78,8 @@ NUMA node1 CPU(s):     9-17,27-35
 
 ![XampleImage](https://miro.medium.com/max/1400/1*06j6Lo0XA4gj0AV2eXWbbQ.png)
 
+* Ephemeral Storage: These are physically attached to the host computer that is running the instance. Data on the volume only exists for the duration of the life of the instance
+
+    * Stopped/Shutdown: Data erased
+    * Rebooted: Data remained
+    
