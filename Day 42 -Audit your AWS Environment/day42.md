@@ -7,6 +7,8 @@
 
     * AWS Trusted Advisor is an online tool that provides you real time guidance to help you provision your resources following AWS best practices.
 
+#### AWS Trusted Advisor
+
 * Go to Trusted Advisor → [**here**](https://console.aws.amazon.com/trustedadvisor)
 
     * Green: No issue or concern found
@@ -23,4 +25,8 @@
 * This is the simple example of how you can use Trusted Advisor to fix security issues.
 
 * Similarly, you can look for other security recommendation and fixed it.
+
+#### Scout2
+
+One other tool I will highly recommend everyone to use is Scout2 as it gives you much more detailed information for auditing purpose.
 
