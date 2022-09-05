@@ -97,3 +97,5 @@ NUMA node1 CPU(s):     9-17,27-35
     * Generally used in the non-production scenario as the instance will be automatically terminate when the spot price is equal to or less than our bid
     * It allows Amazon to sell the unused instance for a short amount of time at a substantial discount prize
 
+* Elastic IP Address(EIP): It’s a public IPv4 address designed for dynamic cloud mapping. We can attach our instance to EIP that was created only with a private IP address. The advantage of EIP that in the case of any instance failure we can detach it and attach it to the new instance.
+
