@@ -13,3 +13,5 @@
     * Yellow: Investigation is recommended
     * Red: Critical action recommended
 
+* If you further expand the Trusted Advisor page and explore the details, anything which is not in red will list the criteria for details and recommended actions
+
