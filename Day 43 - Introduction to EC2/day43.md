@@ -99,3 +99,5 @@ NUMA node1 CPU(s):     9-17,27-35
 
 * Elastic IP Address(EIP): It’s a public IPv4 address designed for dynamic cloud mapping. We can attach our instance to EIP that was created only with a private IP address. The advantage of EIP that in the case of any instance failure we can detach it and attach it to the new instance.
 
+* User-Data: Using user-data we can add our own custom script during EC2 instance creation.
+
