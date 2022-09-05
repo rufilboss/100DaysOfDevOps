@@ -10,5 +10,8 @@
 
     We can think of it as an operating system or preconfigured package(template) require to launch an EC2 instance
 
+* AMI has two virtualization type
+
+    * Hardware Virtual Machine(HVM): Under this OS runs directly on top of Virtual Machine without any modification, it’s similar to running on the bare metal. It also takes advantage of hardware extension that provides fast access to the underlying hardware on the host system.
 
 
