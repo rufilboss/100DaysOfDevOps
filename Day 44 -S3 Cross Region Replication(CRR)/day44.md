@@ -18,3 +18,9 @@
     * Versioning must be enabled in both the bucket to configure Cross Region Replication
     * Any object that resides in the bucket before versioning is enabled will not be replicated.
 
+###### Step1: Create Source Bucket
+
+* Go to AWS Console --> [**here**](https://console.aws.amazon.com/s3) --> Create bucket
+
+    * Give your bucket some name
+    * Choose Region as US East(N. Virginia)
