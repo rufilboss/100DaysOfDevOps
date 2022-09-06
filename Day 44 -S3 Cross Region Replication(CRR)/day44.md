@@ -36,3 +36,12 @@
 * Everything will be same, except Bucket name will be my-destination-s3-bucket-to-test-crr
 * Region: US West(Oregon)
 * Enabled Versioning
+
+###### Step4: Enabled Cross Region Replication
+
+* Go to your Source Bucket --> Management --> Replication --> Get started
+* Select Entire bucket
+* Select the destination Bucket
+* Select new IAM role
+* Give your Role name
+* Review your settings and save it
