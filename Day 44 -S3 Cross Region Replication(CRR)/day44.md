@@ -31,3 +31,8 @@
 
 * Click on the bucket --> Properties --> Versioning --> Enable versioning
 
+###### Step3: Create a destination bucket
+
+* Everything will be same, except Bucket name will be my-destination-s3-bucket-to-test-crr
+* Region: US West(Oregon)
+* Enabled Versioning
