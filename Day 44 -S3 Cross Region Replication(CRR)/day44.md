@@ -54,4 +54,4 @@
 
 ##### Terraform code to automate the above setup
 
-Check out: [**here**]()
+Check out: [**here**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2044%20-S3%20Cross%20Region%20Replication(CRR)/aws_s3_cross_region.tf)
