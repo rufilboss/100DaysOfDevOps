@@ -24,5 +24,10 @@
 
     * Give your bucket some name
     * Choose Region as US East(N. Virginia)
-    
+
 * Once the bucket is created
+
+###### Step2: Enable versioning
+
+* Click on the bucket --> Properties --> Versioning --> Enable versioning
+
