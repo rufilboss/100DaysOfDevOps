@@ -50,3 +50,8 @@
 
 * Go back to your Source S3 bucket(my-source-s3-bucket-to-test-crr) and try to upload some files
 * Wait for a few mins, you will see the same file replicated to the destination bucket
+
+
+##### Terraform code to automate the above setup
+
+Check out: [**here**]()
