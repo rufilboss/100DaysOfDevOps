@@ -12,3 +12,9 @@
     * Lifecycle events are not replicated
     * When the bucket owner has no permissions, objects are not replicated.
     * Cross region replication is uni-directional i.e from source to destination, not the other way i.e if I delete the file at the destination it will not be deleted at Source.
+
+* Create a source and destination bucket in two different regions under the same account
+
+    * Versioning must be enabled in both the bucket to configure Cross Region Replication
+    * Any object that resides in the bucket before versioning is enabled will not be replicated.
+
