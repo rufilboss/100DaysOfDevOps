@@ -1,6 +1,6 @@
 ###### Step1: Need to assign IAM Role to the instance, so that has permission to write to S3 bucket
 
-* Check out: [Xample]()
+* Check out: [Xample](https://github.com/rufilboy/100DaysOfDevOps/blob/dev/Day%2045%20-Simple%20Backup%20Solution%20using%20S3%2C%20Glacier%20and%20VPC%20Endpoint/ec2_instance_s3_role.tf)
 
 ###### Step2: Create VPC endpoint for S3 bucket, so that data never leaves the AWS network
 
