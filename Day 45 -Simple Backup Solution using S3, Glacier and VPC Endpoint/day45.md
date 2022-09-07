@@ -56,3 +56,5 @@ aws s3 sync /var/log/. s3://terraform-20190327040316452900000001
 ```sh
 # chmod +x /usr/bin/awss3sync.sh
 ```
+
+* Your simple backup solution is ready, it's not a perfect solution but it’s easy to implement and will perform the given task.
