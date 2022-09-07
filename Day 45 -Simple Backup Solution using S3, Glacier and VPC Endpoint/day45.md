@@ -8,7 +8,7 @@
 
 ###### Step3: Create an S3 bucket and assigned it a LifeCycle Policy so that data after 30 days move to Standard IA storage class and after 60 days to Glacier.
 
-* Check out: [Xample]()
+* Check out: [Xample](https://github.com/rufilboy/100DaysOfDevOps/blob/dev/Day%2045%20-Simple%20Backup%20Solution%20using%20S3%2C%20Glacier%20and%20VPC%20Endpoint/s3_storage_class.tf)
 
 ###### Step4: Login to host and install epel-release, this is required as we need pip to install aws cli
 
