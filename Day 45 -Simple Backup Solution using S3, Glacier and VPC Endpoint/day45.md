@@ -51,3 +51,8 @@ aws s3 sync /var/log/. s3://terraform-20190327040316452900000001
 */1 * * * * /usr/bin/awss3sync.sh
 ```
 
+* Dont forget to change the permission of the script
+
+```sh
+# chmod +x /usr/bin/awss3sync.sh
+```
