@@ -36,3 +36,10 @@ upload: ./wtmp to s3://terraform-20190327040316452900000001/wtmp
 
 ###### NOTE: As we already setup the IAM role, we don't need to hardcode the value of AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
 
+* Now I am going to write a simple script which is going to sync data from your local folder to s3 bucket every minute
+
+```sh
+# cat /usr/bin/awss3sync.sh
+#!/bin/bash
+aws s3 sync /var/log/. s3://terraform-20190327040316452900000001
+```
