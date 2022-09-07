@@ -12,3 +12,24 @@
 
 ###### Step4: Login to host and install epel-release, this is required as we need pip to install aws cli
 
+
+```sh
+# yum -y install epel-release
+```
+
+* Next step is to install pip
+
+```sh
+# yum -y install python2-pip.noarch
+```
+Then aws cli
+```sh
+# pip install awscli
+```
+
+* Test your access to S3 bucket
+
+```sh
+# aws s3 cp wtmp s3://terraform-20190327040316452900000001
+upload: ./wtmp to s3://terraform-20190327040316452900000001/wtmp
+```
