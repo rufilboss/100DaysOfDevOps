@@ -43,3 +43,11 @@ upload: ./wtmp to s3://terraform-20190327040316452900000001/wtmp
 #!/bin/bash
 aws s3 sync /var/log/. s3://terraform-20190327040316452900000001
 ```
+
+* Put that script in crontab so that it will execute every min
+
+```sh
+[root@ip-172-31-31-68 bin]# crontab -l
+*/1 * * * * /usr/bin/awss3sync.sh
+```
+
