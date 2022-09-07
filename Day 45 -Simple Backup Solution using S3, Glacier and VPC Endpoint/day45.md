@@ -10,4 +10,5 @@
 
 * Check out: [Xample]()
 
-###### 
+###### Step4: Login to host and install epel-release, this is required as we need pip to install aws cli
+
