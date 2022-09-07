@@ -33,3 +33,6 @@ Then aws cli
 # aws s3 cp wtmp s3://terraform-20190327040316452900000001
 upload: ./wtmp to s3://terraform-20190327040316452900000001/wtmp
 ```
+
+###### NOTE: As we already setup the IAM role, we don't need to hardcode the value of AWS_ACCESS_KEY and AWS_SECRET_ACCESS_KEY.
+
