@@ -11,3 +11,8 @@
     * Vault: Vault is the container for storing archive.
     * Access Policy: Determine who can and can’t access the data stored in the Vault. It also controls what action user can and can’t perform on the Vault. You can also create a Vault lock policy so that Vault can’t be altered.
 
+* Data retrieval from Glacier
+
+    * Expedited: 1–5 min(highest cost)
+    * Standard: 3–5 hour
+    * Bulk: 5–12 hour(lowest cost)
