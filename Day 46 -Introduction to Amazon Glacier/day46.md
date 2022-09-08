@@ -25,3 +25,6 @@
 
 * Go to the Glacier tab using AWS console [**here**](https://us-west-2.console.aws.amazon.com/glacier) → Create Vault
 
+* Choose all the default options and create Vault
+* Most of the time, I see people use LifeCycle Policies to move the object from S3 to a glacier.
+
