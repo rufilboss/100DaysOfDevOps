@@ -23,3 +23,5 @@
     * Glacier encrypt your data using AES-256
     * Glacier manages key for you
 
+* Go to the Glacier tab using AWS console [**here**](https://us-west-2.console.aws.amazon.com/glacier) → Create Vault
+
