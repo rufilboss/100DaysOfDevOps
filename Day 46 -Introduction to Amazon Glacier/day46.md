@@ -40,3 +40,4 @@
     * enabled — (Required) Specifies lifecycle rule status.
     * transition - (Optional) Specifies a period in the object's transitions
 
+* Here I am defining after 30 days move the objects to STANDARD_IA and after 60 days to GLACIER.
