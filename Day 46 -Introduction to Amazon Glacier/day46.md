@@ -16,3 +16,10 @@
     * Expedited: 1–5 min(highest cost)
     * Standard: 3–5 hour
     * Bulk: 5–12 hour(lowest cost)
+
+* Security with Amazon Glacier
+
+    * Glacier access can be control using IAM
+    * Glacier encrypt your data using AES-256
+    * Glacier manages key for you
+
