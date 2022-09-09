@@ -25,3 +25,5 @@
     * Keep all the other values default
     * Review and create the filesystem
 
+* If you now click on the Amazon EC2 mount instructions(from local VPC), that will give you the detailed instruction which package to install and how to mount the filesystem
+
