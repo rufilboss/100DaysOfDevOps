@@ -16,3 +16,14 @@
 ###### Step2: Create an Amazon EFS FileSystem
 
 * EFS FileSystem can be mounted to multiple EC2 instances running in different availability zone with the same region. These instances use mount targets created in each Availability Zone to mount the filesystem using the standard Network File System.
+
+###### NOTE: All the instances where we are trying to mount the Filesystem must be the part of the same VPC.
+
+* Go to [**here**](https://us-west-2.console.aws.amazon.com/efs) → Create file system
+
+    * Add tag to your FileSystem
+    * Keep all the other values default
+    * Review and create the filesystem
+
+* If you now click on the Amazon EC2 mount instructions(from local VPC), that will give you the detailed instruction which package to install and how to mount the filesystem
+
