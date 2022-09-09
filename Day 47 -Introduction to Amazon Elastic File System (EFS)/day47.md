@@ -19,4 +19,5 @@
 
 ###### NOTE: All the instances where we are trying to mount the Filesystem must be the part of the same VPC.
 
-* 
+* Go to [**here**](https://us-west-2.console.aws.amazon.com/efs) → Create file system
+
