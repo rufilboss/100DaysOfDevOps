@@ -10,3 +10,6 @@
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/ec2) → NETWORK & SECURITY → Security Groups --> Create Security Group
 
+    * Type : Should be NFS
+    * Source: Rather than opening it for the entire subnet, we are only opening it for EFS Client Security Group
+
