@@ -15,4 +15,4 @@
 
 ###### Step2: Create an Amazon EFS FileSystem
 
-* EFS FileSystem can be mounted to multiple EC2 instances running in different availability zone with the same region. These instances use mount targets created in each Availability Zone to mount the filesystem using the standard Network File System v4.1(NFS v4.1).
+* EFS FileSystem can be mounted to multiple EC2 instances running in different availability zone with the same region. These instances use mount targets created in each Availability Zone to mount the filesystem using the standard Network File System.
