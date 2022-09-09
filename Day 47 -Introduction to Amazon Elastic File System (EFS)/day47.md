@@ -21,3 +21,7 @@
 
 * Go to [**here**](https://us-west-2.console.aws.amazon.com/efs) → Create file system
 
+    * Add tag to your FileSystem
+    * Keep all the other values default
+    * Review and create the filesystem
+
