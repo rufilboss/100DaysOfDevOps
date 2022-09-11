@@ -1,4 +1,4 @@
-##### What is AWS Route53?
+#### What is AWS Route53?
 
 * Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination:
 
@@ -69,8 +69,8 @@
 * Routing Policy: Simple
 
 
-#### Using Terraform
+### Using Terraform
 
-Check out [**here**]()
+Check out [**here**](https://github.com/rufilboy/100DaysOfDevOps/blob/main/Day%2049%20-Introduction%20to%20Route53/route53.tf)
 
 [**Reference**](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
