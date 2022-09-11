@@ -59,4 +59,18 @@
 
 ##### NOTE: Please don’t change or alter these record.
 
- 
+###### Step2: Create A record
+
+* Name : www
+* Type: A-IPv4 address
+* Alias: No
+* TTL: Select +1m(60second)
+* Value: Public IP of your EC2 instance
+* Routing Policy: Simple
+
+
+#### Using Terraform
+
+Check out [**here**]()
+
+[**Reference**](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
