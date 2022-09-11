@@ -27,3 +27,7 @@
         ns-2050.awsdns-66.org
         ns-2051.awsdns-67.co.uk
 
+* SOA Record
+
+    * A Start of Authority record (abbreviated as SOA record) is a type of resource record in the Domain Name System (DNS) containing administrative information about the zone, especially regarding zone transfers
+
