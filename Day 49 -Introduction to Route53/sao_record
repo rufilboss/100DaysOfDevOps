@@ -1,0 +1,13 @@
+
+$TTL 86400
+@   IN  SOA     example root.example.com (
+        2018110201  ;Serial
+        3600        ;Refresh
+        1800        ;Retry
+        604800      ;Expire
+        86400       ;Minimum TTL
+)
+        IN  NS      example
+        IN  A       192.168.1.3
+        IN  MX 10   example
+example     IN  A       192.168.1.3
