@@ -49,3 +49,5 @@
 
 ###### Step1: Create a hosted zone
 
+* Go to [**here**](https://console.aws.amazon.com/route53) --> Hosted zones --> Create Hosted Zone
+
