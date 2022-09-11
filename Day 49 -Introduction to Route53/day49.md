@@ -1,4 +1,4 @@
-###### What is AWS Route53?
+##### What is AWS Route53?
 
 * Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination:
 
@@ -6,7 +6,7 @@
     * DNS Routing
     * Health Checking
 
-###### Key DNS Terms
+##### Key DNS Terms
 
 * A Record
 
@@ -31,7 +31,7 @@
 
     * A Start of Authority record (abbreviated as SOA record) is a type of resource record in the Domain Name System (DNS) containing administrative information about the zone, especially regarding zone transfers
 
-###### AWS Specific DNS Terms
+##### AWS Specific DNS Terms
 
 * Alias Record
 
@@ -46,3 +46,6 @@
         * The health of a specified resource, such as a web server
         * The status of other health checks
         * The status of an Amazon CloudWatch alarm
+
+###### Step1: Create a hosted zone
+
