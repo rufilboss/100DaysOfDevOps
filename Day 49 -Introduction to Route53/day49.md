@@ -54,3 +54,6 @@
     * Domain Name: You must need to purchase this domain either from your Domain Registrar or you can purchase from Amazon
     * Comment: Add some comment
     * Type: Public Hosted Zone(if purchased by a domain registrar) OR you can set Private Hosted Zone for Amazon VPC
+
+* The moment you create a hosted zone four NS and SOA record will be created for you.
+
