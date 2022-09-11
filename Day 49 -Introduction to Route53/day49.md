@@ -69,4 +69,8 @@
 * Routing Policy: Simple
 
 
+#### Using Terraform
+
+Check out [**here**]()
+
 [**Reference**](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
