@@ -51,3 +51,6 @@
 
 * Go to [**here**](https://console.aws.amazon.com/route53) --> Hosted zones --> Create Hosted Zone
 
+    * Domain Name: You must need to purchase this domain either from your Domain Registrar or you can purchase from Amazon
+    * Comment: Add some comment
+    * Type: Public Hosted Zone(if purchased by a domain registrar) OR you can set Private Hosted Zone for Amazon VPC
