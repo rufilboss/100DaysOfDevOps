@@ -68,3 +68,5 @@
 * Value: Public IP of your EC2 instance
 * Routing Policy: Simple
 
+
+[**Reference**](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
