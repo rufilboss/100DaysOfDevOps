@@ -10,4 +10,9 @@
 
 * A Record
 
-* A record is used to translate human-friendly domain names such as “www.example.com" into IP-addresses such as 192.168.0.1 (machine friendly numbers).
+    * A record is used to translate human-friendly domain names such as “www.example.com" into IP-addresses such as 192.168.0.1 (machine friendly numbers).
+
+* CNAME Record
+
+    * A Canonical Name record (abbreviated as CNAME record) is a type of resource record in the Domain Name System (DNS) which maps one domain name (an alias) to another (the Canonical Name.)
+
