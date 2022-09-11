@@ -57,3 +57,6 @@
 
 * The moment you create a hosted zone four NS and SOA record will be created for you.
 
+##### NOTE: Please don’t change or alter these record.
+
+ 
