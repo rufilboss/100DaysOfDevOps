@@ -1,4 +1,4 @@
-## Cabling Devices
+## Cabling Devices & Ethernet
 
 * Cables may be copper or fibre
 * UTP uses pairs wires, twisted together. Some are for sending and others are for receiving
@@ -8,10 +8,6 @@
 * Dual core fibre is full duplex anf single fibre is half duplex
 * Use Multi Mode Fibre(MMF) for a cheap shorter run, and Single Mode Fibre(SMF) for expensive longer run
 * If cables are too restrictive, consider a wireless network.
-
-
-## Ethernet
-
 * The ethernet protocol describes physical links, and how data is formatted
 * 802.3(ethernet) - cables
 * 802.11(WiFi) - Wireless
