@@ -5,6 +5,10 @@
 * Straight-through UTP connects a host to the switch, Crossover UTP connects host to each other
 * Auto MDI-X detects UTP type and adapts if needed
 * Full duplex send and recieve at the time. Half duplex take turns sending and receiving
+* Dual core fibre is full duplex anf single fibre is half duplex
+* Use Multi Mode Fibre(MMF) for a cheap shorter run, and Single Mode Fibre(SMF) for expensive longer run
+* If cables are too restrictive, consider a wireless network.
+
 
 ## Ethernet
 
