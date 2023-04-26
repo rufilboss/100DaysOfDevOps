@@ -1,4 +1,4 @@
-# Networking cont...
+# Networking cont
 
 ## Cabling Devices & Ethernet
 
