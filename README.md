@@ -8,8 +8,6 @@
 
 ##### Resume: 25th of April 2023
 
-Day 76 of 100, We meuve....
+Day 73 of my #100DaysOfDevOps Challenge🚀🚀🚀
 
 Inspired by: MichealCade's [**90DaysOfDevOps**](https://github.com/MichaelCade/90DaysOfDevOps)
-
-I'll be following this roadmap: [**ROADMAP**](https://devopslearning.medium.com/100-days-of-devops-day-100-thanks-everyone-and-happy-learning-f014f0aad490)
