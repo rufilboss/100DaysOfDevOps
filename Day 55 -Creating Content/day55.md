@@ -1,1 +1,1 @@
-#### Busy writing article on DevOps for my newsletter
+# Busy writing article on DevOps for my newsletter
