@@ -6,7 +6,7 @@
 
 ##### Pause: 8th of Octomber 2022
 
-##### Resume: 25th of April 2023
+##### Resumed on the 25th of April 2023
 
 Day 74 of my #100DaysOfDevOps Challenge🚀🚀🚀
 
