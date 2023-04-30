@@ -1,4 +1,4 @@
-# Day 75 
+# Day 75
 
 ## Implementing Asynchronous Event-Based Collaboration
 
