@@ -8,6 +8,6 @@
 
 ##### Resumed on the 25th of April 2023
 
-Day 78 of my #100DaysOfDevOps Challenge🚀🚀🚀
+Day 79 of my #100DaysOfDevOps Challenge🚀🚀🚀
 
 Inspired by: MichealCade's [**90DaysOfDevOps**](https://github.com/MichaelCade/90DaysOfDevOps)
