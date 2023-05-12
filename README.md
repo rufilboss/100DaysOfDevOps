@@ -1,5 +1,5 @@
 <h1 align=center>
-  MY 100DaysOfDevOps Journey.
+  MY 100DaysOfDevOps Journey
 </h1>
 
 ### Started on Monday 25th Of July 2022
