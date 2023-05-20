@@ -8,6 +8,6 @@ Took break from this challenge on 8th of Octomber 2022 due to some issues
 
 Resumed on the 25th of April 2023
 
-It's Day 95 of my #100DaysOfDevOps Challenge🚀🚀🚀
+It's Day 96 of my #100DaysOfDevOps Challenge🚀🚀🚀
 
 Inspired by: MichealCade's [**90DaysOfDevOps**](https://github.com/MichaelCade/90DaysOfDevOps)
