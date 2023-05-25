@@ -1,6 +1,4 @@
-<h1 align=center>
-  MY 100DaysOfDevOps Journey
-</h1>
+<h1 align=center> 100 Days of DevOps Challenge </h1>
 
 Welcome to my 100 Days of DevOps Challenge! This README file documents my journey and accomplishments throughout this exciting challenge.
 
