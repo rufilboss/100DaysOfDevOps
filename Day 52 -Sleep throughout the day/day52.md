@@ -1,3 +1,3 @@
-# Just resting throughout the day
+# Just sleeping throughout the day
 
-## Anyways, I completed the 21th Juz'u of the glorious Qur'an today.
+## Anyways, I completed the 21th Juz'u of the glorious Qur'an today
