@@ -2,4 +2,4 @@
 
 ## Linux Intoduction Continues
 
-Explore some new things about Linux
+Explore some new topics in Linux
